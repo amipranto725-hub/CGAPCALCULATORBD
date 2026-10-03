@@ -2,379 +2,331 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>CGPA Calculator BD - Free GPA & CGPA Calculator</title>
+  <title>CGPA Calculator BD - Free GPA & CGPA Calculator Bangladesh</title>
 
-  <meta name="description" content="Free CGPA and GPA calculator for Bangladesh students. Calculate semester GPA, overall CGPA and target GPA.">
+  <meta
+    name="description"
+    content="Free CGPA Calculator BD for Bangladesh students. Calculate semester GPA, overall CGPA and required GPA for your target CGPA using a simple online calculator."
+  >
 
-  <meta name="keywords" content="CGPA Calculator BD, CGPA Calculator Bangladesh, GPA Calculator, University CGPA Calculator">
+  <meta
+    name="keywords"
+    content="CGPA Calculator BD, CGPA Calculator Bangladesh, GPA Calculator Bangladesh, University CGPA Calculator, Semester GPA Calculator, Target CGPA Calculator"
+  >
+
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="CGPA Calculator BD">
+
+  <link
+    rel="canonical"
+    href="https://amipranto725-hub.github.io/CGAPCALCULATORBD/"
+  >
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="CGPA Calculator BD - Free GPA & CGPA Calculator">
+  <meta
+    property="og:description"
+    content="Calculate your semester GPA, overall CGPA and required GPA for your target CGPA."
+  >
+  <meta
+    property="og:url"
+    content="https://amipranto725-hub.github.io/CGAPCALCULATORBD/"
+  >
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CGPA Calculator BD">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta
+    name="twitter:title"
+    content="CGPA Calculator BD - Free GPA & CGPA Calculator"
+  >
+  <meta
+    name="twitter:description"
+    content="Free online CGPA and GPA calculator for Bangladesh students."
+  >
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "CGPA Calculator BD",
+    "url": "https://amipranto725-hub.github.io/CGAPCALCULATORBD/",
+    "description": "Free CGPA and GPA calculator for Bangladesh students.",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "BDT"
+    }
+  }
+  </script>
 
   <style>
     * {
       box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
       font-family: Arial, Helvetica, sans-serif;
       background: #f5f7fb;
-      color: #172033;
+      color: #222;
       line-height: 1.6;
     }
 
     header {
-      background: #ffffff;
-      border-bottom: 1px solid #e5e7eb;
+      background: #0b5ed7;
+      color: white;
+      padding: 18px 20px;
       position: sticky;
       top: 0;
       z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.12);
     }
 
-    .nav {
-      max-width: 1150px;
+    .header-container {
+      max-width: 1100px;
       margin: auto;
-      padding: 16px 20px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       gap: 20px;
     }
 
     .logo {
       font-size: 22px;
-      font-weight: 800;
-      color: #0757a0;
-      text-decoration: none;
+      font-weight: bold;
+      white-space: nowrap;
     }
 
-    .nav-links {
+    nav {
       display: flex;
-      gap: 18px;
+      gap: 15px;
       flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
-    .nav-links a {
-      color: #374151;
+    nav a {
+      color: white;
       text-decoration: none;
       font-size: 14px;
       font-weight: 600;
     }
 
-    .nav-links a:hover {
-      color: #0757a0;
+    nav a:hover {
+      text-decoration: underline;
     }
 
     .hero {
-      background: linear-gradient(135deg, #eaf4ff, #ffffff);
-      padding: 60px 20px 45px;
+      background: linear-gradient(135deg, #0b5ed7, #084298);
+      color: white;
       text-align: center;
+      padding: 55px 20px;
     }
 
     .hero h1 {
-      margin: 0 0 12px;
-      font-size: 42px;
-      color: #111827;
+      font-size: 40px;
+      margin-bottom: 12px;
     }
 
     .hero p {
-      max-width: 720px;
+      max-width: 750px;
       margin: auto;
-      color: #596579;
       font-size: 17px;
     }
 
     .container {
-      width: min(1100px, calc(100% - 30px));
-      margin: 35px auto 60px;
-    }
-
-    .ad-box {
-      min-height: 90px;
-      background: #ffffff;
-      border: 1px solid #edf0f5;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #9ca3af;
-      margin: 20px 0 30px;
-      font-size: 13px;
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 0 18px;
     }
 
     .card {
-      background: #ffffff;
-      border-radius: 16px;
-      padding: 28px;
-      margin-bottom: 28px;
-      box-shadow: 0 5px 25px rgba(15, 23, 42, 0.06);
-      border: 1px solid #e8ecf2;
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      margin-bottom: 25px;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.08);
     }
 
     .card h2 {
-      margin-top: 0;
+      margin-bottom: 18px;
+      color: #0b5ed7;
+    }
+
+    .card h3 {
+      margin-top: 18px;
       margin-bottom: 8px;
-      font-size: 25px;
-      color: #172033;
     }
 
-    .section-description {
-      color: #6b7280;
-      margin-top: 0;
-      margin-bottom: 22px;
-      font-size: 14px;
-    }
-
-    .university-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-
-    .field {
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-    }
-
-    .field.full {
-      grid-column: 1 / -1;
+    .intro-text {
+      font-size: 16px;
+      margin-bottom: 15px;
     }
 
     label {
-      font-size: 14px;
-      font-weight: 700;
-      color: #374151;
+      display: block;
+      font-weight: bold;
+      margin-bottom: 6px;
     }
 
     input,
     select {
       width: 100%;
-      min-height: 46px;
-      padding: 11px 13px;
-      border: 1px solid #d6dce5;
-      border-radius: 9px;
-      background: #ffffff;
-      color: #1f2937;
-      font-size: 14px;
-      outline: none;
-    }
-
-    input:focus,
-    select:focus {
-      border-color: #1677c8;
-      box-shadow: 0 0 0 3px rgba(22, 119, 200, 0.1);
-    }
-
-    .search-result {
-      margin-top: 8px;
-      color: #2563eb;
-      font-size: 13px;
-      min-height: 20px;
-    }
-
-    .previous-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-
-    .course-header {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 90px;
-      gap: 10px;
-      background: #0869b5;
-      color: #ffffff;
-      padding: 12px;
-      border-radius: 8px;
-      font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    .course-row {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 90px;
-      gap: 10px;
-      margin-bottom: 10px;
-      align-items: center;
-    }
-
-    .remove-btn {
-      min-height: 44px;
-      border: none;
-      border-radius: 8px;
-      background: #fee2e2;
-      color: #b91c1c;
-      cursor: pointer;
-      font-weight: 700;
-    }
-
-    .remove-btn:hover {
-      background: #fecaca;
-    }
-
-    .buttons {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 18px;
+      padding: 11px 12px;
+      border: 1px solid #ccc;
+      border-radius: 7px;
+      font-size: 15px;
+      margin-bottom: 15px;
+      background: white;
     }
 
     button {
       border: none;
-      cursor: pointer;
-      border-radius: 9px;
+      background: #0b5ed7;
+      color: white;
       padding: 12px 18px;
-      font-size: 14px;
-      font-weight: 700;
+      border-radius: 7px;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: bold;
     }
 
-    .primary-btn {
-      background: #075da8;
-      color: #ffffff;
-    }
-
-    .primary-btn:hover {
-      background: #064b87;
+    button:hover {
+      background: #084298;
     }
 
     .secondary-btn {
-      background: #e8f2fb;
-      color: #075da8;
+      background: #6c757d;
+      margin-left: 8px;
     }
 
     .secondary-btn:hover {
-      background: #dcecf9;
+      background: #545b62;
     }
 
-    .result-box {
-      margin-top: 22px;
-      padding: 20px;
-      border-radius: 12px;
-      background: #f0f7ff;
-      border: 1px solid #cfe5f9;
+    .course-row {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 12px;
+      align-items: end;
+      margin-bottom: 10px;
+    }
+
+    .course-row input,
+    .course-row select {
+      margin-bottom: 0;
+    }
+
+    .course-header {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 12px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .result {
+      margin-top: 20px;
+      padding: 18px;
+      background: #e9f2ff;
+      border-left: 5px solid #0b5ed7;
+      border-radius: 7px;
       display: none;
     }
 
-    .result-box.show {
-      display: block;
+    .result strong {
+      color: #084298;
     }
 
-    .result-title {
-      font-size: 14px;
-      color: #4b5563;
-      margin-bottom: 4px;
-    }
-
-    .result-number {
-      font-size: 36px;
-      font-weight: 800;
-      color: #075da8;
-    }
-
-    .result-text {
-      color: #4b5563;
-      margin-top: 6px;
+    .warning {
+      margin-top: 15px;
+      padding: 14px;
+      background: #fff3cd;
+      border-left: 5px solid #ffc107;
+      border-radius: 6px;
       font-size: 14px;
     }
 
-    .target-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
+    .info {
+      margin-top: 15px;
+      padding: 14px;
+      background: #e7f5ff;
+      border-left: 5px solid #0b5ed7;
+      border-radius: 6px;
+      font-size: 14px;
     }
 
-    .info-box {
-      background: #f8fafc;
-      border-left: 4px solid #075da8;
-      padding: 15px;
-      border-radius: 8px;
-      color: #4b5563;
+    .university-search {
+      margin-bottom: 10px;
+    }
+
+    .university-results {
       font-size: 14px;
+      color: #555;
+      margin-bottom: 12px;
+    }
+
+    .steps {
+      padding-left: 22px;
+    }
+
+    .steps li {
+      margin-bottom: 8px;
     }
 
     footer {
-      background: #111827;
-      color: #d1d5db;
-      padding: 35px 20px;
+      background: #212529;
+      color: white;
       text-align: center;
+      padding: 25px 15px;
+      margin-top: 40px;
     }
 
     footer p {
-      margin: 5px 0;
-      font-size: 13px;
+      margin-bottom: 10px;
     }
 
     footer a {
-      color: #ffffff;
+      color: white;
       text-decoration: none;
       margin: 0 8px;
+      font-size: 14px;
     }
 
-    @media (max-width: 750px) {
+    footer a:hover {
+      text-decoration: underline;
+    }
 
-      .hero {
-        padding: 42px 18px 35px;
+    @media (max-width: 700px) {
+      .header-container {
+        flex-direction: column;
+      }
+
+      nav {
+        justify-content: center;
       }
 
       .hero h1 {
-        font-size: 31px;
+        font-size: 30px;
       }
 
-      .hero p {
-        font-size: 15px;
-      }
-
-      .nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .nav-links {
-        gap: 12px;
-      }
-
-      .card {
-        padding: 20px;
-      }
-
-      .university-grid,
-      .previous-grid,
-      .target-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .field.full {
-        grid-column: auto;
-      }
-
+      .course-row,
       .course-header {
-        display: none;
-      }
-
-      .course-row {
         grid-template-columns: 1fr;
-        padding: 15px;
-        border: 1px solid #e1e6ed;
-        border-radius: 10px;
-        margin-bottom: 12px;
       }
 
-      .remove-btn {
-        width: 100%;
-      }
-
-      .buttons {
-        flex-direction: column;
-      }
-
-      .buttons button {
-        width: 100%;
+      .secondary-btn {
+        margin-left: 0;
+        margin-top: 8px;
       }
     }
   </style>
@@ -383,451 +335,281 @@
 <body>
 
 <header>
+  <div class="header-container">
+    <div class="logo">CGPA Calculator BD</div>
 
-  <div class="nav">
-
-    <a href="index.html" class="logo">
-      CGPACalculatorBD
-    </a>
-
-    <nav class="nav-links">
-
+    <nav aria-label="Main navigation">
       <a href="index.html">Home</a>
-
-      <a href="tools/cgpa-calculator.html">
-        CGPA
-      </a>
-
-      <a href="tools/marks-to-cgpa.html">
-        Marks to CGPA
-      </a>
-
-      <a href="tools/target-cgpa.html">
-        Target CGPA
-      </a>
-
-      <a href="about.html">
-        About
-      </a>
-
+      <a href="tools/cgpa-calculator.html">CGPA Calculator</a>
+      <a href="tools/marks-to-cgpa.html">Marks to CGPA</a>
+      <a href="tools/target-cgpa.html">Target CGPA</a>
+      <a href="about.html">About</a>
     </nav>
-
   </div>
-
 </header>
 
-
 <section class="hero">
-
   <h1>CGPA Calculator BD</h1>
 
   <p>
-    Calculate your semester GPA and overall CGPA easily.
-    Enter your previous academic record and current semester courses.
+    Free online CGPA Calculator for Bangladesh students.
+    Calculate your semester GPA, overall CGPA and required GPA
+    for your target CGPA quickly and easily.
   </p>
-
 </section>
-
 
 <main class="container">
 
-  <div class="ad-box">
-    Advertisement
-  </div>
-
-
-  <!-- UNIVERSITY -->
-
   <section class="card">
+    <h2>Free CGPA Calculator for Bangladesh Students</h2>
 
-    <h2>🎓 Select Your University</h2>
-
-    <p class="section-description">
-      Select your university type and university before calculating your CGPA.
+    <p class="intro-text">
+      Use this free CGPA calculator to calculate your current semester GPA,
+      overall CGPA and target CGPA requirements. Enter your previous CGPA,
+      completed credits and current semester course information.
     </p>
 
-    <div class="university-grid">
-
-      <div class="field">
-
-        <label for="universityType">
-          University Type
-        </label>
-
-        <select id="universityType">
-
-          <option value="">
-            Select Type
-          </option>
-
-          <option value="public">
-            Public University
-          </option>
-
-          <option value="private">
-            Private University
-          </option>
-
-        </select>
-
-      </div>
-
-
-      <div class="field">
-
-        <label for="universitySearch">
-          Search University
-        </label>
-
-        <input
-          type="text"
-          id="universitySearch"
-          placeholder="Type university name..."
-        >
-
-        <div
-          id="searchResult"
-          class="search-result">
-        </div>
-
-      </div>
-
-
-      <div class="field full">
-
-        <label for="university">
-          University
-        </label>
-
-        <select id="university">
-
-          <option value="">
-            Select University
-          </option>
-
-        </select>
-
-      </div>
-
+    <div class="info">
+      <strong>Important:</strong>
+      University grading systems can vary. The grade-point scale currently
+      used by this calculator is a general 4.00-scale example and may not
+      match the official grading policy of every university. Always verify
+      your university's official grading scale before using the calculated
+      result for academic or official purposes.
     </div>
-
   </section>
 
-
-  <!-- PREVIOUS RECORD -->
-
+  <!-- University -->
   <section class="card">
+    <h2>Select Your University</h2>
 
-    <h2>📚 Previous Academic Record</h2>
+    <label for="universityType">University Type</label>
 
-    <p class="section-description">
-      If you already completed previous semesters, enter your current CGPA
-      and completed credits.
-    </p>
+    <select id="universityType" onchange="updateUniversities()">
+      <option value="public">Public University</option>
+      <option value="private">Private University</option>
+    </select>
 
-    <div class="previous-grid">
+    <label for="universitySearch">Search University</label>
 
-      <div class="field">
+    <input
+      type="text"
+      id="universitySearch"
+      class="university-search"
+      placeholder="Type university name..."
+      oninput="filterUniversities()"
+      aria-label="Search university"
+    >
 
-        <label for="previousCGPA">
-          Previous CGPA
-        </label>
+    <div
+      id="universityCount"
+      class="university-results"
+      aria-live="polite"
+    ></div>
 
-        <input
-          type="number"
-          id="previousCGPA"
-          min="0"
-          max="4"
-          step="0.01"
-          placeholder="Example: 3.50"
-        >
+    <label for="university">University</label>
 
-      </div>
-
-
-      <div class="field">
-
-        <label for="completedCredits">
-          Completed Credits
-        </label>
-
-        <input
-          type="number"
-          id="completedCredits"
-          min="0"
-          step="0.5"
-          placeholder="Example: 90"
-        >
-
-      </div>
-
-    </div>
-
+    <select id="university">
+    </select>
   </section>
 
-
-  <!-- CURRENT COURSES -->
-
+  <!-- Previous CGPA -->
   <section class="card">
+    <h2>Previous Academic Record</h2>
 
-    <h2>📖 Current Semester Courses</h2>
+    <label for="previousCGPA">
+      Previous CGPA
+    </label>
 
-    <p class="section-description">
-      Add your current semester courses, credits and grades.
-    </p>
+    <input
+      type="number"
+      id="previousCGPA"
+      min="0"
+      max="4"
+      step="0.01"
+      placeholder="Example: 3.25"
+    >
 
+    <label for="completedCredits">
+      Completed Credits
+    </label>
+
+    <input
+      type="number"
+      id="completedCredits"
+      min="0"
+      step="0.5"
+      placeholder="Example: 60"
+    >
+  </section>
+
+  <!-- Semester Calculator -->
+  <section class="card">
+    <h2>Semester GPA Calculator</h2>
 
     <div class="course-header">
-
-      <div>Course Name</div>
-
+      <div>Course</div>
       <div>Credit</div>
-
       <div>Grade</div>
-
-      <div>Action</div>
-
     </div>
-
 
     <div id="courses"></div>
 
+    <button onclick="addCourse()">
+      + Add Course
+    </button>
 
-    <div class="buttons">
-
-      <button
-        type="button"
-        class="secondary-btn"
-        onclick="addCourse()"
-      >
-        + Add Course
-      </button>
-
-
-      <button
-        type="button"
-        class="primary-btn"
-        onclick="calculateCGPA()"
-      >
-        Calculate CGPA
-      </button>
-
-    </div>
-
-
-    <div
-      id="cgpaResult"
-      class="result-box"
+    <button
+      onclick="calculateCGPA()"
+      class="secondary-btn"
     >
+      Calculate CGPA
+    </button>
 
-      <div class="result-title">
-        Your Current Semester GPA
-      </div>
-
-      <div
-        id="semesterGPA"
-        class="result-number"
-      >
-        0.00
-      </div>
-
-      <div
-        id="overallText"
-        class="result-text">
-      </div>
-
-    </div>
-
+    <div id="cgpaResult" class="result" aria-live="polite"></div>
   </section>
 
-
-  <!-- TARGET CGPA -->
-
+  <!-- Target CGPA -->
   <section class="card">
+    <h2>Target CGPA Calculator</h2>
 
-    <h2>🎯 Target CGPA Calculator</h2>
-
-    <p class="section-description">
-      Find the GPA you need in your next semester to reach your target CGPA.
+    <p class="intro-text">
+      Find out what GPA you need in your next semester to reach your
+      desired target CGPA.
     </p>
 
+    <label for="targetCurrentCGPA">
+      Current CGPA
+    </label>
 
-    <div class="target-grid">
+    <input
+      type="number"
+      id="targetCurrentCGPA"
+      min="0"
+      max="4"
+      step="0.01"
+      placeholder="Example: 3.20"
+    >
 
-      <div class="field">
+    <label for="targetCompletedCredits">
+      Completed Credits
+    </label>
 
-        <label for="targetCurrentCGPA">
-          Current CGPA
-        </label>
+    <input
+      type="number"
+      id="targetCompletedCredits"
+      min="0"
+      step="0.5"
+      placeholder="Example: 60"
+    >
 
-        <input
-          type="number"
-          id="targetCurrentCGPA"
-          min="0"
-          max="4"
-          step="0.01"
-          placeholder="Example: 3.20"
-        >
+    <label for="targetCGPA">
+      Target CGPA
+    </label>
 
-      </div>
+    <input
+      type="number"
+      id="targetCGPA"
+      min="0"
+      max="4"
+      step="0.01"
+      placeholder="Example: 3.50"
+    >
 
+    <label for="targetSemesterCredits">
+      Next Semester Credits
+    </label>
 
-      <div class="field">
+    <input
+      type="number"
+      id="targetSemesterCredits"
+      min="1"
+      step="0.5"
+      placeholder="Example: 15"
+    >
 
-        <label for="targetCompletedCredits">
-          Completed Credits
-        </label>
-
-        <input
-          type="number"
-          id="targetCompletedCredits"
-          min="0"
-          step="0.5"
-          placeholder="Example: 90"
-        >
-
-      </div>
-
-
-      <div class="field">
-
-        <label for="targetCGPA">
-          Target CGPA
-        </label>
-
-        <input
-          type="number"
-          id="targetCGPA"
-          min="0"
-          max="4"
-          step="0.01"
-          placeholder="Example: 3.50"
-        >
-
-      </div>
-
-
-      <div class="field">
-
-        <label for="nextCredits">
-          Next Semester Credits
-        </label>
-
-        <input
-          type="number"
-          id="nextCredits"
-          min="0"
-          step="0.5"
-          placeholder="Example: 15"
-        >
-
-      </div>
-
-    </div>
-
-
-    <div class="buttons">
-
-      <button
-        type="button"
-        class="primary-btn"
-        onclick="calculateTarget()"
-      >
-        Calculate Required GPA
-      </button>
-
-    </div>
-
+    <button onclick="calculateTargetCGPA()">
+      Calculate Required GPA
+    </button>
 
     <div
       id="targetResult"
-      class="result-box"
-    >
-
-      <div class="result-title">
-        Required GPA
-      </div>
-
-      <div
-        id="requiredGPA"
-        class="result-number"
-      >
-        0.00
-      </div>
-
-      <div
-        id="targetText"
-        class="result-text">
-      </div>
-
-    </div>
-
+      class="result"
+      aria-live="polite"
+    ></div>
   </section>
 
-
-  <!-- ABOUT -->
-
+  <!-- How to Calculate -->
   <section class="card">
+    <h2>How to Calculate CGPA</h2>
 
+    <ol class="steps">
+      <li>
+        Enter your previous CGPA.
+      </li>
+
+      <li>
+        Enter the total credits you have already completed.
+      </li>
+
+      <li>
+        Add each current semester course with its credit and grade.
+      </li>
+
+      <li>
+        Click the Calculate CGPA button.
+      </li>
+
+      <li>
+        The calculator will show your semester GPA and updated overall CGPA.
+      </li>
+    </ol>
+
+    <h3>CGPA Formula</h3>
+
+    <p>
+      CGPA is calculated using the total quality points divided by
+      the total completed credits.
+    </p>
+  </section>
+
+  <!-- About -->
+  <section class="card">
     <h2>About CGPA Calculator BD</h2>
 
-    <div class="info-box">
+    <p>
+      CGPA Calculator BD is a simple educational calculator designed
+      to help students understand and calculate GPA and CGPA.
+      It can be useful for students studying at universities in Bangladesh.
+    </p>
 
-      CGPACalculatorBD is a free student-focused calculator website.
-      You can calculate semester GPA, overall CGPA and target GPA easily.
-
-      <br><br>
-
-      <strong>Important:</strong>
-      University grading systems can vary. Always verify the official
-      grading policy of your university before using the result.
-
-    </div>
-
+    <p style="margin-top: 12px;">
+      This website is an independent calculator and is not officially
+      affiliated with any university. University grading policies may differ,
+      so students should check their university's official academic rules.
+    </p>
   </section>
-
-
-  <div class="ad-box">
-    Advertisement
-  </div>
 
 </main>
 
-
 <footer>
-
   <p>
-    © 2026 CGPACalculatorBD. All rights reserved.
+    © 2026 CGPA Calculator BD. All rights reserved.
   </p>
 
   <p>
-
-    <a href="about.html">
-      About
-    </a>
-
-    <a href="contact.html">
-      Contact
-    </a>
-
-    <a href="privacy-policy.html">
-      Privacy Policy
-    </a>
-
-    <a href="terms.html">
-      Terms
-    </a>
-
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="terms.html">Terms</a>
   </p>
-
 </footer>
-
 
 <script>
 
   /* =========================
      UNIVERSITY DATA
-     ========================= */
+  ========================= */
 
   const universities = {
 
@@ -861,511 +643,485 @@
   };
 
 
-  const universityType =
-    document.getElementById("universityType");
+  /* =========================
+     GENERAL GRADE SCALE
+  ========================= */
 
-  const university =
-    document.getElementById("university");
-
-  const universitySearch =
-    document.getElementById("universitySearch");
-
-  const searchResult =
-    document.getElementById("searchResult");
-
-
-  universityType.addEventListener(
-    "change",
-    function() {
-
-      const type =
-        universityType.value;
-
-      university.innerHTML =
-        '<option value="">Select University</option>';
-
-      searchResult.textContent = "";
-
-      if (!type) {
-        return;
-      }
-
-      universities[type].forEach(
-        function(name) {
-
-          const option =
-            document.createElement("option");
-
-          option.value = name;
-
-          option.textContent = name;
-
-          university.appendChild(option);
-
-        }
-      );
-
-    }
-  );
-
-
-  universitySearch.addEventListener(
-    "input",
-    function() {
-
-      const search =
-        universitySearch.value
-          .trim()
-          .toLowerCase();
-
-      const type =
-        universityType.value;
-
-      if (!type || !search) {
-
-        searchResult.textContent = "";
-
-        return;
-      }
-
-
-      const matches =
-        universities[type].filter(
-          function(name) {
-
-            return name
-              .toLowerCase()
-              .includes(search);
-
-          }
-        );
-
-
-      if (matches.length > 0) {
-
-        searchResult.textContent =
-          matches.length +
-          " university found.";
-
-      } else {
-
-        searchResult.textContent =
-          "No university found in this list.";
-
-      }
-
-    }
-  );
+  const gradePoints = {
+    "A+": 4.00,
+    "A": 3.75,
+    "A-": 3.50,
+    "B+": 3.25,
+    "B": 3.00,
+    "B-": 2.75,
+    "C+": 2.50,
+    "C": 2.25,
+    "D": 2.00,
+    "F": 0.00
+  };
 
 
   /* =========================
-     COURSE SYSTEM
-     ========================= */
+     UPDATE UNIVERSITY LIST
+  ========================= */
 
-  const courses =
-    document.getElementById("courses");
+  function updateUniversities() {
 
-
-  const gradeOptions = [
-
-    ["A+", 4.00],
-    ["A", 3.75],
-    ["A-", 3.50],
-    ["B+", 3.25],
-    ["B", 3.00],
-    ["B-", 2.75],
-    ["C+", 2.50],
-    ["C", 2.25],
-    ["D", 2.00],
-    ["F", 0.00]
-
-  ];
-
-
-  function createGradeSelect() {
+    const type =
+      document.getElementById("universityType").value;
 
     const select =
-      document.createElement("select");
+      document.getElementById("university");
 
-    select.innerHTML =
-      '<option value="">Select Grade</option>';
+    select.innerHTML = "";
 
+    universities[type].forEach(function(university) {
 
-    gradeOptions.forEach(
-      function(item) {
+      const option =
+        document.createElement("option");
 
-        const option =
-          document.createElement("option");
+      option.value = university;
+      option.textContent = university;
 
-        option.value = item[1];
+      select.appendChild(option);
 
-        option.textContent =
-          item[0] +
-          " (" +
-          item[1].toFixed(2) +
-          ")";
+    });
 
-        select.appendChild(option);
-
-      }
-    );
-
-
-    return select;
-
+    filterUniversities();
   }
 
 
+  /* =========================
+     FILTER UNIVERSITY
+  ========================= */
+
+  function filterUniversities() {
+
+    const type =
+      document.getElementById("universityType").value;
+
+    const search =
+      document.getElementById("universitySearch")
+      .value
+      .toLowerCase()
+      .trim();
+
+    const select =
+      document.getElementById("university");
+
+    select.innerHTML = "";
+
+    const filtered =
+      universities[type].filter(function(university) {
+
+        return university
+          .toLowerCase()
+          .includes(search);
+
+      });
+
+    filtered.forEach(function(university) {
+
+      const option =
+        document.createElement("option");
+
+      option.value = university;
+      option.textContent = university;
+
+      select.appendChild(option);
+
+    });
+
+    document.getElementById("universityCount").textContent =
+      filtered.length +
+      " university" +
+      (filtered.length !== 1 ? "ies" : "") +
+      " found.";
+  }
+
+
+  /* =========================
+     ADD COURSE
+  ========================= */
+
   function addCourse() {
+
+    const courses =
+      document.getElementById("courses");
 
     const row =
       document.createElement("div");
 
-    row.className =
-      "course-row";
+    row.className = "course-row";
 
+    row.innerHTML = `
 
-    const courseName =
-      document.createElement("input");
+      <input
+        type="text"
+        placeholder="Course name"
+        aria-label="Course name"
+      >
 
-    courseName.type =
-      "text";
+      <input
+        type="number"
+        min="0.5"
+        step="0.5"
+        placeholder="Credit"
+        aria-label="Course credit"
+      >
 
-    courseName.placeholder =
-      "Course name";
+      <select aria-label="Course grade">
 
+        <option value="">Select Grade</option>
 
-    const credit =
-      document.createElement("input");
+        <option value="A+">A+</option>
+        <option value="A">A</option>
+        <option value="A-">A-</option>
 
-    credit.type =
-      "number";
+        <option value="B+">B+</option>
+        <option value="B">B</option>
+        <option value="B-">B-</option>
 
-    credit.min =
-      "0";
+        <option value="C+">C+</option>
+        <option value="C">C</option>
 
-    credit.step =
-      "0.5";
+        <option value="D">D</option>
+        <option value="F">F</option>
 
-    credit.placeholder =
-      "Credit";
+      </select>
 
-
-    const grade =
-      createGradeSelect();
-
-
-    const remove =
-      document.createElement("button");
-
-    remove.type =
-      "button";
-
-    remove.className =
-      "remove-btn";
-
-    remove.textContent =
-      "Remove";
-
-
-    remove.onclick =
-      function() {
-
-        row.remove();
-
-      };
-
-
-    row.appendChild(courseName);
-
-    row.appendChild(credit);
-
-    row.appendChild(grade);
-
-    row.appendChild(remove);
-
+    `;
 
     courses.appendChild(row);
-
   }
 
 
-  /* Start with 3 courses */
-
-  addCourse();
-  addCourse();
-  addCourse();
-
-
   /* =========================
-     CGPA CALCULATOR
-     ========================= */
+     CALCULATE CGPA
+  ========================= */
 
   function calculateCGPA() {
 
-    const rows =
-      document.querySelectorAll(
-        ".course-row"
+    const previousCGPA =
+      parseFloat(
+        document.getElementById("previousCGPA").value
       );
 
-
-    let totalQualityPoints = 0;
-
-    let totalCredits = 0;
-
-
-    rows.forEach(
-      function(row) {
-
-        const credit =
-          parseFloat(
-            row.children[1].value
-          );
-
-
-        const grade =
-          parseFloat(
-            row.children[2].value
-          );
-
-
-        if (
-          !isNaN(credit) &&
-          credit > 0 &&
-          !isNaN(grade)
-        ) {
-
-          totalQualityPoints +=
-            credit * grade;
-
-          totalCredits +=
-            credit;
-
-        }
-
-      }
-    );
-
-
-    const resultBox =
-      document.getElementById(
-        "cgpaResult"
+    const completedCredits =
+      parseFloat(
+        document.getElementById("completedCredits").value
       );
 
+    if (
+      isNaN(previousCGPA) ||
+      previousCGPA < 0 ||
+      previousCGPA > 4
+    ) {
 
-    resultBox.classList.add("show");
-
-
-    if (totalCredits === 0) {
-
-      document.getElementById(
-        "semesterGPA"
-      ).textContent =
-        "0.00";
-
-      document.getElementById(
-        "overallText"
-      ).textContent =
-        "Please enter valid credits and grades.";
+      alert("Please enter a valid previous CGPA between 0 and 4.");
 
       return;
+    }
 
+    if (
+      isNaN(completedCredits) ||
+      completedCredits < 0
+    ) {
+
+      alert("Please enter valid completed credits.");
+
+      return;
+    }
+
+
+    const rows =
+      document.querySelectorAll(".course-row");
+
+
+    let semesterQualityPoints = 0;
+    let semesterCredits = 0;
+
+
+    rows.forEach(function(row) {
+
+      const inputs =
+        row.querySelectorAll("input");
+
+      const select =
+        row.querySelector("select");
+
+
+      const credit =
+        parseFloat(inputs[1].value);
+
+      const grade =
+        select.value;
+
+
+      if (
+        !isNaN(credit) &&
+        credit > 0 &&
+        grade &&
+        gradePoints[grade] !== undefined
+      ) {
+
+        semesterCredits += credit;
+
+        semesterQualityPoints +=
+          credit * gradePoints[grade];
+
+      }
+
+    });
+
+
+    if (semesterCredits === 0) {
+
+      alert(
+        "Please add at least one valid course with credit and grade."
+      );
+
+      return;
     }
 
 
     const semesterGPA =
+      semesterQualityPoints /
+      semesterCredits;
+
+
+    const previousQualityPoints =
+      previousCGPA *
+      completedCredits;
+
+
+    const totalQualityPoints =
+      previousQualityPoints +
+      semesterQualityPoints;
+
+
+    const totalCredits =
+      completedCredits +
+      semesterCredits;
+
+
+    const overallCGPA =
       totalQualityPoints /
       totalCredits;
 
 
-    document.getElementById(
-      "semesterGPA"
-    ).textContent =
-      semesterGPA.toFixed(2);
+    const result =
+      document.getElementById("cgpaResult");
 
 
-    const previousCGPA =
-      parseFloat(
-        document.getElementById(
-          "previousCGPA"
-        ).value
-      );
+    result.style.display = "block";
 
 
-    const completedCredits =
-      parseFloat(
-        document.getElementById(
-          "completedCredits"
-        ).value
-      );
+    result.innerHTML = `
 
+      <p>
+        <strong>Semester GPA:</strong>
+        ${semesterGPA.toFixed(2)}
+      </p>
 
-    let overallMessage =
-      "Your semester GPA is " +
-      semesterGPA.toFixed(2) +
-      ".";
+      <p>
+        <strong>Updated CGPA:</strong>
+        ${overallCGPA.toFixed(2)}
+      </p>
 
+      <p>
+        <strong>Semester Credits:</strong>
+        ${semesterCredits.toFixed(2)}
+      </p>
 
-    if (
-      !isNaN(previousCGPA) &&
-      !isNaN(completedCredits) &&
-      previousCGPA >= 0 &&
-      completedCredits > 0
-    ) {
+      <p>
+        <strong>Total Credits:</strong>
+        ${totalCredits.toFixed(2)}
+      </p>
 
-      const overallCGPA =
-        (
-          previousCGPA *
-          completedCredits +
-          semesterGPA *
-          totalCredits
-        ) /
-        (
-          completedCredits +
-          totalCredits
-        );
-
-
-      overallMessage =
-        "Semester GPA: " +
-        semesterGPA.toFixed(2) +
-        " | Overall CGPA: " +
-        overallCGPA.toFixed(2);
-
-    }
-
-
-    document.getElementById(
-      "overallText"
-    ).textContent =
-      overallMessage;
-
+    `;
   }
 
 
   /* =========================
-     TARGET CGPA
-     ========================= */
+     TARGET CGPA CALCULATOR
+  ========================= */
 
-  function calculateTarget() {
+  function calculateTargetCGPA() {
 
     const currentCGPA =
       parseFloat(
-        document.getElementById(
-          "targetCurrentCGPA"
-        ).value
+        document.getElementById("targetCurrentCGPA").value
       );
-
 
     const completedCredits =
       parseFloat(
-        document.getElementById(
-          "targetCompletedCredits"
-        ).value
+        document.getElementById("targetCompletedCredits").value
       );
-
 
     const targetCGPA =
       parseFloat(
-        document.getElementById(
-          "targetCGPA"
-        ).value
+        document.getElementById("targetCGPA").value
       );
-
 
     const nextCredits =
       parseFloat(
-        document.getElementById(
-          "nextCredits"
-        ).value
+        document.getElementById("targetSemesterCredits").value
       );
-
-
-    const resultBox =
-      document.getElementById(
-        "targetResult"
-      );
-
-
-    const requiredOutput =
-      document.getElementById(
-        "requiredGPA"
-      );
-
-
-    const targetText =
-      document.getElementById(
-        "targetText"
-      );
-
-
-    resultBox.classList.add("show");
 
 
     if (
       isNaN(currentCGPA) ||
+      currentCGPA < 0 ||
+      currentCGPA > 4
+    ) {
+
+      alert(
+        "Please enter a valid current CGPA between 0 and 4."
+      );
+
+      return;
+    }
+
+
+    if (
       isNaN(completedCredits) ||
+      completedCredits < 0
+    ) {
+
+      alert(
+        "Please enter valid completed credits."
+      );
+
+      return;
+    }
+
+
+    if (
       isNaN(targetCGPA) ||
+      targetCGPA < 0 ||
+      targetCGPA > 4
+    ) {
+
+      alert(
+        "Please enter a valid target CGPA between 0 and 4."
+      );
+
+      return;
+    }
+
+
+    if (
       isNaN(nextCredits) ||
-      completedCredits < 0 ||
       nextCredits <= 0
     ) {
 
-      requiredOutput.textContent =
-        "--";
-
-      targetText.textContent =
-        "Please enter all values correctly.";
+      alert(
+        "Please enter valid next semester credits."
+      );
 
       return;
-
     }
 
 
-    const required =
-      (
-        targetCGPA *
-        (completedCredits + nextCredits)
-        -
-        currentCGPA *
-        completedCredits
-      ) /
+    const currentQualityPoints =
+      currentCGPA *
+      completedCredits;
+
+
+    const targetTotalCredits =
+      completedCredits +
       nextCredits;
 
 
-    if (required > 4) {
+    const targetQualityPoints =
+      targetCGPA *
+      targetTotalCredits;
 
-      requiredOutput.textContent =
-        "4.00+";
 
-      targetText.textContent =
-        "This target cannot be reached in one semester on a 4.00 scale.";
+    const requiredQualityPoints =
+      targetQualityPoints -
+      currentQualityPoints;
 
+
+    const requiredGPA =
+      requiredQualityPoints /
+      nextCredits;
+
+
+    const result =
+      document.getElementById("targetResult");
+
+
+    result.style.display = "block";
+
+
+    if (requiredGPA <= 0) {
+
+      result.innerHTML = `
+        <p>
+          <strong>
+            Your current CGPA is already enough to reach this target.
+          </strong>
+        </p>
+      `;
+
+      return;
     }
 
-    else if (required <= 0) {
 
-      requiredOutput.textContent =
-        "0.00";
+    if (requiredGPA > 4) {
 
-      targetText.textContent =
-        "You are already at or above your target CGPA.";
+      result.innerHTML = `
+        <p>
+          <strong>
+            The target CGPA cannot be reached in the next semester
+            with a maximum GPA of 4.00.
+          </strong>
+        </p>
 
+        <p>
+          Required GPA:
+          ${requiredGPA.toFixed(2)}
+        </p>
+      `;
+
+      return;
     }
 
-    else {
 
-      requiredOutput.textContent =
-        required.toFixed(2);
+    result.innerHTML = `
 
-      targetText.textContent =
-        "You need approximately " +
-        required.toFixed(2) +
-        " GPA in the next semester.";
+      <p>
+        <strong>Required GPA:</strong>
+        ${requiredGPA.toFixed(2)}
+      </p>
 
-    }
+      <p>
+        You need approximately
+        <strong>${requiredGPA.toFixed(2)}</strong>
+        GPA in the next semester to reach a CGPA of
+        <strong>${targetCGPA.toFixed(2)}</strong>.
+      </p>
 
+    `;
   }
+
+
+  /* =========================
+     INITIAL SETUP
+  ========================= */
+
+  updateUniversities();
+
+
+  /*
+    Add three course rows when the page loads.
+  */
+
+  addCourse();
+  addCourse();
+  addCourse();
 
 </script>
 
