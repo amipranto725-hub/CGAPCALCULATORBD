@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CGPA Calculator BD - Free GPA & CGPA Calculator</title>
+  <meta name="description" content="Free CGPA calculator for Bangladesh students. Calculate CGPA, GPA, target CGPA and convert marks to grade points.">
+  <meta name="keywords" content="CGPA Calculator BD, CGPA Calculator Bangladesh, GPA Calculator, University CGPA Calculator">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #172033;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #173b8f;
+      color: white;
+      padding: 18px 20px;
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 15px;
+      font-size: 14px;
+    }
+
+    .hero {
+      max-width: 1100px;
+      margin: 45px auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      color: #596579;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .calculator {
+      background: white;
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+      margin-bottom: 35px;
+    }
+
+    .calculator h2 {
+      margin-bottom: 20px;
+    }
+
+    .course {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccd3df;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    button {
+      border: none;
+      background: #173b8f;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 15px;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    .result {
+      margin-top: 20px;
+      padding: 18px;
+      background: #eef3ff;
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .tools {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin: 30px 0;
+    }
+
+    .tool-card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+    }
+
+    .tool-card h3 {
+      margin-bottom: 8px;
+    }
+
+    .tool-card a {
+      display: inline-block;
+      margin-top: 12px;
+      text-decoration: none;
+      color: #173b8f;
+      font-weight: bold;
+    }
+
+    .ad {
+      background: #eeeeee;
+      min-height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #777;
+      margin: 25px 0;
+      border-radius: 8px;
+    }
+
+    footer {
+      background: #101827;
+      color: white;
+      margin-top: 40px;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    footer a {
+      color: white;
+      margin: 0 8px;
+      text-decoration: none;
+    }
+
+    @media(max-width: 700px) {
+      .hero h1 {
+        font-size: 30px;
+      }
+
+      .course {
+        grid-template-columns: 1fr;
+      }
+
+      .tools {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        flex-direction: column;
+      }
+
+      nav a {
+        margin: 0 5px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <div class="logo">CGPACalculatorBD</div>
+
+    <div>
+      <a href="index.html">Home</a>
+      <a href="tools/cgpa-calculator.html">CGPA</a>
+      <a href="tools/marks-to-cgpa.html">Marks</a>
+      <a href="tools/target-cgpa.html">Target CGPA</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>CGPA Calculator BD</h1>
+  <p>
+    A simple free CGPA and GPA calculator for students.
+    Calculate your semester GPA and overall CGPA easily.
+  </p>
+</section>
+
+<div class="container">
+
+  <div class="ad">Advertisement</div>
+
+  <section class="calculator">
+    <h2>Quick CGPA Calculator</h2>
+
+    <div id="courses">
+
+      <div class="course">
+        <input type="number" step="0.01" min="0" max="4" placeholder="Grade Point">
+        <input type="number" step="0.5" min="0" placeholder="Credit">
+        <input type="text" placeholder="Course Name">
+      </div>
+
+      <div class="course">
+        <input type="number" step="0.01" min="0" max="4" placeholder="Grade Point">
+        <input type="number" step="0.5" min="0" placeholder="Credit">
+        <input type="text" placeholder="Course Name">
+      </div>
+
+      <div class="course">
+        <input type="number" step="0.01" min="0" max="4" placeholder="Grade Point">
+        <input type="number" step="0.5" min="0" placeholder="Credit">
+        <input type="text" placeholder="Course Name">
+      </div>
+
+    </div>
+
+    <button onclick="addCourse()">+ Add Course</button>
+    <button onclick="calculateCGPA()">Calculate CGPA</button>
+
+    <div id="result" class="result">
+      Your CGPA will appear here.
+    </div>
+  </section>
+
+  <div class="ad">Advertisement</div>
+
+  <section>
+    <h2>Student Tools</h2>
+
+    <div class="tools">
+
+      <div class="tool-card">
+        <h3>CGPA Calculator</h3>
+        <p>Calculate GPA and CGPA using course credits and grade points.</p>
+        <a href="tools/cgpa-calculator.html">Open Calculator →</a>
+      </div>
+
+      <div class="tool-card">
+        <h3>Marks to CGPA</h3>
+        <p>Convert marks into grade and grade point using a generic scale.</p>
+        <a href="tools/marks-to-cgpa.html">Open Tool →</a>
+      </div>
+
+      <div class="tool-card">
+        <h3>Target CGPA</h3>
+        <p>Find the GPA required in your next semester to reach a target CGPA.</p>
+        <a href="tools/target-cgpa.html">Open Tool →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="calculator">
+    <h2>About CGPA Calculator BD</h2>
+
+    <p>
+      CGPACalculatorBD provides simple academic calculators for students.
+      You can calculate CGPA, convert marks to grade points and estimate
+      the GPA required to reach a target CGPA.
+    </p>
+  </section>
+
+</div>
+
+<footer>
+  <p>© 2026 CGPACalculatorBD</p>
+  <br>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="privacy-policy.html">Privacy</a>
+  <a href="terms.html">Terms</a>
+</footer>
+
+<script>
+  function addCourse() {
+    const courses = document.getElementById("courses");
+
+    const div = document.createElement("div");
+    div.className = "course";
+
+    div.innerHTML = `
+      <input type="number" step="0.01" min="0" max="4" placeholder="Grade Point">
+      <input type="number" step="0.5" min="0" placeholder="Credit">
+      <input type="text" placeholder="Course Name">
+    `;
+
+    courses.appendChild(div);
+  }
+
+  function calculateCGPA() {
+    const rows = document.querySelectorAll(".course");
+
+    let totalPoints = 0;
+    let totalCredits = 0;
+
+    rows.forEach(row => {
+      const inputs = row.querySelector
