@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Marks to Grade Point Calculator - CGPACalculatorBD</title>
+
+  <style>
+    body{font-family:Arial;background:#f5f7fb;margin:0;color:#172033}
+    header{background:#173b8f;color:white;padding:20px;text-align:center}
+    main{max-width:700px;margin:40px auto;padding:20px}
+    .box{background:white;padding:30px;border-radius:12px;box-shadow:0 4px 18px #ddd}
+    input{width:100%;padding:13px;border:1px solid #ccc;border-radius:8px;margin:10px 0}
+    button{padding:13px 20px;background:#173b8f;color:white;border:0;border-radius:8px;cursor:pointer}
+    #result{margin-top:20px;padding:20px;background:#eef3ff;font-size:18px}
+    a{color:white;margin:0 8px}
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Marks to Grade Point</h1>
+  <a href="../index.html">Home</a>
+</header>
+
+<main>
+
+  <div class="box">
+
+    <h2>Marks to Grade Point Calculator</h2>
+
+    <p>
+      This is a generic scale. Check your university's official grading
+      policy before using the result for academic decisions.
+    </p>
+
+    <input id="marks" type="number" min="0" max="100" placeholder="Enter marks (0-100)">
+
+    <button onclick="calculateGrade()">Calculate</button>
+
+    <div id="result">
+      Result will appear here.
+    </div>
+
+  </div>
+
+</main>
+
+<script>
+function calculateGrade() {
+
+  const marks = parseFloat(document.getElementById("marks").value);
+
+  if (isNaN(marks) || marks < 0 || marks > 100) {
+    document.getElementById("result").innerText =
+      "Please enter marks between 0 and 100.";
+    return;
+  }
+
+  let grade;
+  let point;
+
+  if (marks >= 80) {
+    grade = "A+";
+    point = 4.00;
+  } else if (marks >= 75) {
+    grade = "A";
+    point = 3.75;
+  } else if (marks >= 70) {
+    grade = "A-";
+    point = 3.50;
+  } else if (marks >= 65) {
+    grade = "B+";
+    point = 3.25;
+  } else if (marks >= 60) {
+    grade = "B";
+    point = 3.00;
+  } else if (marks >= 55) {
+    grade = "B-";
+    point = 2.75;
+  } else if (marks >= 50) {
+    grade = "C+";
+    point = 2.50;
+  } else if (marks >= 45) {
+    grade = "C";
+    point = 2.25;
+  } else if (marks >= 40) {
+    grade = "D";
+    point = 2.00;
+  } else {
+    grade = "F";
+    point = 0.00;
+  }
+
+  document.getElementById("result").innerHTML =
+    "<strong>Grade:</strong> " + grade +
+    "<br><strong>Grade Point:</strong> " + point.toFixed(2);
+}
+</script>
+
+</body>
+</html>
