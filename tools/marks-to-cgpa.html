@@ -1,104 +1,1453 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Marks to Grade Point Calculator - CGPACalculatorBD</title>
+  <title>Marks to Grade Point Calculator Bangladesh | CGPA Calculator BD</title>
+
+  <meta name="description"
+    content="Convert marks to grade and grade point for Bangladeshi universities including AIUB, NSU, BRAC University, UIU, IUB, ULAB, EWU, Uttara University and more.">
+
+  <meta name="keywords"
+    content="Marks to Grade Point Calculator Bangladesh, Marks to CGPA, Marks to GPA, Grade Calculator BD, University Grade Calculator">
+
+  <meta name="author" content="CGPA Calculator BD">
 
   <style>
-    body{font-family:Arial;background:#f5f7fb;margin:0;color:#172033}
-    header{background:#173b8f;color:white;padding:20px;text-align:center}
-    main{max-width:700px;margin:40px auto;padding:20px}
-    .box{background:white;padding:30px;border-radius:12px;box-shadow:0 4px 18px #ddd}
-    input{width:100%;padding:13px;border:1px solid #ccc;border-radius:8px;margin:10px 0}
-    button{padding:13px 20px;background:#173b8f;color:white;border:0;border-radius:8px;cursor:pointer}
-    #result{margin-top:20px;padding:20px;background:#eef3ff;font-size:18px}
-    a{color:white;margin:0 8px}
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f7fb;
+      color: #172033;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #173b8f;
+      color: white;
+      padding: 24px 15px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+    }
+
+    header p {
+      margin: 0 0 15px;
+      opacity: 0.9;
+      font-size: 14px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 780px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .box {
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+      border: 1px solid #e5e7eb;
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #111827;
+    }
+
+    .description {
+      color: #6b7280;
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      margin-top: 18px;
+      margin-bottom: 7px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    select,
+    input {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #d1d5db;
+      border-radius: 9px;
+      font-size: 15px;
+      outline: none;
+      background: white;
+    }
+
+    select:focus,
+    input:focus {
+      border-color: #173b8f;
+    }
+
+    .info {
+      margin-top: 15px;
+      padding: 14px;
+      background: #eef3ff;
+      border-left: 4px solid #173b8f;
+      border-radius: 7px;
+      font-size: 13px;
+      color: #374151;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 22px;
+      padding: 14px 20px;
+      background: #173b8f;
+      color: white;
+      border: 0;
+      border-radius: 9px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #102d70;
+    }
+
+    #result {
+      margin-top: 25px;
+      padding: 24px;
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .result-grade {
+      font-size: 40px;
+      font-weight: 800;
+      color: #047857;
+    }
+
+    .result-point {
+      font-size: 23px;
+      font-weight: bold;
+      color: #065f46;
+    }
+
+    .result-text {
+      color: #374151;
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+    .scale-box {
+      margin-top: 32px;
+    }
+
+    .scale-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+
+    .scale-table th,
+    .scale-table td {
+      padding: 10px;
+      border: 1px solid #e5e7eb;
+      text-align: center;
+    }
+
+    .scale-table th {
+      background: #f3f4f6;
+    }
+
+    .note {
+      margin-top: 18px;
+      padding: 13px;
+      background: #fff7ed;
+      border-left: 4px solid #f97316;
+      border-radius: 7px;
+      font-size: 13px;
+      color: #7c2d12;
+    }
+
+    footer {
+      background: #111827;
+      color: #d1d5db;
+      text-align: center;
+      padding: 30px 15px;
+      margin-top: 50px;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      margin: 0 8px;
+      font-size: 14px;
+    }
+
+    .copyright {
+      margin-top: 15px;
+      font-size: 13px;
+      color: #9ca3af;
+    }
+
+    @media (max-width: 600px) {
+
+      main {
+        margin: 20px auto;
+        padding: 15px;
+      }
+
+      .box {
+        padding: 22px;
+      }
+
+      header h1 {
+        font-size: 23px;
+      }
+
+      .result-grade {
+        font-size: 34px;
+      }
+
+      .scale-table {
+        font-size: 13px;
+      }
+
+    }
+
   </style>
+
 </head>
+
 
 <body>
 
+
 <header>
-  <h1>Marks to Grade Point</h1>
-  <a href="../index.html">Home</a>
+
+  <h1>Marks to Grade Point Calculator</h1>
+
+  <p>
+    Convert your marks into Grade and Grade Point
+  </p>
+
+  <nav>
+
+    <a href="../index.html">
+      Home
+    </a>
+
+    <a href="cgpa-calculator.html">
+      CGPA Calculator
+    </a>
+
+    <a href="target-cgpa.html">
+      Target CGPA
+    </a>
+
+  </nav>
+
 </header>
+
 
 <main>
 
   <div class="box">
 
-    <h2>Marks to Grade Point Calculator</h2>
+    <h2>
+      🎓 Marks to Grade Point
+    </h2>
 
-    <p>
-      This is a generic scale. Check your university's official grading
-      policy before using the result for academic decisions.
+    <p class="description">
+
+      Select your university and enter your marks.
+      The calculator will show the corresponding
+      letter grade and grade point.
+
     </p>
 
-    <input id="marks" type="number" min="0" max="100" placeholder="Enter marks (0-100)">
 
-    <button onclick="calculateGrade()">Calculate</button>
+    <!-- UNIVERSITY -->
+
+    <label for="university">
+      Select University
+    </label>
+
+    <select
+      id="university"
+      onchange="universityChanged()">
+    </select>
+
+
+    <!-- UNIVERSITY INFO -->
+
+    <div
+      class="info"
+      id="universityInfo">
+    </div>
+
+
+    <!-- MARKS -->
+
+    <label for="marks">
+      Enter Marks
+    </label>
+
+    <input
+      id="marks"
+      type="number"
+      min="0"
+      max="100"
+      step="0.01"
+      placeholder="Enter marks (0-100)"
+      oninput="calculateGrade()">
+
+
+    <!-- BUTTON -->
+
+    <button onclick="calculateGrade()">
+      Calculate Grade
+    </button>
+
+
+    <!-- RESULT -->
 
     <div id="result">
-      Result will appear here.
+
+      <div style="color:#6b7280;">
+        Enter your marks to see the result.
+      </div>
+
+    </div>
+
+
+    <!-- SCALE -->
+
+    <div class="scale-box">
+
+      <h3>
+        📊 Grading Scale
+      </h3>
+
+      <table class="scale-table">
+
+        <thead>
+
+          <tr>
+
+            <th>Marks</th>
+
+            <th>Grade</th>
+
+            <th>Grade Point</th>
+
+          </tr>
+
+        </thead>
+
+        <tbody id="scaleBody">
+        </tbody>
+
+      </table>
+
+
+      <div class="note">
+
+        ⚠️ Always check your university's latest official
+        academic regulations before making academic decisions.
+
+      </div>
+
     </div>
 
   </div>
 
 </main>
 
+
+<footer>
+
+  <div>
+
+    <a href="../index.html">
+      Home
+    </a>
+
+    <a href="cgpa-calculator.html">
+      CGPA Calculator
+    </a>
+
+    <a href="target-cgpa.html">
+      Target CGPA
+    </a>
+
+    <a href="../about.html">
+      About
+    </a>
+
+  </div>
+
+  <div class="copyright">
+
+    © 2026 CGPA Calculator BD.
+    Built for Bangladeshi students.
+
+  </div>
+
+</footer>
+
+
 <script>
-function calculateGrade() {
 
-  const marks = parseFloat(document.getElementById("marks").value);
 
-  if (isNaN(marks) || marks < 0 || marks > 100) {
-    document.getElementById("result").innerText =
-      "Please enter marks between 0 and 100.";
+/* =====================================================
+   UNIVERSITY LIST
+===================================================== */
+
+const universities = [
+
+  {
+    name: "UGC Standard",
+    scale: "standard",
+    source: "UGC Uniform Recommended Grading System"
+  },
+
+  {
+    name: "University of Dhaka",
+    scale: "standard",
+    source: "UGC standard grading scale"
+  },
+
+  {
+    name: "BUET",
+    scale: "standard",
+    source: "UGC standard grading scale"
+  },
+
+  {
+    name: "University of Chittagong",
+    scale: "standard",
+    source: "UGC standard grading scale"
+  },
+
+  {
+    name: "University of Rajshahi",
+    scale: "standard",
+    source: "UGC standard grading scale"
+  },
+
+  {
+    name: "Jahangirnagar University",
+    scale: "standard",
+    source: "UGC standard grading scale"
+  },
+
+  {
+    name: "North South University",
+    scale: "nsu",
+    source: "North South University official grading policy"
+  },
+
+  {
+    name: "BRAC University",
+    scale: "brac",
+    source: "BRAC University official grading policy"
+  },
+
+  {
+    name: "East West University",
+    scale: "standard",
+    source: "East West University official grading rules"
+  },
+
+  {
+    name: "American International University-Bangladesh (AIUB)",
+    scale: "aiub",
+    source: "AIUB official current V3 grading system"
+  },
+
+  {
+    name: "United International University (UIU)",
+    scale: "uiu",
+    source: "UIU official grading policy"
+  },
+
+  {
+    name: "Daffodil International University (DIU)",
+    scale: "standard",
+    source: "UGC standard grading scale"
+  },
+
+  {
+    name: "Independent University, Bangladesh (IUB)",
+    scale: "iub",
+    source: "IUB official GreenBook grading system"
+  },
+
+  {
+    name: "Ahsanullah University of Science and Technology (AUST)",
+    scale: "standard",
+    source: "UGC standard grading scale"
+  },
+
+  {
+    name: "University of Asia Pacific (UAP)",
+    scale: "standard",
+    source: "UGC standard grading scale"
+  },
+
+  {
+    name: "Stamford University Bangladesh",
+    scale: "standard",
+    source: "UGC standard grading scale"
+  },
+
+  {
+    name: "University of Liberal Arts Bangladesh (ULAB)",
+    scale: "ulab",
+    source: "ULAB current undergraduate handbook"
+  },
+
+  {
+    name: "Southeast University",
+    scale: "standard",
+    source: "UGC uniform grading scale used by SEU"
+  },
+
+  {
+    name: "State University of Bangladesh",
+    scale: "standard",
+    source: "UGC standard grading scale / university framework"
+  },
+
+  {
+    name: "Uttara University",
+    scale: "standard",
+    source: "Uttara University official grading policy"
+  }
+
+];
+
+
+/* =====================================================
+   GRADING SCALES
+===================================================== */
+
+const gradingScales = {
+
+
+  /* -------------------------------------------------
+     UGC STANDARD
+  ------------------------------------------------- */
+
+  standard: [
+
+    {
+      min: 80,
+      max: 100,
+      grade: "A+",
+      point: 4.00
+    },
+
+    {
+      min: 75,
+      max: 79.999999,
+      grade: "A",
+      point: 3.75
+    },
+
+    {
+      min: 70,
+      max: 74.999999,
+      grade: "A-",
+      point: 3.50
+    },
+
+    {
+      min: 65,
+      max: 69.999999,
+      grade: "B+",
+      point: 3.25
+    },
+
+    {
+      min: 60,
+      max: 64.999999,
+      grade: "B",
+      point: 3.00
+    },
+
+    {
+      min: 55,
+      max: 59.999999,
+      grade: "B-",
+      point: 2.75
+    },
+
+    {
+      min: 50,
+      max: 54.999999,
+      grade: "C+",
+      point: 2.50
+    },
+
+    {
+      min: 45,
+      max: 49.999999,
+      grade: "C",
+      point: 2.25
+    },
+
+    {
+      min: 40,
+      max: 44.999999,
+      grade: "D",
+      point: 2.00
+    },
+
+    {
+      min: 0,
+      max: 39.999999,
+      grade: "F",
+      point: 0.00
+    }
+
+  ],
+
+
+  /* -------------------------------------------------
+     AIUB CURRENT V3
+  ------------------------------------------------- */
+
+  aiub: [
+
+    {
+      min: 90,
+      max: 100,
+      grade: "A+",
+      point: 4.00
+    },
+
+    {
+      min: 85,
+      max: 89.999999,
+      grade: "A",
+      point: 3.75
+    },
+
+    {
+      min: 80,
+      max: 84.999999,
+      grade: "B+",
+      point: 3.50
+    },
+
+    {
+      min: 75,
+      max: 79.999999,
+      grade: "B",
+      point: 3.25
+    },
+
+    {
+      min: 70,
+      max: 74.999999,
+      grade: "C+",
+      point: 3.00
+    },
+
+    {
+      min: 65,
+      max: 69.999999,
+      grade: "C",
+      point: 2.75
+    },
+
+    {
+      min: 60,
+      max: 64.999999,
+      grade: "D+",
+      point: 2.50
+    },
+
+    {
+      min: 50,
+      max: 59.999999,
+      grade: "D",
+      point: 2.25
+    },
+
+    {
+      min: 0,
+      max: 49.999999,
+      grade: "F",
+      point: 0.00
+    }
+
+  ],
+
+
+  /* -------------------------------------------------
+     NORTH SOUTH UNIVERSITY
+  ------------------------------------------------- */
+
+  nsu: [
+
+    {
+      min: 93,
+      max: 100,
+      grade: "A",
+      point: 4.00
+    },
+
+    {
+      min: 90,
+      max: 92.999999,
+      grade: "A-",
+      point: 3.70
+    },
+
+    {
+      min: 87,
+      max: 89.999999,
+      grade: "B+",
+      point: 3.30
+    },
+
+    {
+      min: 83,
+      max: 86.999999,
+      grade: "B",
+      point: 3.00
+    },
+
+    {
+      min: 80,
+      max: 82.999999,
+      grade: "B-",
+      point: 2.70
+    },
+
+    {
+      min: 77,
+      max: 79.999999,
+      grade: "C+",
+      point: 2.30
+    },
+
+    {
+      min: 73,
+      max: 76.999999,
+      grade: "C",
+      point: 2.00
+    },
+
+    {
+      min: 70,
+      max: 72.999999,
+      grade: "C-",
+      point: 1.70
+    },
+
+    {
+      min: 67,
+      max: 69.999999,
+      grade: "D+",
+      point: 1.30
+    },
+
+    {
+      min: 60,
+      max: 66.999999,
+      grade: "D",
+      point: 1.00
+    },
+
+    {
+      min: 0,
+      max: 59.999999,
+      grade: "F",
+      point: 0.00
+    }
+
+  ],
+
+
+  /* -------------------------------------------------
+     BRAC UNIVERSITY
+  ------------------------------------------------- */
+
+  brac: [
+
+    {
+      min: 97,
+      max: 100,
+      grade: "A+",
+      point: 4.00
+    },
+
+    {
+      min: 90,
+      max: 96.999999,
+      grade: "A",
+      point: 4.00
+    },
+
+    {
+      min: 85,
+      max: 89.999999,
+      grade: "A-",
+      point: 3.70
+    },
+
+    {
+      min: 80,
+      max: 84.999999,
+      grade: "B+",
+      point: 3.30
+    },
+
+    {
+      min: 75,
+      max: 79.999999,
+      grade: "B",
+      point: 3.00
+    },
+
+    {
+      min: 70,
+      max: 74.999999,
+      grade: "B-",
+      point: 2.70
+    },
+
+    {
+      min: 65,
+      max: 69.999999,
+      grade: "C+",
+      point: 2.30
+    },
+
+    {
+      min: 60,
+      max: 64.999999,
+      grade: "C",
+      point: 2.00
+    },
+
+    {
+      min: 57,
+      max: 59.999999,
+      grade: "C-",
+      point: 1.70
+    },
+
+    {
+      min: 55,
+      max: 56.999999,
+      grade: "D+",
+      point: 1.30
+    },
+
+    {
+      min: 52,
+      max: 54.999999,
+      grade: "D",
+      point: 1.00
+    },
+
+    {
+      min: 50,
+      max: 51.999999,
+      grade: "D-",
+      point: 0.70
+    },
+
+    {
+      min: 0,
+      max: 49.999999,
+      grade: "F",
+      point: 0.00
+    }
+
+  ],
+
+
+  /* -------------------------------------------------
+     UIU
+  ------------------------------------------------- */
+
+  uiu: [
+
+    {
+      min: 90,
+      max: 100,
+      grade: "A",
+      point: 4.00
+    },
+
+    {
+      min: 86,
+      max: 89.999999,
+      grade: "A-",
+      point: 3.67
+    },
+
+    {
+      min: 82,
+      max: 85.999999,
+      grade: "B+",
+      point: 3.33
+    },
+
+    {
+      min: 78,
+      max: 81.999999,
+      grade: "B",
+      point: 3.00
+    },
+
+    {
+      min: 74,
+      max: 77.999999,
+      grade: "B-",
+      point: 2.67
+    },
+
+    {
+      min: 70,
+      max: 73.999999,
+      grade: "C+",
+      point: 2.33
+    },
+
+    {
+      min: 66,
+      max: 69.999999,
+      grade: "C",
+      point: 2.00
+    },
+
+    {
+      min: 62,
+      max: 65.999999,
+      grade: "C-",
+      point: 1.67
+    },
+
+    {
+      min: 58,
+      max: 61.999999,
+      grade: "D+",
+      point: 1.33
+    },
+
+    {
+      min: 55,
+      max: 57.999999,
+      grade: "D",
+      point: 1.00
+    },
+
+    {
+      min: 0,
+      max: 54.999999,
+      grade: "F",
+      point: 0.00
+    }
+
+  ],
+
+
+  /* -------------------------------------------------
+     IUB
+  ------------------------------------------------- */
+
+  iub: [
+
+    {
+      min: 90,
+      max: 100,
+      grade: "A",
+      point: 4.00
+    },
+
+    {
+      min: 85,
+      max: 89.999999,
+      grade: "A-",
+      point: 3.70
+    },
+
+    {
+      min: 80,
+      max: 84.999999,
+      grade: "B+",
+      point: 3.30
+    },
+
+    {
+      min: 75,
+      max: 79.999999,
+      grade: "B",
+      point: 3.00
+    },
+
+    {
+      min: 70,
+      max: 74.999999,
+      grade: "B-",
+      point: 2.70
+    },
+
+    {
+      min: 65,
+      max: 69.999999,
+      grade: "C+",
+      point: 2.30
+    },
+
+    {
+      min: 60,
+      max: 64.999999,
+      grade: "C",
+      point: 2.00
+    },
+
+    {
+      min: 55,
+      max: 59.999999,
+      grade: "C-",
+      point: 1.70
+    },
+
+    {
+      min: 50,
+      max: 54.999999,
+      grade: "D+",
+      point: 1.30
+    },
+
+    {
+      min: 45,
+      max: 49.999999,
+      grade: "D",
+      point: 1.00
+    },
+
+    {
+      min: 0,
+      max: 44.999999,
+      grade: "F",
+      point: 0.00
+    }
+
+  ],
+
+
+  /* -------------------------------------------------
+     ULAB CURRENT
+  ------------------------------------------------- */
+
+  ulab: [
+
+    {
+      min: 95,
+      max: 100,
+      grade: "A+",
+      point: 4.00
+    },
+
+    {
+      min: 90,
+      max: 94.999999,
+      grade: "A",
+      point: 4.00
+    },
+
+    {
+      min: 85,
+      max: 89.999999,
+      grade: "A-",
+      point: 3.80
+    },
+
+    {
+      min: 80,
+      max: 84.999999,
+      grade: "B+",
+      point: 3.30
+    },
+
+    {
+      min: 75,
+      max: 79.999999,
+      grade: "B",
+      point: 3.00
+    },
+
+    {
+      min: 70,
+      max: 74.999999,
+      grade: "B-",
+      point: 2.80
+    },
+
+    {
+      min: 65,
+      max: 69.999999,
+      grade: "C+",
+      point: 2.50
+    },
+
+    {
+      min: 60,
+      max: 64.999999,
+      grade: "C",
+      point: 2.20
+    },
+
+    {
+      min: 50,
+      max: 59.999999,
+      grade: "D",
+      point: 1.50
+    },
+
+    {
+      min: 0,
+      max: 49.999999,
+      grade: "F",
+      point: 0.00
+    }
+
+  ]
+
+};
+
+
+/* =====================================================
+   LOAD UNIVERSITIES
+===================================================== */
+
+function loadUniversities() {
+
+  const select =
+    document.getElementById("university");
+
+  select.innerHTML = "";
+
+  universities.forEach(function(university) {
+
+    const option =
+      document.createElement("option");
+
+    option.value =
+      university.name;
+
+    option.textContent =
+      university.name;
+
+    select.appendChild(option);
+
+  });
+
+  universityChanged();
+
+}
+
+
+/* =====================================================
+   GET SELECTED UNIVERSITY
+===================================================== */
+
+function getSelectedUniversity() {
+
+  const name =
+    document.getElementById("university").value;
+
+  return universities.find(
+    function(university) {
+
+      return university.name === name;
+
+    }
+  );
+
+}
+
+
+/* =====================================================
+   UNIVERSITY CHANGED
+===================================================== */
+
+function universityChanged() {
+
+  const university =
+    getSelectedUniversity();
+
+  if (!university) {
     return;
   }
 
-  let grade;
-  let point;
+  document.getElementById(
+    "universityInfo"
+  ).innerHTML =
 
-  if (marks >= 80) {
-    grade = "A+";
-    point = 4.00;
-  } else if (marks >= 75) {
-    grade = "A";
-    point = 3.75;
-  } else if (marks >= 70) {
-    grade = "A-";
-    point = 3.50;
-  } else if (marks >= 65) {
-    grade = "B+";
-    point = 3.25;
-  } else if (marks >= 60) {
-    grade = "B";
-    point = 3.00;
-  } else if (marks >= 55) {
-    grade = "B-";
-    point = 2.75;
-  } else if (marks >= 50) {
-    grade = "C+";
-    point = 2.50;
-  } else if (marks >= 45) {
-    grade = "C";
-    point = 2.25;
-  } else if (marks >= 40) {
-    grade = "D";
-    point = 2.00;
-  } else {
-    grade = "F";
-    point = 0.00;
+    "<strong>" +
+    university.name +
+    "</strong><br>" +
+
+    university.source;
+
+  showScale();
+
+  calculateGrade();
+
+}
+
+
+/* =====================================================
+   CALCULATE GRADE
+===================================================== */
+
+function calculateGrade() {
+
+  const marks =
+    parseFloat(
+      document.getElementById("marks").value
+    );
+
+  const result =
+    document.getElementById("result");
+
+
+  if (
+    isNaN(marks) ||
+    marks < 0 ||
+    marks > 100
+  ) {
+
+    result.innerHTML =
+
+      "<div style='color:#6b7280;'>" +
+      "Enter marks between 0 and 100." +
+      "</div>";
+
+    return;
+
   }
 
-  document.getElementById("result").innerHTML =
-    "<strong>Grade:</strong> " + grade +
-    "<br><strong>Grade Point:</strong> " + point.toFixed(2);
+
+  const university =
+    getSelectedUniversity();
+
+
+  const scale =
+    gradingScales[
+      university.scale
+    ];
+
+
+  let matchedGrade = null;
+
+
+  for (
+    let i = 0;
+    i < scale.length;
+    i++
+  ) {
+
+    if (
+      marks >= scale[i].min &&
+      marks <= scale[i].max
+    ) {
+
+      matchedGrade =
+        scale[i];
+
+      break;
+
+    }
+
+  }
+
+
+  if (!matchedGrade) {
+
+    result.innerHTML =
+      "Unable to determine grade.";
+
+    return;
+
+  }
+
+
+  result.innerHTML =
+
+    "<div class='result-grade'>" +
+    matchedGrade.grade +
+    "</div>" +
+
+    "<div class='result-point'>" +
+    matchedGrade.point.toFixed(2) +
+    " Grade Point" +
+    "</div>" +
+
+    "<div class='result-text'>" +
+    "Marks: " +
+    marks.toFixed(2) +
+    "</div>";
+
 }
+
+
+/* =====================================================
+   SHOW GRADING SCALE
+===================================================== */
+
+function showScale() {
+
+  const university =
+    getSelectedUniversity();
+
+  if (!university) {
+    return;
+  }
+
+
+  const scale =
+    gradingScales[
+      university.scale
+    ];
+
+
+  const body =
+    document.getElementById(
+      "scaleBody"
+    );
+
+
+  body.innerHTML = "";
+
+
+  scale.forEach(function(item) {
+
+    const row =
+      document.createElement("tr");
+
+
+    let markText;
+
+
+    if (item.grade === "F") {
+
+      markText =
+        "Below " +
+        item.min;
+
+    }
+
+    else if (
+      item.min === 0
+    ) {
+
+      markText =
+        "0 - " +
+        item.max;
+
+    }
+
+    else if (
+      item.max >= 100
+    ) {
+
+      markText =
+        item.min +
+        " - 100";
+
+    }
+
+    else {
+
+      markText =
+        item.min +
+        " - " +
+        Math.floor(item.max);
+
+    }
+
+
+    row.innerHTML =
+
+      "<td>" +
+      markText +
+      "</td>" +
+
+      "<td><strong>" +
+      item.grade +
+      "</strong></td>" +
+
+      "<td>" +
+      item.point.toFixed(2) +
+      "</td>";
+
+
+    body.appendChild(row);
+
+  });
+
+}
+
+
+/* =====================================================
+   INITIALIZE
+===================================================== */
+
+document.addEventListener(
+  "DOMContentLoaded",
+  function() {
+
+    loadUniversities();
+
+  }
+);
+
 </script>
 
+
 </body>
+
 </html>
