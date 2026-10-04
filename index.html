@@ -3,13 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CGPA Calculator BD – University CGPA Calculator</title>
+<title>CGPA Calculator Bangladesh – Free University GPA & CGPA Calculator</title>
 <meta name="description"
-content="Free Bangladesh CGPA Calculator for public and private universities. Calculate semester GPA, cumulative CGPA and target CGPA easily.">
-<meta name="keywords"
-content="CGPA Calculator Bangladesh, GPA Calculator BD, AIUB CGPA Calculator, NSU CGPA Calculator, BRAC CGPA Calculator, UIU CGPA Calculator, University CGPA">
+content="Free CGPA Calculator for Bangladesh university students. Calculate semester GPA, cumulative CGPA, target CGPA and grade points for public and private universities.">
+<meta name="robots" content="index, follow">
 <link rel="canonical"
 href="https://amipranto725-hub.github.io/CGAPCALCULATORBD/">
+<meta property="og:title"
+content="CGPA Calculator Bangladesh – Free University GPA & CGPA Calculator">
+<meta property="og:description"
+content="Calculate GPA, CGPA, grade points and target CGPA easily for Bangladesh universities.">
+<meta property="og:url"
+content="https://amipranto725-hub.github.io/CGAPCALCULATORBD/">
+<meta property="og:type" content="website">
 <style>
 *{
     box-sizing:border-box;
@@ -236,6 +242,13 @@ footer{
 footer p{
     margin:5px;
 }
+footer a{
+    color:white;
+    text-decoration:none;
+}
+footer a:hover{
+    text-decoration:underline;
+}
 .small{
     color:#697386;
     font-size:13px;
@@ -275,16 +288,32 @@ CGPA Calculator BD
 </div>
 <nav>
 <a href="index.html">Home</a>
-<a href="tools/cgpa-calculator.html">CGPA Calculator</a>
-<a href="tools/marks-to-cgpa.html">Marks → Grade</a>
-<a href="tools/target-cgpa.html">Target CGPA</a>
-<a href="about.html">About</a>
+<a href="tools/cgpa-calculator.html">
+CGPA Calculator
+</a>
+<a href="tools/marks-to-cgpa.html">
+Marks → Grade
+</a>
+<a href="tools/target-cgpa.html">
+Target CGPA
+</a>
+<a href="about.html">
+About
+</a>
+<a href="contact.html">
+Contact
+</a>
+<a href="privacy-policy.html">
+Privacy
+</a>
 </nav>
 </div>
 </header>
 <div class="container">
 <section class="hero">
-<h1>Bangladesh CGPA Calculator</h1>
+<h1>
+Bangladesh CGPA Calculator
+</h1>
 <p>
 Calculate your semester GPA, cumulative CGPA and target CGPA
 for Bangladesh public and private universities.
@@ -292,7 +321,9 @@ for Bangladesh public and private universities.
 </section>
 <!-- UNIVERSITY -->
 <div class="card">
-<h2>1. Select University</h2>
+<h2>
+1. Select University
+</h2>
 <div class="tabs">
 <button
 class="tab active"
@@ -313,19 +344,26 @@ id="universitySearch"
 class="search"
 placeholder="Search university..."
 oninput="filterUniversities()">
-<select id="universitySelect"
+<select
+id="universitySelect"
 onchange="universityChanged()">
 </select>
-<div class="info" id="universityInfo">
+<div
+class="info"
+id="universityInfo">
 Select your university.
 </div>
 </div>
 <!-- PREVIOUS CGPA -->
 <div class="card">
-<h2>2. Previous Academic Record</h2>
+<h2>
+2. Previous Academic Record
+</h2>
 <div class="grid">
 <div>
-<label>Previous CGPA</label>
+<label>
+Previous CGPA
+</label>
 <input
 type="number"
 id="previousCGPA"
@@ -335,7 +373,9 @@ step="0.01"
 placeholder="Example: 3.25">
 </div>
 <div>
-<label>Completed Credits</label>
+<label>
+Completed Credits
+</label>
 <input
 type="number"
 id="completedCredits"
@@ -347,7 +387,9 @@ placeholder="Example: 60">
 </div>
 <!-- COURSE TABLE -->
 <div class="card">
-<h2>3. Current Semester Courses</h2>
+<h2>
+3. Current Semester Courses
+</h2>
 <div style="overflow-x:auto;">
 <table class="course-table">
 <thead>
@@ -375,7 +417,9 @@ Calculate CGPA
 </button>
 </div>
 <div class="result">
-<div>Current CGPA</div>
+<div>
+Current CGPA
+</div>
 <div
 class="cgpa"
 id="cgpaResult">
@@ -390,10 +434,14 @@ id="cgpaGrade">
 </div>
 <!-- TARGET CGPA -->
 <div class="card">
-<h2>4. Target CGPA Calculator</h2>
+<h2>
+4. Target CGPA Calculator
+</h2>
 <div class="grid">
 <div>
-<label>Current CGPA</label>
+<label>
+Current CGPA
+</label>
 <input
 type="number"
 id="targetCurrentCGPA"
@@ -403,7 +451,9 @@ step="0.01"
 placeholder="Example: 3.10">
 </div>
 <div>
-<label>Completed Credits</label>
+<label>
+Completed Credits
+</label>
 <input
 type="number"
 id="targetCompletedCredits"
@@ -412,7 +462,9 @@ step="0.5"
 placeholder="Example: 90">
 </div>
 <div>
-<label>Target CGPA</label>
+<label>
+Target CGPA
+</label>
 <input
 type="number"
 id="targetCGPA"
@@ -422,7 +474,9 @@ step="0.01"
 placeholder="Example: 3.50">
 </div>
 <div>
-<label>Future Credits</label>
+<label>
+Future Credits
+</label>
 <input
 type="number"
 id="futureCredits"
@@ -446,7 +500,9 @@ Enter your information to calculate the required GPA.
 </div>
 <!-- GRADING SCALE -->
 <div class="card">
-<h2>University Grading Scale</h2>
+<h2>
+University Grading Scale
+</h2>
 <div style="overflow-x:auto;">
 <table class="scale-table">
 <thead>
@@ -466,19 +522,36 @@ Always verify your official university policy.
 </div>
 <!-- HOW TO USE -->
 <div class="card">
-<h2>How to Use</h2>
+<h2>
+How to Use
+</h2>
 <ol>
-<li>Select your university.</li>
-<li>Enter previous CGPA and completed credits.</li>
-<li>Add your current semester courses.</li>
-<li>Select credit and grade for each course.</li>
-<li>Click <b>Calculate CGPA</b>.</li>
-<li>Use Target CGPA Calculator if you want to know the GPA required for your future credits.</li>
+<li>
+Select your university.
+</li>
+<li>
+Enter previous CGPA and completed credits.
+</li>
+<li>
+Add your current semester courses.
+</li>
+<li>
+Select credit and grade for each course.
+</li>
+<li>
+Click <b>Calculate CGPA</b>.
+</li>
+<li>
+Use Target CGPA Calculator if you want to know
+the GPA required for your future credits.
+</li>
 </ol>
 </div>
 <!-- ABOUT -->
 <div class="card">
-<h2>About CGPA Calculator BD</h2>
+<h2>
+About CGPA Calculator BD
+</h2>
 <p>
 CGPA Calculator BD is a Bangladesh-focused academic calculator
 designed to make GPA and CGPA calculation easier for university students.
@@ -490,9 +563,22 @@ official grading information is available.
 </div>
 </div>
 <footer>
-<p><b>CGPA Calculator BD</b></p>
-<p>Bangladesh University GPA & CGPA Calculator</p>
-<p>© 2026 CGPA Calculator BD</p>
+<p>
+<b>CGPA Calculator BD</b>
+</p>
+<p>
+Bangladesh University GPA & CGPA Calculator
+</p>
+<p>
+<a href="about.html">About</a>
+&nbsp; | &nbsp;
+<a href="contact.html">Contact</a>
+&nbsp; | &nbsp;
+<a href="privacy-policy.html">Privacy Policy</a>
+</p>
+<p>
+© 2026 CGPA Calculator BD
+</p>
 </footer>
 <script>
 /* =========================================================
@@ -791,11 +877,6 @@ const universities = {
             id:"green",
             name:"Green University of Bangladesh",
             scale:"standard"
-        },
-        {
-            id:"aiub",
-            name:"American International University-Bangladesh",
-            scale:"aiub"
         }
     ]
 };
@@ -868,7 +949,9 @@ function filterUniversities(){
    ========================================================= */
 function getSelectedUniversity(){
     const id =
-        document.getElementById("universitySelect").value;
+        document
+        .getElementById("universitySelect")
+        .value;
     return universities[currentType]
         .find(u => u.id === id);
 }
@@ -1064,14 +1147,20 @@ function updateAllCoursePoints(){
 function calculateCGPA(){
     const previousCGPA =
         parseFloat(
-            document.getElementById("previousCGPA").value
+            document
+            .getElementById("previousCGPA")
+            .value
         ) || 0;
     const completedCredits =
         parseFloat(
-            document.getElementById("completedCredits").value
+            document
+            .getElementById("completedCredits")
+            .value
         ) || 0;
     if(previousCGPA < 0 || previousCGPA > 4){
-        alert("Previous CGPA must be between 0 and 4.");
+        alert(
+            "Previous CGPA must be between 0 and 4."
+        );
         return;
     }
     const rows =
@@ -1083,10 +1172,14 @@ function calculateCGPA(){
     rows.forEach(row => {
         const credit =
             parseFloat(
-                row.querySelector(".course-credit").value
+                row
+                .querySelector(".course-credit")
+                .value
             );
         const grade =
-            row.querySelector(".course-grade").value;
+            row
+            .querySelector(".course-grade")
+            .value;
         if(!credit || credit <= 0){
             return;
         }
@@ -1160,19 +1253,27 @@ function getCGPALabel(cgpa){
 function calculateTarget(){
     const currentCGPA =
         parseFloat(
-            document.getElementById("targetCurrentCGPA").value
+            document
+            .getElementById("targetCurrentCGPA")
+            .value
         );
     const completedCredits =
         parseFloat(
-            document.getElementById("targetCompletedCredits").value
+            document
+            .getElementById("targetCompletedCredits")
+            .value
         );
     const targetCGPA =
         parseFloat(
-            document.getElementById("targetCGPA").value
+            document
+            .getElementById("targetCGPA")
+            .value
         );
     const futureCredits =
         parseFloat(
-            document.getElementById("futureCredits").value
+            document
+            .getElementById("futureCredits")
+            .value
         );
     const result =
         document.getElementById("targetResult");
@@ -1243,11 +1344,9 @@ document.addEventListener(
     "DOMContentLoaded",
     function(){
         loadUniversities();
-        // Start with 3 courses
         addCourse();
         addCourse();
         addCourse();
-        // Default example for AIUB testing
         document.getElementById(
             "previousCGPA"
         ).value = "";
