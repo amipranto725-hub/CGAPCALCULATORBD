@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://YOUR-USERNAME.github.io/CGPACalculatorBD/sitemap.xml
+Sitemap: https://amipranto725-hub.github.io/CGAPCALCULATORBD/sitemap.xml
