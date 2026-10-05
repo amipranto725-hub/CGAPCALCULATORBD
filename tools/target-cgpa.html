@@ -2,256 +2,332 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Target CGPA Calculator Bangladesh | CGPA Calculator BD</title>
+
 <meta name="description"
 content="Calculate the GPA required to reach your target CGPA in Bangladesh universities. Free Target CGPA Calculator BD.">
+
 <meta name="keywords"
 content="Target CGPA Calculator Bangladesh, Required GPA Calculator BD, CGPA Target Calculator">
+
 <link rel="canonical"
 href="https://amipranto725-hub.github.io/CGAPCALCULATORBD/tools/target-cgpa.html">
+
 <style>
 *{
-    box-sizing:border-box;
+  box-sizing:border-box;
 }
+
 body{
-    margin:0;
-    font-family:Arial,Helvetica,sans-serif;
-    background:#f5f7fb;
-    color:#172033;
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f5f7fb;
+  color:#172033;
 }
+
 header{
-    background:#173b8f;
-    color:white;
-    padding:17px 20px;
+  background:#173b8f;
+  color:white;
+  padding:17px 20px;
 }
+
 .header-inner{
-    max-width:1100px;
-    margin:auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:15px;
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
 }
+
 .logo{
-    font-size:21px;
-    font-weight:700;
+  font-size:21px;
+  font-weight:700;
 }
+
+.logo a{
+  color:white;
+  text-decoration:none;
+}
+
 nav{
-    display:flex;
-    flex-wrap:wrap;
-    gap:6px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
 }
+
 nav a{
-    color:white;
-    text-decoration:none;
-    font-size:14px;
-    padding:8px 10px;
-    border-radius:6px;
+  color:white;
+  text-decoration:none;
+  font-size:14px;
+  padding:8px 10px;
+  border-radius:6px;
 }
+
 nav a:hover{
-    background:rgba(255,255,255,.15);
+  background:rgba(255,255,255,.15);
 }
+
 .container{
-    max-width:900px;
-    margin:30px auto;
-    padding:0 16px;
+  max-width:900px;
+  margin:30px auto;
+  padding:0 16px;
 }
+
 .hero{
-    background:linear-gradient(
-        135deg,
-        #173b8f,
-        #2864d7
-    );
-    color:white;
-    padding:35px 25px;
-    border-radius:16px;
-    margin-bottom:22px;
+  background:linear-gradient(135deg,#173b8f,#2864d7);
+  color:white;
+  padding:35px 25px;
+  border-radius:16px;
+  margin-bottom:22px;
 }
+
 .hero h1{
-    margin:0 0 10px;
-    font-size:32px;
+  margin:0 0 10px;
+  font-size:32px;
 }
+
 .hero p{
-    margin:0;
-    line-height:1.6;
+  margin:0;
+  line-height:1.6;
 }
+
 .card{
-    background:white;
-    padding:25px;
-    border-radius:14px;
-    margin-bottom:20px;
-    box-shadow:0 5px 20px rgba(0,0,0,.06);
+  background:white;
+  padding:25px;
+  border-radius:14px;
+  margin-bottom:20px;
+  box-shadow:0 5px 20px rgba(0,0,0,.06);
 }
+
 .card h2{
-    margin-top:0;
-    color:#173b8f;
+  margin-top:0;
+  color:#173b8f;
 }
+
 .grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:16px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
 }
+
 label{
-    display:block;
-    font-weight:600;
-    margin-bottom:7px;
+  display:block;
+  font-weight:600;
+  margin-bottom:7px;
 }
+
 input{
-    width:100%;
-    padding:13px;
-    border:1px solid #ccd3df;
-    border-radius:8px;
-    font-size:15px;
+  width:100%;
+  padding:13px;
+  border:1px solid #ccd3df;
+  border-radius:8px;
+  font-size:15px;
 }
+
 input:focus{
-    outline:none;
-    border-color:#173b8f;
+  outline:none;
+  border-color:#173b8f;
 }
+
 button{
-    border:0;
-    border-radius:8px;
-    padding:13px 20px;
-    font-weight:600;
-    font-size:15px;
-    cursor:pointer;
+  border:0;
+  border-radius:8px;
+  padding:13px 20px;
+  font-weight:600;
+  font-size:15px;
+  cursor:pointer;
 }
+
 .btn-primary{
-    background:#173b8f;
-    color:white;
+  background:#173b8f;
+  color:white;
 }
+
 .btn-primary:hover{
-    background:#0f2e73;
+  background:#0f2e73;
 }
+
 .actions{
-    margin-top:18px;
+  margin-top:18px;
 }
+
 .result{
-    margin-top:22px;
-    padding:25px;
-    text-align:center;
-    background:#edf5ff;
-    border:2px solid #2864d7;
-    border-radius:12px;
+  margin-top:22px;
+  padding:25px;
+  text-align:center;
+  background:#edf5ff;
+  border:2px solid #2864d7;
+  border-radius:12px;
 }
+
 .result-title{
-    color:#596579;
+  color:#596579;
 }
+
 .required-gpa{
-    font-size:44px;
-    font-weight:800;
-    color:#173b8f;
-    margin:8px 0;
+  font-size:44px;
+  font-weight:800;
+  color:#173b8f;
+  margin:8px 0;
 }
+
 .message{
-    font-size:17px;
-    line-height:1.6;
+  font-size:17px;
+  line-height:1.6;
 }
+
 .info{
-    background:#eef3ff;
-    border-left:5px solid #173b8f;
-    padding:15px;
-    border-radius:7px;
-    line-height:1.7;
+  background:#eef3ff;
+  border-left:5px solid #173b8f;
+  padding:15px;
+  border-radius:7px;
+  line-height:1.7;
 }
+
 .warning{
-    background:#fff8df;
-    border-left:5px solid #f0ad00;
-    padding:15px;
-    border-radius:7px;
-    line-height:1.7;
+  background:#fff8df;
+  border-left:5px solid #f0ad00;
+  padding:15px;
+  border-radius:7px;
+  line-height:1.7;
 }
+
 .formula{
-    background:#f7f8fb;
-    padding:16px;
-    border-radius:8px;
-    text-align:center;
-    font-weight:600;
-    line-height:1.8;
+  background:#f7f8fb;
+  padding:16px;
+  border-radius:8px;
+  text-align:center;
+  font-weight:600;
+  line-height:1.8;
 }
+
 footer{
-    margin-top:40px;
-    padding:25px 15px;
-    background:#172033;
-    color:white;
-    text-align:center;
+  margin-top:40px;
+  padding:25px 15px;
+  background:#172033;
+  color:white;
+  text-align:center;
 }
+
 footer p{
-    margin:5px;
+  margin:5px;
 }
+
 .small{
-    color:#697386;
-    font-size:13px;
-    line-height:1.6;
+  color:#697386;
+  font-size:13px;
+  line-height:1.6;
 }
+
 @media(max-width:700px){
-    .header-inner{
-        flex-direction:column;
-        align-items:flex-start;
-    }
-    nav{
-        width:100%;
-    }
-    nav a{
-        font-size:12px;
-    }
-    .hero h1{
-        font-size:27px;
-    }
-    .grid{
-        grid-template-columns:1fr;
-    }
-    .card{
-        padding:19px;
-    }
+
+  .header-inner{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  nav{
+    width:100%;
+  }
+
+  nav a{
+    font-size:12px;
+  }
+
+  .hero h1{
+    font-size:27px;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .card{
+    padding:19px;
+  }
 }
 </style>
 </head>
+
 <body>
+
 <header>
+
 <div class="header-inner">
+
 <div class="logo">
-CGPA Calculator BD
-</div>
-<nav>
 <a href="../index.html">
-Home
+CGPA Calculator BD
 </a>
+</div>
+
+<nav>
+
+<a href="../index.html">Home</a>
+
 <a href="cgpa-calculator.html">
 CGPA Calculator
 </a>
+
 <a href="marks-to-cgpa.html">
 Marks → Grade
 </a>
+
 <a href="target-cgpa.html">
 Target CGPA
 </a>
+
 <a href="../about.html">
 About
 </a>
+
+<a href="../contact.html">
+Contact
+</a>
+
+<a href="../privacy-policy.html">
+Privacy
+</a>
+
 </nav>
+
 </div>
+
 </header>
+
+
 <div class="container">
+
 <section class="hero">
+
 <h1>
 Target CGPA Calculator
 </h1>
+
 <p>
-Find out exactly what average GPA you need
-in your future credits to reach your target CGPA.
+Find out what average GPA you need in your future credits to reach your target CGPA.
 </p>
+
 </section>
+
+
 <div class="card">
+
 <h2>
 Enter Your Academic Information
 </h2>
+
 <div class="grid">
+
 <div>
+
 <label for="currentCGPA">
 Current CGPA
 </label>
+
 <input
 type="number"
 id="currentCGPA"
@@ -259,22 +335,32 @@ min="0"
 max="4"
 step="0.01"
 placeholder="Example: 3.10">
+
 </div>
+
+
 <div>
+
 <label for="completedCredits">
 Completed Credits
 </label>
+
 <input
 type="number"
 id="completedCredits"
 min="0"
 step="0.5"
 placeholder="Example: 90">
+
 </div>
+
+
 <div>
+
 <label for="targetCGPA">
 Target CGPA
 </label>
+
 <input
 type="number"
 id="targetCGPA"
@@ -282,205 +368,310 @@ min="0"
 max="4"
 step="0.01"
 placeholder="Example: 3.50">
+
 </div>
+
+
 <div>
+
 <label for="futureCredits">
 Future Credits
 </label>
+
 <input
 type="number"
 id="futureCredits"
 min="0.5"
 step="0.5"
 placeholder="Example: 30">
+
 </div>
+
 </div>
+
+
 <div class="actions">
+
 <button
 class="btn-primary"
 onclick="calculateTarget()">
+
 Calculate Required GPA
+
 </button>
+
 </div>
+
+
 <div
 class="result"
 id="result">
+
 <div class="result-title">
 Required Future GPA
 </div>
+
 <div
 class="required-gpa"
 id="requiredGPA">
 0.00
 </div>
+
 <div
 class="message"
 id="message">
 Enter your information above.
 </div>
+
 </div>
+
 </div>
+
+
 <div class="card">
+
 <h2>
 How the Calculation Works
 </h2>
+
 <div class="formula">
+
 Required GPA =
 [Target CGPA × (Completed Credits + Future Credits)
 − Current CGPA × Completed Credits]
 ÷ Future Credits
+
 </div>
+
 </div>
+
+
 <div class="card">
+
 <h2>
 Example
 </h2>
+
 <p>
 Suppose:
 </p>
+
 <ul>
+
 <li>Current CGPA = <b>3.10</b></li>
+
 <li>Completed Credits = <b>90</b></li>
+
 <li>Target CGPA = <b>3.50</b></li>
+
 <li>Future Credits = <b>30</b></li>
+
 </ul>
+
 <p>
 Required GPA:
 <b>4.70</b>
 </p>
+
 <div class="warning">
-In this example, the target is mathematically
-impossible because the required future GPA is
-greater than the maximum GPA of 4.00.
+
+In this example, the target is mathematically impossible because the required future GPA is greater than the maximum GPA of 4.00.
+
 </div>
+
 </div>
+
+
 <div class="card">
+
 <h2>
 Important Information
 </h2>
+
 <div class="info">
-The calculator assumes that your current CGPA
-and completed credits are accurate and that all
-future credits contribute normally to your CGPA.
-University policies regarding repeated courses,
-grade replacement, retakes, withdrawn courses,
-transfer credits and excluded courses may affect
-the actual CGPA.
+
+The calculator assumes that your current CGPA and completed credits are accurate and that all future credits contribute normally to your CGPA.
+
+University policies regarding repeated courses, grade replacement, retakes, withdrawn courses, transfer credits and excluded courses may affect the actual CGPA.
+
 </div>
+
 </div>
+
+
 <div class="card">
+
 <h2>
 Quick Guide
 </h2>
+
 <ol>
+
 <li>
 Enter your current CGPA.
 </li>
+
 <li>
 Enter the number of credits you have already completed.
 </li>
+
 <li>
 Enter the CGPA you want to achieve.
 </li>
+
 <li>
 Enter how many credits you still have left.
 </li>
+
 <li>
 Click <b>Calculate Required GPA</b>.
 </li>
+
 </ol>
+
 </div>
+
 </div>
+
+
 <footer>
+
 <p>
 <b>CGPA Calculator BD</b>
 </p>
+
 <p>
 Bangladesh University GPA & CGPA Calculator
 </p>
+
 <p>
 © 2026 CGPA Calculator BD
 </p>
+
 </footer>
+
+
 <script>
+
 function calculateTarget(){
+
 const currentCGPA =
 parseFloat(
 document.getElementById("currentCGPA").value
 );
+
 const completedCredits =
 parseFloat(
 document.getElementById("completedCredits").value
 );
+
 const targetCGPA =
 parseFloat(
 document.getElementById("targetCGPA").value
 );
+
 const futureCredits =
 parseFloat(
 document.getElementById("futureCredits").value
 );
+
 const gpaElement =
 document.getElementById("requiredGPA");
+
 const messageElement =
 document.getElementById("message");
-/* Validation */
+
+
 if(
 isNaN(currentCGPA) ||
 isNaN(completedCredits) ||
 isNaN(targetCGPA) ||
 isNaN(futureCredits)
 ){
+
 gpaElement.textContent = "—";
+
 messageElement.textContent =
 "Please enter all required values.";
+
 return;
+
 }
+
+
 if(
 currentCGPA < 0 ||
 currentCGPA > 4
 ){
+
 gpaElement.textContent = "—";
+
 messageElement.textContent =
 "Current CGPA must be between 0.00 and 4.00.";
+
 return;
+
 }
+
+
 if(
 targetCGPA < 0 ||
 targetCGPA > 4
 ){
+
 gpaElement.textContent = "—";
+
 messageElement.textContent =
 "Target CGPA must be between 0.00 and 4.00.";
+
 return;
+
 }
+
+
 if(
 completedCredits < 0
 ){
+
 gpaElement.textContent = "—";
+
 messageElement.textContent =
 "Completed credits cannot be negative.";
+
 return;
+
 }
+
+
 if(
 futureCredits <= 0
 ){
+
 gpaElement.textContent = "—";
+
 messageElement.textContent =
 "Future credits must be greater than 0.";
+
 return;
+
 }
-/* If target is already below current CGPA */
+
+
 if(
 targetCGPA <= currentCGPA
 ){
+
 gpaElement.textContent =
 "0.00";
+
 messageElement.innerHTML =
 "Your target CGPA is already achieved or lower than your current CGPA.";
+
 return;
+
 }
-/* Main formula */
+
+
 const requiredGPA =
 (
 targetCGPA *
@@ -494,34 +685,51 @@ completedCredits
 )
 /
 futureCredits;
+
+
 gpaElement.textContent =
 requiredGPA.toFixed(2);
-/* Result */
+
+
 if(requiredGPA > 4){
+
 messageElement.innerHTML =
 "<b>Target CGPA is not mathematically possible.</b><br>" +
 "You would need " +
 requiredGPA.toFixed(2) +
 " GPA, but the maximum GPA is 4.00.";
+
 }
+
 else if(requiredGPA <= 0){
+
 messageElement.innerHTML =
 "Your target is already achievable.";
+
 }
+
 else if(requiredGPA === 4){
+
 messageElement.innerHTML =
 "<b>Very difficult target.</b><br>" +
 "You need a perfect 4.00 GPA in all future credits.";
+
 }
+
 else{
+
 messageElement.innerHTML =
 "You need an average GPA of <b>" +
 requiredGPA.toFixed(2) +
 "</b> over your future " +
 futureCredits +
 " credits.";
+
 }
+
 }
+
 </script>
+
 </body>
 </html>
