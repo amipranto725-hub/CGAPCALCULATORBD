@@ -4,1810 +4,1346 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>CGPA Calculator Bangladesh – Free University GPA & CGPA Calculator</title>
+<title>CGPA Calculator BD - Bangladesh University CGPA Calculator</title>
 
 <meta name="description"
-content="Free CGPA Calculator for Bangladesh university students. Calculate semester GPA, cumulative CGPA, target CGPA and grade points for public and private universities.">
+content="CGPA Calculator BD for Bangladesh public and private universities. Calculate CGPA, convert marks to grade and find your target CGPA.">
 
 <meta name="robots" content="index, follow">
 
-<link rel="canonical"
-href="https://amipranto725-hub.github.io/CGAPCALCULATORBD/">
-
-<!-- Open Graph -->
-<meta property="og:title"
-content="CGPA Calculator Bangladesh – Free University GPA & CGPA Calculator">
-
-<meta property="og:description"
-content="Calculate GPA, CGPA, grade points and target CGPA easily for Bangladesh universities.">
-
-<meta property="og:url"
-content="https://amipranto725-hub.github.io/CGAPCALCULATORBD/">
-
-<meta property="og:type" content="website">
-
-<!-- Structured Data -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "CGPA Calculator BD",
-  "url": "https://amipranto725-hub.github.io/CGAPCALCULATORBD/",
-  "description": "Free CGPA Calculator for Bangladesh university students. Calculate semester GPA, cumulative CGPA, target CGPA and grade points for public and private universities.",
-  "applicationCategory": "EducationalApplication",
-  "operatingSystem": "Any",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "BDT"
-  }
-</script>
-
 <style>
+
 *{
-    box-sizing:border-box;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
 }
 
 body{
-    margin:0;
-    font-family:Arial,Helvetica,sans-serif;
-    background:#f5f7fb;
-    color:#172033;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f5f7fb;
+  color:#172033;
 }
 
+
+/* ================= HEADER ================= */
+
 header{
-    background:#173b8f;
-    color:white;
-    padding:18px 20px;
-    position:sticky;
-    top:0;
-    z-index:1000;
+  background:#ffffff;
+  border-bottom:1px solid #e5e9f1;
 }
 
 .header-inner{
-    max-width:1100px;
-    margin:auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:15px;
+  max-width:1200px;
+  margin:auto;
+  padding:38px 20px 28px;
 }
 
 .logo{
-    font-size:22px;
-    font-weight:700;
+  text-align:center;
+  margin-bottom:42px;
+}
+
+.logo a{
+  text-decoration:none;
+  font-size:42px;
+  font-weight:800;
+  color:#20479b;
+}
+
+.logo span{
+  color:#f28a25;
 }
 
 nav{
-    display:flex;
-    gap:8px;
-    flex-wrap:wrap;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:20px 28px;
 }
 
 nav a{
-    color:white;
-    text-decoration:none;
-    padding:8px 11px;
-    border-radius:6px;
-    font-size:14px;
+  color:#4c5870;
+  text-decoration:none;
+  font-size:18px;
+  font-weight:700;
+  transition:.2s;
 }
 
 nav a:hover{
-    background:rgba(255,255,255,.15);
+  color:#20479b;
 }
 
-.container{
-    max-width:1100px;
-    margin:30px auto;
-    padding:0 16px;
+
+/* ================= HERO ================= */
+
+.hero-section{
+  background:
+    linear-gradient(
+      135deg,
+      #f3f7ff 0%,
+      #ffffff 55%,
+      #fffaf3 100%
+    );
+
+  padding:105px 20px 100px;
 }
 
-.hero{
-    background:linear-gradient(135deg,#173b8f,#2864d7);
-    color:white;
-    padding:38px 25px;
-    border-radius:16px;
-    margin-bottom:25px;
+.hero-content{
+  max-width:1100px;
+  margin:auto;
+  text-align:center;
 }
 
-.hero h1{
-    margin:0 0 10px;
-    font-size:34px;
+.hero-content h1{
+  color:#20479b;
+  font-size:76px;
+  line-height:1.08;
+  font-weight:800;
+  margin-bottom:28px;
 }
 
-.hero p{
-    margin:0;
-    opacity:.92;
-    line-height:1.6;
+.hero-content p{
+  max-width:850px;
+  margin:auto;
+
+  color:#606b80;
+
+  font-size:28px;
+  line-height:1.6;
 }
 
-.card{
-    background:white;
-    padding:24px;
-    border-radius:14px;
-    margin-bottom:20px;
-    box-shadow:0 5px 20px rgba(0,0,0,.06);
+.hero-buttons{
+  max-width:720px;
+  margin:55px auto 0;
+
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:28px;
 }
 
-.card h2{
-    margin-top:0;
-    color:#173b8f;
+.hero-btn{
+  min-height:72px;
+
+  border-radius:18px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  text-decoration:none;
+
+  font-size:22px;
+  font-weight:800;
+
+  transition:.2s;
 }
+
+.hero-btn.primary{
+  background:#20479b;
+  color:white;
+
+  box-shadow:
+    0 8px 20px rgba(32,71,155,.18);
+}
+
+.hero-btn.secondary{
+  background:white;
+  color:#20479b;
+
+  border:2px solid #d8dfed;
+}
+
+.hero-btn:hover{
+  transform:translateY(-2px);
+}
+
+
+/* ================= UNIVERSITY SECTION ================= */
+
+.university-section{
+  padding:85px 20px;
+  background:#f5f7fb;
+}
+
+.university-card{
+  max-width:1100px;
+  margin:auto;
+
+  background:white;
+
+  border:1px solid #e0e5ee;
+
+  border-radius:28px;
+
+  padding:48px;
+
+  box-shadow:
+    0 10px 35px rgba(20,50,100,.06);
+}
+
+.section-title{
+  display:flex;
+  align-items:center;
+  gap:18px;
+
+  margin-bottom:35px;
+}
+
+.number{
+  width:60px;
+  height:60px;
+
+  border-radius:17px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:#edf3ff;
+
+  color:#20479b;
+
+  font-size:29px;
+  font-weight:800;
+}
+
+.section-title h2{
+  color:#20479b;
+  font-size:34px;
+}
+
+
+/* ================= TABS ================= */
 
 .tabs{
-    display:flex;
-    gap:10px;
-    margin-bottom:20px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+
+  gap:15px;
+
+  margin-bottom:28px;
 }
 
 .tab{
-    flex:1;
-    padding:12px;
-    border:1px solid #d8deea;
-    background:#f8f9fc;
-    border-radius:8px;
-    cursor:pointer;
-    font-weight:600;
+  height:65px;
+
+  border:2px solid #d8dfed;
+
+  border-radius:15px;
+
+  background:white;
+
+  color:#5e697d;
+
+  font-size:20px;
+  font-weight:800;
+
+  cursor:pointer;
+
+  transition:.2s;
 }
 
 .tab.active{
-    background:#173b8f;
-    color:white;
+  background:#20479b;
+  border-color:#20479b;
+  color:white;
 }
 
-label{
-    display:block;
-    font-weight:600;
-    margin-bottom:7px;
+.tab:hover{
+  border-color:#20479b;
 }
 
-input,
-select{
-    width:100%;
-    padding:12px;
-    border:1px solid #ccd3df;
-    border-radius:8px;
-    font-size:15px;
-    background:white;
-}
 
-input:focus,
-select:focus{
-    outline:none;
-    border-color:#173b8f;
-}
+/* ================= SEARCH ================= */
 
-.grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:15px;
+.search-title{
+  color:#35435d;
+
+  font-size:18px;
+  font-weight:700;
+
+  margin-bottom:10px;
 }
 
 .search{
-    margin-bottom:12px;
+  width:100%;
+  height:62px;
+
+  border:2px solid #dce2ec;
+
+  border-radius:15px;
+
+  padding:0 20px;
+
+  font-size:18px;
+
+  outline:none;
+
+  color:#172033;
+
+  background:white;
 }
 
-.course-table{
-    width:100%;
-    border-collapse:collapse;
-    margin-top:15px;
+.search:focus{
+  border-color:#20479b;
 }
 
-.course-table th,
-.course-table td{
-    padding:10px;
-    border:1px solid #e0e4eb;
-    text-align:left;
+.search::placeholder{
+  color:#a5acb8;
 }
 
-.course-table th{
-    background:#eef2f8;
+
+/* ================= UNIVERSITY LIST ================= */
+
+.university-list{
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:13px;
+
+  margin-top:20px;
 }
 
-.course-table input,
-.course-table select{
-    padding:8px;
+.university-item{
+  background:#f8faff;
+
+  border:1px solid #e0e6ef;
+
+  border-radius:13px;
+
+  padding:17px;
+
+  color:#35435d;
+
+  font-size:16px;
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:.2s;
 }
 
-button{
-    border:0;
-    border-radius:8px;
-    padding:11px 16px;
-    cursor:pointer;
-    font-weight:600;
+.university-item:hover{
+  background:#edf3ff;
+
+  border-color:#20479b;
+
+  color:#20479b;
+
+  transform:translateY(-2px);
 }
 
-.btn-primary{
-    background:#173b8f;
-    color:white;
+.no-result{
+  display:none;
+
+  text-align:center;
+
+  padding:25px;
+
+  color:#66758d;
+
+  font-size:17px;
 }
 
-.btn-primary:hover{
-    background:#0f2e73;
+
+/* ================= TOOLS ================= */
+
+.tools-section{
+  background:white;
+
+  padding:80px 20px;
 }
 
-.btn-danger{
-    background:#dc3545;
-    color:white;
+.tools{
+  max-width:1100px;
+  margin:auto;
 }
 
-.btn-success{
-    background:#168a4b;
-    color:white;
+.tools-title{
+  text-align:center;
+
+  color:#20479b;
+
+  font-size:38px;
+
+  margin-bottom:35px;
 }
 
-.actions{
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-    margin-top:15px;
+.tool-grid{
+  display:grid;
+
+  grid-template-columns:
+  repeat(3,1fr);
+
+  gap:20px;
 }
 
-.result{
-    background:#edf5ff;
-    border:2px solid #2864d7;
-    border-radius:12px;
-    padding:20px;
-    text-align:center;
-    margin-top:20px;
+.tool-card{
+  background:#ffffff;
+
+  border:1px solid #e0e5ee;
+
+  border-radius:20px;
+
+  padding:32px 22px;
+
+  text-align:center;
+
+  text-decoration:none;
+
+  color:inherit;
+
+  transition:.2s;
 }
 
-.result .cgpa{
-    font-size:42px;
-    font-weight:800;
-    color:#173b8f;
+.tool-card:hover{
+  transform:translateY(-4px);
+
+  border-color:#20479b;
+
+  box-shadow:
+    0 10px 25px rgba(20,50,100,.08);
 }
 
-.result .grade{
-    font-size:22px;
-    font-weight:700;
-    margin-top:5px;
+.tool-icon{
+  font-size:38px;
+
+  margin-bottom:15px;
 }
 
-.info{
-    background:#fff8df;
-    border-left:5px solid #f2b400;
-    padding:14px;
-    border-radius:7px;
-    margin-top:15px;
-    line-height:1.6;
+.tool-card h3{
+  color:#20479b;
+
+  font-size:21px;
+
+  margin-bottom:9px;
 }
 
-.scale-table{
-    width:100%;
-    border-collapse:collapse;
+.tool-card p{
+  color:#6b778c;
+
+  font-size:15px;
+
+  line-height:1.5;
 }
 
-.scale-table th,
-.scale-table td{
-    border:1px solid #ddd;
-    padding:9px;
-    text-align:center;
-}
 
-.scale-table th{
-    background:#173b8f;
-    color:white;
-}
-
-.target-result{
-    margin-top:15px;
-    padding:15px;
-    background:#eef8f1;
-    border-left:5px solid #168a4b;
-    border-radius:7px;
-    line-height:1.7;
-}
+/* ================= FOOTER ================= */
 
 footer{
-    background:#172033;
-    color:white;
-    padding:25px 15px;
-    margin-top:40px;
-    text-align:center;
+  background:#173f91;
+
+  color:white;
+
+  text-align:center;
+
+  padding:40px 20px;
+}
+
+footer h2{
+  font-size:25px;
+
+  margin-bottom:10px;
 }
 
 footer p{
-    margin:5px;
+  color:#dbe5ff;
+
+  font-size:14px;
 }
 
-footer a{
-    color:white;
-    text-decoration:none;
+.footer-links{
+  display:flex;
+
+  justify-content:center;
+
+  flex-wrap:wrap;
+
+  gap:18px;
+
+  margin-top:20px;
 }
 
-footer a:hover{
-    text-decoration:underline;
+.footer-links a{
+  color:white;
+
+  text-decoration:none;
+
+  font-size:14px;
+
+  font-weight:600;
 }
 
-.small{
-    color:#697386;
-    font-size:13px;
+.footer-links a:hover{
+  text-decoration:underline;
 }
 
-@media(max-width:700px){
+.copyright{
+  margin-top:20px;
 
-    .header-inner{
-        flex-direction:column;
-        align-items:flex-start;
-    }
+  color:#c9d7fa;
 
-    nav{
-        width:100%;
-    }
-
-    nav a{
-        font-size:12px;
-    }
-
-    .hero h1{
-        font-size:27px;
-    }
-
-    .grid{
-        grid-template-columns:1fr;
-    }
-
-    .course-table{
-        font-size:13px;
-    }
-
-    .course-table th,
-    .course-table td{
-        padding:6px;
-    }
+  font-size:12px;
 }
+
+
+/* ================= TABLET ================= */
+
+@media(max-width:768px){
+
+  .header-inner{
+    padding:32px 18px 25px;
+  }
+
+  .logo{
+    margin-bottom:35px;
+  }
+
+  .logo a{
+    font-size:34px;
+  }
+
+  nav{
+    gap:18px 24px;
+  }
+
+  nav a{
+    font-size:17px;
+  }
+
+  .hero-section{
+    padding:75px 20px 75px;
+  }
+
+  .hero-content h1{
+    font-size:55px;
+  }
+
+  .hero-content p{
+    font-size:23px;
+  }
+
+  .hero-buttons{
+    max-width:650px;
+    gap:18px;
+  }
+
+  .university-card{
+    padding:35px 28px;
+  }
+
+  .section-title h2{
+    font-size:29px;
+  }
+
+  .university-list{
+    grid-template-columns:1fr;
+  }
+
+  .tool-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:500px){
+
+  .header-inner{
+    padding:28px 15px 25px;
+  }
+
+  .logo{
+    margin-bottom:35px;
+  }
+
+  .logo a{
+    font-size:29px;
+  }
+
+  nav{
+    gap:17px 20px;
+  }
+
+  nav a{
+    font-size:15px;
+  }
+
+
+  /* HERO */
+
+  .hero-section{
+    padding:62px 18px 65px;
+  }
+
+  .hero-content h1{
+    font-size:45px;
+    line-height:1.12;
+    margin-bottom:22px;
+  }
+
+  .hero-content p{
+    font-size:20px;
+    line-height:1.55;
+  }
+
+  .hero-buttons{
+    grid-template-columns:1fr 1fr;
+
+    gap:12px;
+
+    margin-top:38px;
+  }
+
+  .hero-btn{
+    min-height:62px;
+
+    border-radius:15px;
+
+    font-size:17px;
+  }
+
+
+  /* UNIVERSITY */
+
+  .university-section{
+    padding:50px 15px;
+  }
+
+  .university-card{
+    border-radius:22px;
+
+    padding:28px 18px;
+  }
+
+  .section-title{
+    gap:13px;
+
+    margin-bottom:28px;
+  }
+
+  .number{
+    width:52px;
+    height:52px;
+
+    border-radius:15px;
+
+    font-size:24px;
+  }
+
+  .section-title h2{
+    font-size:25px;
+  }
+
+  .tabs{
+    gap:10px;
+  }
+
+  .tab{
+    height:58px;
+
+    font-size:16px;
+  }
+
+  .search{
+    height:58px;
+
+    font-size:16px;
+  }
+
+  .university-item{
+    font-size:15px;
+
+    padding:16px;
+  }
+
+
+  /* TOOLS */
+
+  .tools-section{
+    padding:60px 15px;
+  }
+
+  .tools-title{
+    font-size:30px;
+  }
+
+}
+
+
+/* ================= SMALL PHONE ================= */
+
+@media(max-width:380px){
+
+  .logo a{
+    font-size:26px;
+  }
+
+  nav{
+    gap:15px;
+  }
+
+  nav a{
+    font-size:14px;
+  }
+
+  .hero-content h1{
+    font-size:39px;
+  }
+
+  .hero-content p{
+    font-size:18px;
+  }
+
+  .hero-buttons{
+    grid-template-columns:1fr;
+  }
+
+  .hero-btn{
+    width:100%;
+  }
+
+}
+
 </style>
 </head>
 
 <body>
 
+
+<!-- ================= HEADER ================= -->
+
 <header>
-<div class="header-inner">
 
-<div class="logo">
-CGPA Calculator BD
-</div>
+  <div class="header-inner">
 
-<nav>
-<a href="index.html">Home</a>
+    <div class="logo">
 
-<a href="tools/cgpa-calculator.html">
-CGPA Calculator
-</a>
+      <a href="index.html">
+        CGPA Calculator <span>BD</span>
+      </a>
 
-<a href="tools/marks-to-cgpa.html">
-Marks → Grade
-</a>
+    </div>
 
-<a href="tools/target-cgpa.html">
-Target CGPA
-</a>
+    <nav>
 
-<a href="about.html">
-About
-</a>
+      <a href="index.html">
+        Home
+      </a>
 
-<a href="contact.html">
-Contact
-</a>
+      <a href="tools/cgpa-calculator.html">
+        CGPA Calculator
+      </a>
 
-<a href="privacy-policy.html">
-Privacy
-</a>
-</nav>
+      <a href="tools/marks-to-cgpa.html">
+        Marks → Grade
+      </a>
 
-</div>
+      <a href="tools/target-cgpa.html">
+        Target CGPA
+      </a>
+
+      <a href="about.html">
+        About
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+      <a href="privacy.html">
+        Privacy
+      </a>
+
+    </nav>
+
+  </div>
+
 </header>
 
-<div class="container">
 
-<section class="hero">
+<!-- ================= HERO ================= -->
 
-<h1>
-Bangladesh CGPA Calculator
-</h1>
+<section class="hero-section">
 
-<p>
-Calculate your semester GPA, cumulative CGPA and target CGPA
-for Bangladesh public and private universities.
-</p>
+  <div class="hero-content">
+
+    <h1>
+      CGPA Calculator
+    </h1>
+
+    <p>
+      Calculate your semester CGPA,
+      cumulative CGPA and target CGPA
+      using your university's grading scale.
+    </p>
+
+    <div class="hero-buttons">
+
+      <a
+        href="#university"
+        class="hero-btn primary">
+
+        Calculate CGPA
+
+      </a>
+
+      <a
+        href="tools/target-cgpa.html"
+        class="hero-btn secondary">
+
+        Target CGPA
+
+      </a>
+
+    </div>
+
+  </div>
 
 </section>
 
-<!-- UNIVERSITY -->
 
-<div class="card">
+<!-- ================= UNIVERSITY ================= -->
 
-<h2>
-1. Select University
-</h2>
+<section
+  class="university-section"
+  id="university">
 
-<div class="tabs">
+  <div class="university-card">
 
-<button
-class="tab active"
-id="publicTab"
-onclick="changeType('public')">
-Public University
-</button>
+    <div class="section-title">
 
-<button
-class="tab"
-id="privateTab"
-onclick="changeType('private')">
-Private University
-</button>
+      <div class="number">
+        1
+      </div>
 
-</div>
+      <h2>
+        Select Your University
+      </h2>
 
-<input
-type="text"
-id="universitySearch"
-class="search"
-placeholder="Search university..."
-oninput="filterUniversities()">
+    </div>
 
-<select
-id="universitySelect"
-onchange="universityChanged()">
-</select>
 
-<div
-class="info"
-id="universityInfo">
-Select your university.
-</div>
+    <!-- TABS -->
 
-</div>
+    <div class="tabs">
 
-<!-- PREVIOUS CGPA -->
+      <button
+        id="publicBtn"
+        class="tab active"
+        onclick="showUniversities('public')">
 
-<div class="card">
+        Public
 
-<h2>
-2. Previous Academic Record
-</h2>
+      </button>
 
-<div class="grid">
+      <button
+        id="privateBtn"
+        class="tab"
+        onclick="showUniversities('private')">
 
-<div>
+        Private
 
-<label>
-Previous CGPA
-</label>
+      </button>
 
-<input
-type="number"
-id="previousCGPA"
-min="0"
-max="4"
-step="0.01"
-placeholder="Example: 3.25">
+    </div>
 
-</div>
 
-<div>
+    <!-- SEARCH -->
 
-<label>
-Completed Credits
-</label>
+    <div class="search-title">
+      Search University
+    </div>
 
-<input
-type="number"
-id="completedCredits"
-min="0"
-step="0.5"
-placeholder="Example: 60">
+    <input
+      id="universitySearch"
+      class="search"
+      type="text"
+      placeholder="Search university..."
+      oninput="searchUniversity()"
+    >
 
-</div>
 
-</div>
+    <!-- LIST -->
 
-</div>
+    <div
+      id="universityList"
+      class="university-list">
+    </div>
 
-<!-- COURSE TABLE -->
 
-<div class="card">
+    <div
+      id="noResult"
+      class="no-result">
 
-<h2>
-3. Current Semester Courses
-</h2>
+      No university found.
 
-<div style="overflow-x:auto;">
+    </div>
 
-<table class="course-table">
+  </div>
 
-<thead>
+</section>
 
-<tr>
-<th>Course</th>
-<th>Credit</th>
-<th>Grade</th>
-<th>Point</th>
-<th>Action</th>
-</tr>
 
-</thead>
+<!-- ================= TOOLS ================= -->
 
-<tbody id="courseBody"></tbody>
+<section class="tools-section">
 
-</table>
+  <div class="tools">
 
-</div>
+    <h2 class="tools-title">
+      Academic Tools
+    </h2>
 
-<div class="actions">
+    <div class="tool-grid">
 
-<button
-class="btn-primary"
-onclick="addCourse()">
-+ Add Course
-</button>
 
-<button
-class="btn-success"
-onclick="calculateCGPA()">
-Calculate CGPA
-</button>
+      <a
+        href="tools/cgpa-calculator.html"
+        class="tool-card">
 
-</div>
+        <div class="tool-icon">
+          🎓
+        </div>
 
-<div class="result">
+        <h3>
+          CGPA Calculator
+        </h3>
 
-<div>
-Current CGPA
-</div>
+        <p>
+          Calculate your semester and
+          cumulative CGPA easily.
+        </p>
 
-<div
-class="cgpa"
-id="cgpaResult">
-0.00
-</div>
+      </a>
 
-<div
-class="grade"
-id="cgpaGrade">
--
-</div>
 
-</div>
+      <a
+        href="tools/marks-to-cgpa.html"
+        class="tool-card">
 
-</div>
+        <div class="tool-icon">
+          📊
+        </div>
 
-<!-- TARGET CGPA -->
+        <h3>
+          Marks → Grade
+        </h3>
 
-<div class="card">
+        <p>
+          Convert your marks into
+          grade and grade point.
+        </p>
 
-<h2>
-4. Target CGPA Calculator
-</h2>
+      </a>
 
-<div class="grid">
 
-<div>
+      <a
+        href="tools/target-cgpa.html"
+        class="tool-card">
 
-<label>
-Current CGPA
-</label>
+        <div class="tool-icon">
+          🎯
+        </div>
 
-<input
-type="number"
-id="targetCurrentCGPA"
-min="0"
-max="4"
-step="0.01"
-placeholder="Example: 3.10">
+        <h3>
+          Target CGPA
+        </h3>
 
-</div>
+        <p>
+          Find the GPA required to
+          reach your target CGPA.
+        </p>
 
-<div>
+      </a>
 
-<label>
-Completed Credits
-</label>
 
-<input
-type="number"
-id="targetCompletedCredits"
-min="0"
-step="0.5"
-placeholder="Example: 90">
+    </div>
 
-</div>
+  </div>
 
-<div>
+</section>
 
-<label>
-Target CGPA
-</label>
 
-<input
-type="number"
-id="targetCGPA"
-min="0"
-max="4"
-step="0.01"
-placeholder="Example: 3.50">
-
-</div>
-
-<div>
-
-<label>
-Future Credits
-</label>
-
-<input
-type="number"
-id="futureCredits"
-min="0"
-step="0.5"
-placeholder="Example: 30">
-
-</div>
-
-</div>
-
-<div class="actions">
-
-<button
-class="btn-primary"
-onclick="calculateTarget()">
-Calculate Required GPA
-</button>
-
-</div>
-
-<div
-class="target-result"
-id="targetResult">
-Enter your information to calculate the required GPA.
-</div>
-
-</div>
-
-<!-- GRADING SCALE -->
-
-<div class="card">
-
-<h2>
-University Grading Scale
-</h2>
-
-<div style="overflow-x:auto;">
-
-<table class="scale-table">
-
-<thead>
-
-<tr>
-<th>Marks</th>
-<th>Grade</th>
-<th>Grade Point</th>
-</tr>
-
-</thead>
-
-<tbody id="scaleBody"></tbody>
-
-</table>
-
-</div>
-
-<p class="small">
-Grading scales may differ by university and academic regulation.
-Always verify your official university policy.
-</p>
-
-</div>
-
-<!-- HOW TO USE -->
-
-<div class="card">
-
-<h2>
-How to Use
-</h2>
-
-<ol>
-
-<li>
-Select your university.
-</li>
-
-<li>
-Enter previous CGPA and completed credits.
-</li>
-
-<li>
-Add your current semester courses.
-</li>
-
-<li>
-Select credit and grade for each course.
-</li>
-
-<li>
-Click <b>Calculate CGPA</b>.
-</li>
-
-<li>
-Use Target CGPA Calculator if you want to know
-the GPA required for your future credits.
-</li>
-
-</ol>
-
-</div>
-
-<!-- ABOUT -->
-
-<div class="card">
-
-<h2>
-About CGPA Calculator BD
-</h2>
-
-<p>
-CGPA Calculator BD is a Bangladesh-focused academic calculator
-designed to make GPA and CGPA calculation easier for university students.
-</p>
-
-<p>
-The calculator supports university-specific grading systems where
-official grading information is available.
-</p>
-
-</div>
-
-</div>
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
-<p>
-<b>CGPA Calculator BD</b>
-</p>
+  <h2>
+    CGPA Calculator BD
+  </h2>
 
-<p>
-Bangladesh University GPA & CGPA Calculator
-</p>
+  <p>
+    Free CGPA calculation tools
+    for Bangladeshi university students.
+  </p>
 
-<p>
 
-<a href="about.html">About</a>
-&nbsp; | &nbsp;
+  <div class="footer-links">
 
-<a href="contact.html">Contact</a>
-&nbsp; | &nbsp;
+    <a href="index.html">
+      Home
+    </a>
 
-<a href="privacy-policy.html">Privacy Policy</a>
+    <a href="tools/cgpa-calculator.html">
+      CGPA Calculator
+    </a>
 
-</p>
+    <a href="tools/marks-to-cgpa.html">
+      Marks → Grade
+    </a>
 
-<p>
-©️ 2026 CGPA Calculator BD
-</p>
+    <a href="tools/target-cgpa.html">
+      Target CGPA
+    </a>
+
+    <a href="about.html">
+      About
+    </a>
+
+    <a href="contact.html">
+      Contact
+    </a>
+
+    <a href="privacy.html">
+      Privacy
+    </a>
+
+  </div>
+
+
+  <div class="copyright">
+    © 2026 CGPA Calculator BD. All rights reserved.
+  </div>
 
 </footer>
 
+
 <script>
 
-/* =========================================================
-   GRADING SCALES
-   ========================================================= */
 
-const gradingScales = {
+/* ================= PUBLIC UNIVERSITIES ================= */
 
-    standard:{
-        name:"Standard / UGC-style",
-        grades:[
-            {min:80,grade:"A+",point:4.00},
-            {min:75,grade:"A",point:3.75},
-            {min:70,grade:"A-",point:3.50},
-            {min:65,grade:"B+",point:3.25},
-            {min:60,grade:"B",point:3.00},
-            {min:55,grade:"B-",point:2.75},
-            {min:50,grade:"C+",point:2.50},
-            {min:45,grade:"C",point:2.25},
-            {min:40,grade:"D",point:2.00},
-            {min:0,grade:"F",point:0.00}
-        ]
-    },
+const publicUniversities = [
 
-    aiub:{
-        name:"AIUB",
-        grades:[
-            {min:90,grade:"A+",point:4.00},
-            {min:85,grade:"A",point:3.75},
-            {min:80,grade:"B+",point:3.50},
-            {min:75,grade:"B",point:3.25},
-            {min:70,grade:"C+",point:3.00},
-            {min:65,grade:"C",point:2.75},
-            {min:60,grade:"D+",point:2.50},
-            {min:50,grade:"D",point:2.25},
-            {min:0,grade:"F",point:0.00}
-        ]
-    },
+  "University of Dhaka",
 
-    nsu:{
-        name:"North South University",
-        grades:[
-            {min:93,grade:"A",point:4.00},
-            {min:90,grade:"A-",point:3.70},
-            {min:87,grade:"B+",point:3.30},
-            {min:83,grade:"B",point:3.00},
-            {min:80,grade:"B-",point:2.70},
-            {min:77,grade:"C+",point:2.30},
-            {min:73,grade:"C",point:2.00},
-            {min:70,grade:"C-",point:1.70},
-            {min:67,grade:"D+",point:1.30},
-            {min:60,grade:"D",point:1.00},
-            {min:0,grade:"F",point:0.00}
-        ]
-    },
+  "Bangladesh University of Engineering and Technology (BUET)",
 
-    brac:{
-        name:"BRAC University",
-        grades:[
-            {min:97,grade:"A+",point:4.00},
-            {min:90,grade:"A",point:4.00},
-            {min:85,grade:"A-",point:3.70},
-            {min:80,grade:"B+",point:3.30},
-            {min:75,grade:"B",point:3.00},
-            {min:70,grade:"B-",point:2.70},
-            {min:65,grade:"C+",point:2.30},
-            {min:60,grade:"C",point:2.00},
-            {min:57,grade:"C-",point:1.70},
-            {min:55,grade:"D+",point:1.30},
-            {min:52,grade:"D",point:1.00},
-            {min:50,grade:"D-",point:0.70},
-            {min:0,grade:"F",point:0.00}
-        ]
-    },
+  "University of Chittagong",
 
-    uiu:{
-        name:"United International University",
-        grades:[
-            {min:90,grade:"A",point:4.00},
-            {min:86,grade:"A-",point:3.67},
-            {min:82,grade:"B+",point:3.33},
-            {min:78,grade:"B",point:3.00},
-            {min:74,grade:"B-",point:2.67},
-            {min:70,grade:"C+",point:2.33},
-            {min:66,grade:"C",point:2.00},
-            {min:62,grade:"C-",point:1.67},
-            {min:58,grade:"D+",point:1.33},
-            {min:55,grade:"D",point:1.00},
-            {min:0,grade:"F",point:0.00}
-        ]
-    },
+  "University of Rajshahi",
 
-    iub:{
-        name:"Independent University, Bangladesh",
-        grades:[
-            {min:90,grade:"A",point:4.00},
-            {min:85,grade:"A-",point:3.70},
-            {min:80,grade:"B+",point:3.30},
-            {min:75,grade:"B",point:3.00},
-            {min:70,grade:"B-",point:2.70},
-            {min:65,grade:"C+",point:2.30},
-            {min:60,grade:"C",point:2.00},
-            {min:55,grade:"C-",point:1.70},
-            {min:50,grade:"D+",point:1.30},
-            {min:45,grade:"D",point:1.00},
-            {min:0,grade:"F",point:0.00}
-        ]
-    },
+  "Jahangirnagar University",
 
-    ulab:{
-        name:"University of Liberal Arts Bangladesh",
-        grades:[
-            {min:97,grade:"A+",point:4.00},
-            {min:90,grade:"A",point:4.00},
-            {min:85,grade:"A-",point:3.80},
-            {min:80,grade:"B+",point:3.30},
-            {min:75,grade:"B",point:3.00},
-            {min:70,grade:"B-",point:2.80},
-            {min:65,grade:"C+",point:2.50},
-            {min:60,grade:"C",point:2.20},
-            {min:50,grade:"D",point:1.50},
-            {min:0,grade:"F",point:0.00}
-        ]
-    }
-};
+  "Khulna University",
+
+  "Shahjalal University of Science and Technology (SUST)",
+
+  "Bangladesh Agricultural University",
+
+  "Jagannath University",
+
+  "Comilla University",
+
+  "Islamic University, Bangladesh",
+
+  "Bangladesh University of Professionals (BUP)",
+
+  "University of Barishal",
+
+  "Begum Rokeya University",
+
+  "Chittagong University of Engineering and Technology (CUET)",
+
+  "Khulna University of Engineering and Technology (KUET)",
+
+  "Rajshahi University of Engineering and Technology (RUET)",
+
+  "Dhaka University of Engineering and Technology (DUET)",
+
+  "Mawlana Bhashani Science and Technology University",
+
+  "Noakhali Science and Technology University",
+
+  "Patuakhali Science and Technology University",
+
+  "Hajee Mohammad Danesh Science and Technology University",
+
+  "Jashore University of Science and Technology",
+
+  "Pabna University of Science and Technology",
+
+  "Bangladesh University of Textiles",
+
+  "Sher-e-Bangla Agricultural University"
+
+];
 
 
-/* =========================================================
-   UNIVERSITY DATABASE
-   ========================================================= */
+/* ================= PRIVATE UNIVERSITIES ================= */
 
-const universities = {
+const privateUniversities = [
 
-    public:[
-        {
-            id:"du",
-            name:"University of Dhaka",
-            scale:"standard"
-        },
+  "North South University (NSU)",
 
-        {
-            id:"buet",
-            name:"Bangladesh University of Engineering and Technology",
-            scale:"standard"
-        },
+  "BRAC University",
 
-        {
-            id:"cu",
-            name:"University of Chittagong",
-            scale:"standard"
-        },
+  "East West University (EWU)",
 
-        {
-            id:"ru",
-            name:"University of Rajshahi",
-            scale:"standard"
-        },
+  "American International University-Bangladesh (AIUB)",
 
-        {
-            id:"ju",
-            name:"Jahangirnagar University",
-            scale:"standard"
-        },
+  "United International University (UIU)",
 
-        {
-            id:"ku",
-            name:"Khulna University",
-            scale:"standard"
-        },
+  "Daffodil International University (DIU)",
 
-        {
-            id:"sust",
-            name:"Shahjalal University of Science and Technology",
-            scale:"standard"
-        },
+  "Independent University, Bangladesh (IUB)",
 
-        {
-            id:"bau",
-            name:"Bangladesh Agricultural University",
-            scale:"standard"
-        },
+  "Ahsanullah University of Science and Technology (AUST)",
 
-        {
-            id:"jnu",
-            name:"Jagannath University",
-            scale:"standard"
-        },
+  "University of Asia Pacific (UAP)",
 
-        {
-            id:"cou",
-            name:"Comilla University",
-            scale:"standard"
-        },
+  "Stamford University Bangladesh",
 
-        {
-            id:"iu",
-            name:"Islamic University",
-            scale:"standard"
-        },
+  "University of Liberal Arts Bangladesh (ULAB)",
 
-        {
-            id:"brur",
-            name:"Begum Rokeya University, Rangpur",
-            scale:"standard"
-        },
+  "Green University of Bangladesh",
 
-        {
-            id:"nstu",
-            name:"Noakhali Science and Technology University",
-            scale:"standard"
-        },
+  "Southeast University",
 
-        {
-            id:"pstu",
-            name:"Patuakhali Science and Technology University",
-            scale:"standard"
-        },
+  "International University of Business Agriculture and Technology (IUBAT)",
 
-        {
-            id:"pust",
-            name:"Pabna University of Science and Technology",
-            scale:"standard"
-        },
+  "Eastern University",
 
-        {
-            id:"just",
-            name:"Jashore University of Science and Technology",
-            scale:"standard"
-        },
+  "Primeasia University",
 
-        {
-            id:"hstu",
-            name:"Hajee Mohammad Danesh Science and Technology University",
-            scale:"standard"
-        },
+  "City University",
 
-        {
-            id:"mbstu",
-            name:"Mawlana Bhashani Science and Technology University",
-            scale:"standard"
-        },
+  "World University of Bangladesh",
 
-        {
-            id:"bsmrstu",
-            name:"Gopalganj Science and Technology University",
-            scale:"standard"
-        },
+  "University of Information Technology and Sciences (UITS)",
 
-        {
-            id:"sau",
-            name:"Sher-e-Bangla Agricultural University",
-            scale:"standard"
-        }
-    ],
+  "Leading University",
 
-    private:[
-        {
-            id:"aiub",
-            name:"American International University-Bangladesh (AIUB)",
-            scale:"aiub"
-        },
+  "Metropolitan University",
 
-        {
-            id:"nsu",
-            name:"North South University (NSU)",
-            scale:"nsu"
-        },
+  "Bangladesh University",
 
-        {
-            id:"brac",
-            name:"BRAC University",
-            scale:"brac"
-        },
+  "Manarat International University",
 
-        {
-            id:"uiu",
-            name:"United International University (UIU)",
-            scale:"uiu"
-        },
+  "Northern University Bangladesh",
 
-        {
-            id:"iub",
-            name:"Independent University, Bangladesh (IUB)",
-            scale:"iub"
-        },
+  "Premier University",
 
-        {
-            id:"ewu",
-            name:"East West University (EWU)",
-            scale:"standard"
-        },
+  "Southern University Bangladesh",
 
-        {
-            id:"ulab",
-            name:"University of Liberal Arts Bangladesh (ULAB)",
-            scale:"ulab"
-        },
+  "Asian University of Bangladesh",
 
-        {
-            id:"diu",
-            name:"Daffodil International University",
-            scale:"standard"
-        },
+  "University of South Asia",
 
-        {
-            id:"aust",
-            name:"Ahsanullah University of Science and Technology (AUST)",
-            scale:"standard"
-        },
+  "ASA University Bangladesh"
 
-        {
-            id:"uap",
-            name:"University of Asia Pacific (UAP)",
-            scale:"standard"
-        },
+];
 
-        {
-            id:"seu",
-            name:"Southeast University",
-            scale:"standard"
-        },
-
-        {
-            id:"stamford",
-            name:"Stamford University Bangladesh",
-            scale:"standard"
-        },
-
-        {
-            id:"sub",
-            name:"State University of Bangladesh",
-            scale:"standard"
-        },
-
-        {
-            id:"uttara",
-            name:"Uttara University",
-            scale:"standard"
-        },
-
-        {
-            id:"green",
-            name:"Green University of Bangladesh",
-            scale:"standard"
-        }
-    ]
-};
-
-
-/* =========================================================
-   VARIABLES
-   ========================================================= */
 
 let currentType = "public";
 
 
-/* =========================================================
-   CHANGE UNIVERSITY TYPE
-   ========================================================= */
+/* ================= SHOW UNIVERSITIES ================= */
 
-function changeType(type){
+function showUniversities(type){
 
-    currentType = type;
+  currentType = type;
 
-    document
-        .getElementById("publicTab")
-        .classList.toggle("active",type === "public");
+  const publicBtn =
+    document.getElementById("publicBtn");
 
-    document
-        .getElementById("privateTab")
-        .classList.toggle("active",type === "private");
+  const privateBtn =
+    document.getElementById("privateBtn");
 
-    document
-        .getElementById("universitySearch")
-        .value = "";
 
-    loadUniversities();
+  if(type === "public"){
+
+    publicBtn.classList.add("active");
+
+    privateBtn.classList.remove("active");
+
+  }else{
+
+    privateBtn.classList.add("active");
+
+    publicBtn.classList.remove("active");
+
+  }
+
+
+  document.getElementById(
+    "universitySearch"
+  ).value = "";
+
+  renderUniversities();
+
 }
 
 
-/* =========================================================
-   LOAD UNIVERSITIES
-   ========================================================= */
+/* ================= RENDER UNIVERSITIES ================= */
 
-function loadUniversities(){
+function renderUniversities(){
 
-    const select =
-        document.getElementById("universitySelect");
+  const list =
+    document.getElementById(
+      "universityList"
+    );
 
-    select.innerHTML = "";
+  const noResult =
+    document.getElementById(
+      "noResult"
+    );
 
-    universities[currentType].forEach(university => {
 
-        const option =
-            document.createElement("option");
+  const data =
+    currentType === "public"
+      ? publicUniversities
+      : privateUniversities;
 
-        option.value = university.id;
 
-        option.textContent = university.name;
+  list.innerHTML = "";
 
-        select.appendChild(option);
+  noResult.style.display = "none";
 
-    });
 
-    universityChanged();
+  data.forEach(function(university){
+
+    createUniversityItem(
+      university,
+      list
+    );
+
+  });
+
 }
 
 
-/* =========================================================
-   SEARCH UNIVERSITIES
-   ========================================================= */
+/* ================= CREATE UNIVERSITY ================= */
 
-function filterUniversities(){
+function createUniversityItem(
+  university,
+  list
+){
 
-    const search =
-        document
-        .getElementById("universitySearch")
-        .value
+  const item =
+    document.createElement("div");
+
+
+  item.className =
+    "university-item";
+
+
+  item.textContent =
+    university;
+
+
+  item.onclick = function(){
+
+    localStorage.setItem(
+      "selectedUniversity",
+      university
+    );
+
+
+    window.location.href =
+      "tools/cgpa-calculator.html";
+
+  };
+
+
+  list.appendChild(item);
+
+}
+
+
+/* ================= SEARCH ================= */
+
+function searchUniversity(){
+
+  const search =
+    document
+      .getElementById(
+        "universitySearch"
+      )
+      .value
+      .toLowerCase()
+      .trim();
+
+
+  const data =
+    currentType === "public"
+      ? publicUniversities
+      : privateUniversities;
+
+
+  const filtered =
+    data.filter(function(university){
+
+      return university
         .toLowerCase()
-        .trim();
-
-    const select =
-        document.getElementById("universitySelect");
-
-    select.innerHTML = "";
-
-    universities[currentType]
-        .filter(university =>
-            university.name
-            .toLowerCase()
-            .includes(search)
-        )
-        .forEach(university => {
-
-            const option =
-                document.createElement("option");
-
-            option.value = university.id;
-
-            option.textContent = university.name;
-
-            select.appendChild(option);
-
-        });
-
-    universityChanged();
-}
-
-
-/* =========================================================
-   FIND UNIVERSITY
-   ========================================================= */
-
-function getSelectedUniversity(){
-
-    const id =
-        document
-        .getElementById("universitySelect")
-        .value;
-
-    return universities[currentType]
-        .find(u => u.id === id);
-}
-
-
-/* =========================================================
-   GET SCALE
-   ========================================================= */
-
-function getScale(){
-
-    const university =
-        getSelectedUniversity();
-
-    if(!university){
-        return gradingScales.standard;
-    }
-
-    return gradingScales[university.scale]
-        || gradingScales.standard;
-}
-
-
-/* =========================================================
-   UNIVERSITY CHANGE
-   ========================================================= */
-
-function universityChanged(){
-
-    const university =
-        getSelectedUniversity();
-
-    if(!university){
-        return;
-    }
-
-    const scale =
-        getScale();
-
-    document
-        .getElementById("universityInfo")
-        .innerHTML =
-        "<b>" +
-        university.name +
-        "</b><br>" +
-        "Grading system: " +
-        scale.name;
-
-    showScale();
-
-    updateAllCoursePoints();
-}
-
-
-/* =========================================================
-   SHOW SCALE
-   ========================================================= */
-
-function showScale(){
-
-    const scale =
-        getScale();
-
-    const body =
-        document.getElementById("scaleBody");
-
-    body.innerHTML = "";
-
-    scale.grades.forEach((item,index)=>{
-
-        const next =
-            scale.grades[index - 1];
-
-        let marksText;
-
-        if(index === 0){
-
-            marksText =
-                item.min + " – 100";
-
-        }else if(item.grade === "F"){
-
-            marksText =
-                "Below " + next.min;
-
-        }else{
-
-            marksText =
-                item.min +
-                " – " +
-                (next.min - 1);
-
-        }
-
-        const row =
-            document.createElement("tr");
-
-        row.innerHTML = `
-            <td>${marksText}%</td>
-            <td>${item.grade}</td>
-            <td>${item.point.toFixed(2)}</td>
-        `;
-
-        body.appendChild(row);
+        .includes(search);
 
     });
+
+
+  const list =
+    document.getElementById(
+      "universityList"
+    );
+
+  const noResult =
+    document.getElementById(
+      "noResult"
+    );
+
+
+  list.innerHTML = "";
+
+
+  if(filtered.length === 0){
+
+    noResult.style.display =
+      "block";
+
+    return;
+
+  }
+
+
+  noResult.style.display =
+    "none";
+
+
+  filtered.forEach(function(university){
+
+    createUniversityItem(
+      university,
+      list
+    );
+
+  });
+
 }
 
 
-/* =========================================================
-   GRADE OPTIONS
-   ========================================================= */
+/* ================= START ================= */
 
-function gradeOptions(selected=""){
-
-    const scale =
-        getScale();
-
-    return scale.grades
-        .filter(item => item.grade !== "F")
-        .map(item => {
-
-            const selectedText =
-                item.grade === selected
-                ? "selected"
-                : "";
-
-            return `
-                <option
-                    value="${item.grade}"
-                    ${selectedText}>
-                    ${item.grade} (${item.point.toFixed(2)})
-                </option>
-            `;
-
-        })
-        .join("") +
-
-        `
-        <option
-            value="F"
-            ${selected === "F" ? "selected" : ""}>
-            F (0.00)
-        </option>
-        `;
-}
-
-
-/* =========================================================
-   ADD COURSE
-   ========================================================= */
-
-function addCourse(){
-
-    const body =
-        document.getElementById("courseBody");
-
-    const row =
-        document.createElement("tr");
-
-    row.innerHTML = `
-
-        <td>
-            <input
-                type="text"
-                class="course-name"
-                placeholder="Course name">
-        </td>
-
-        <td>
-            <input
-                type="number"
-                class="course-credit"
-                min="0.5"
-                step="0.5"
-                value="3">
-        </td>
-
-        <td>
-            <select
-                class="course-grade"
-                onchange="updateCoursePoint(this)">
-                ${gradeOptions("A+")}
-            </select>
-        </td>
-
-        <td class="course-point">
-            4.00
-        </td>
-
-        <td>
-            <button
-                class="btn-danger"
-                onclick="removeCourse(this)">
-                Remove
-            </button>
-        </td>
-
-    `;
-
-    body.appendChild(row);
-
-    updateAllCoursePoints();
-}
-
-
-/* =========================================================
-   REMOVE COURSE
-   ========================================================= */
-
-function removeCourse(button){
-
-    button
-        .closest("tr")
-        .remove();
-
-    calculateCGPA();
-}
-
-
-/* =========================================================
-   UPDATE COURSE POINT
-   ========================================================= */
-
-function updateCoursePoint(select){
-
-    const row =
-        select.closest("tr");
-
-    const grade =
-        select.value;
-
-    const scale =
-        getScale();
-
-    const item =
-        scale.grades.find(
-            x => x.grade === grade
-        );
-
-    const point =
-        item ? item.point : 0;
-
-    row.querySelector(".course-point")
-        .textContent =
-        point.toFixed(2);
-}
-
-
-/* =========================================================
-   UPDATE ALL POINTS
-   ========================================================= */
-
-function updateAllCoursePoints(){
-
-    document
-        .querySelectorAll(".course-grade")
-        .forEach(select => {
-
-            const current =
-                select.value;
-
-            select.innerHTML =
-                gradeOptions(current);
-
-            updateCoursePoint(select);
-
-        });
-}
-
-
-/* =========================================================
-   CALCULATE CGPA
-   ========================================================= */
-
-function calculateCGPA(){
-
-    const previousCGPA =
-        parseFloat(
-            document
-            .getElementById("previousCGPA")
-            .value
-        ) || 0;
-
-    const completedCredits =
-        parseFloat(
-            document
-            .getElementById("completedCredits")
-            .value
-        ) || 0;
-
-    if(previousCGPA < 0 || previousCGPA > 4){
-
-        alert(
-            "Previous CGPA must be between 0 and 4."
-        );
-
-        return;
-    }
-
-    const rows =
-        document.querySelectorAll(
-            "#courseBody tr"
-        );
-
-    let currentQualityPoints = 0;
-
-    let currentCredits = 0;
-
-    rows.forEach(row => {
-
-        const credit =
-            parseFloat(
-                row
-                .querySelector(".course-credit")
-                .value
-            );
-
-        const grade =
-            row
-            .querySelector(".course-grade")
-            .value;
-
-        if(!credit || credit <= 0){
-            return;
-        }
-
-        const scale =
-            getScale();
-
-        const item =
-            scale.grades.find(
-                x => x.grade === grade
-            );
-
-        const point =
-            item ? item.point : 0;
-
-        currentQualityPoints +=
-            credit * point;
-
-        currentCredits += credit;
-
-    });
-
-    const totalCredits =
-        completedCredits + currentCredits;
-
-    if(totalCredits <= 0){
-
-        document
-            .getElementById("cgpaResult")
-            .textContent = "0.00";
-
-        document
-            .getElementById("cgpaGrade")
-            .textContent = "-";
-
-        return;
-    }
-
-    const totalQualityPoints =
-        previousCGPA * completedCredits
-        + currentQualityPoints;
-
-    let cgpa =
-        totalQualityPoints /
-        totalCredits;
-
-    if(cgpa > 4){
-        cgpa = 4;
-    }
-
-    if(cgpa < 0){
-        cgpa = 0;
-    }
-
-    cgpa =
-        Math.round(cgpa * 100) / 100;
-
-    document
-        .getElementById("cgpaResult")
-        .textContent =
-        cgpa.toFixed(2);
-
-    document
-        .getElementById("cgpaGrade")
-        .textContent =
-        getCGPALabel(cgpa);
-}
-
-
-/* =========================================================
-   CGPA LABEL
-   ========================================================= */
-
-function getCGPALabel(cgpa){
-
-    if(cgpa >= 4.00)
-        return "Excellent";
-
-    if(cgpa >= 3.75)
-        return "Very Good";
-
-    if(cgpa >= 3.50)
-        return "Good";
-
-    if(cgpa >= 3.00)
-        return "Satisfactory";
-
-    if(cgpa >= 2.50)
-        return "Average";
-
-    if(cgpa >= 2.00)
-        return "Pass";
-
-    return "Needs Improvement";
-}
-
-
-/* =========================================================
-   TARGET CGPA
-   ========================================================= */
-
-function calculateTarget(){
-
-    const currentCGPA =
-        parseFloat(
-            document
-            .getElementById("targetCurrentCGPA")
-            .value
-        );
-
-    const completedCredits =
-        parseFloat(
-            document
-            .getElementById("targetCompletedCredits")
-            .value
-        );
-
-    const targetCGPA =
-        parseFloat(
-            document
-            .getElementById("targetCGPA")
-            .value
-        );
-
-    const futureCredits =
-        parseFloat(
-            document
-            .getElementById("futureCredits")
-            .value
-        );
-
-    const result =
-        document.getElementById("targetResult");
-
-    if(
-        isNaN(currentCGPA) ||
-        isNaN(completedCredits) ||
-        isNaN(targetCGPA) ||
-        isNaN(futureCredits)
-    ){
-
-        result.innerHTML =
-        "Please enter all values.";
-
-        return;
-    }
-
-    if(
-        currentCGPA < 0 ||
-        currentCGPA > 4 ||
-        targetCGPA < 0 ||
-        targetCGPA > 4 ||
-        completedCredits < 0 ||
-        futureCredits <= 0
-    ){
-
-        result.innerHTML =
-        "Please enter valid values.";
-
-        return;
-    }
-
-    const requiredGPA =
-        (
-            targetCGPA *
-            (completedCredits + futureCredits)
-            -
-            currentCGPA *
-            completedCredits
-        )
-        /
-        futureCredits;
-
-    if(requiredGPA > 4){
-
-        result.innerHTML =
-        "<b>Target not mathematically possible.</b><br>" +
-        "Required future GPA: " +
-        requiredGPA.toFixed(2) +
-        "<br><br>" +
-        "Maximum GPA is 4.00.";
-
-        return;
-    }
-
-    if(requiredGPA <= 0){
-
-        result.innerHTML =
-        "<b>Target already achievable.</b><br>" +
-        "Required future GPA: " +
-        requiredGPA.toFixed(2);
-
-        return;
-    }
-
-    result.innerHTML =
-    "<b>Required Future GPA:</b> " +
-    requiredGPA.toFixed(2) +
-    "<br><br>" +
-    "You need approximately " +
-    requiredGPA.toFixed(2) +
-    " GPA over the next " +
-    futureCredits +
-    " credits to reach " +
-    targetCGPA.toFixed(2) +
-    " CGPA.";
-}
-
-
-/* =========================================================
-   INITIAL LOAD
-   ========================================================= */
-
-document.addEventListener(
-    "DOMContentLoaded",
-    function(){
-
-        loadUniversities();
-
-        addCourse();
-
-        addCourse();
-
-        addCourse();
-
-        document.getElementById(
-            "previousCGPA"
-        ).value = "";
-
-        document.getElementById(
-            "completedCredits"
-        ).value = "";
-
-    }
-);
+showUniversities("public");
 
 </script>
 
