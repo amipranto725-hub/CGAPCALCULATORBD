@@ -1,4 +1,1081 @@
-<nav>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CGPA Calculator BD - Bangladesh University CGPA Calculator</title>
+
+<meta name="description"
+content="CGPA Calculator BD for Bangladesh public and private university students. Calculate CGPA, convert marks to grade and find your target CGPA.">
+
+<meta name="robots" content="index, follow">
+
+<style>
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f4f7fc;
+  color:#172033;
+}
+
+
+/* ================= HEADER ================= */
+
+header{
+  background:#ffffff;
+  border-bottom:1px solid #e1e6ef;
+}
+
+.header-inner{
+  max-width:1200px;
+  margin:auto;
+  padding:32px 20px 28px;
+}
+
+.logo{
+  text-align:center;
+  margin-bottom:35px;
+}
+
+.logo a{
+  text-decoration:none;
+  color:#20479b;
+  font-size:40px;
+  font-weight:800;
+}
+
+.logo span{
+  color:#f28a25;
+}
+
+
+/* ================= NAVIGATION ================= */
+
+nav{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:20px 28px;
+}
+
+nav a{
+  color:#4c5870;
+  text-decoration:none;
+  font-size:18px;
+  font-weight:700;
+  transition:.2s;
+}
+
+nav a:hover{
+  color:#20479b;
+}
+
+
+/* ================= HOME ================= */
+
+.home{
+  max-width:1200px;
+  margin:auto;
+}
+
+
+/* ================= HERO ================= */
+
+.hero-card{
+
+  text-align:center;
+
+  background:linear-gradient(
+    135deg,
+    #edf4ff,
+    #fffaf2
+  );
+
+  padding:55px 25px 70px;
+
+}
+
+.hero-card h1{
+
+  color:#20479b;
+
+  font-size:62px;
+
+  line-height:1.15;
+
+  margin-bottom:25px;
+
+}
+
+.hero-card p{
+
+  color:#5f6c83;
+
+  font-size:25px;
+
+  line-height:1.6;
+
+  max-width:800px;
+
+  margin:0 auto 42px;
+
+}
+
+
+/* ================= HERO BUTTONS ================= */
+
+.hero-buttons{
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:25px;
+
+  flex-wrap:wrap;
+
+}
+
+.hero-btn{
+
+  min-width:365px;
+
+  padding:22px 30px;
+
+  border-radius:18px;
+
+  text-decoration:none;
+
+  font-size:22px;
+
+  font-weight:800;
+
+  border:2px solid #20479b;
+
+  transition:.2s;
+
+}
+
+.hero-btn.primary{
+
+  background:#20479b;
+
+  color:white;
+
+}
+
+.hero-btn.secondary{
+
+  background:white;
+
+  color:#20479b;
+
+}
+
+.hero-btn:hover{
+
+  transform:translateY(-2px);
+
+}
+
+
+/* ================= UNIVERSITY SECTION ================= */
+
+.university-area{
+
+  background:#f4f7fc;
+
+  padding:70px 20px 80px;
+
+}
+
+.university-card{
+
+  max-width:1150px;
+
+  margin:auto;
+
+  background:white;
+
+  border-radius:28px;
+
+  padding:45px;
+
+  box-shadow:
+    0 8px 28px rgba(20,50,100,.07);
+
+  border:1px solid #e1e6ef;
+
+}
+
+
+/* ================= TITLE ================= */
+
+.university-title{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:18px;
+
+  margin-bottom:32px;
+
+}
+
+.number{
+
+  width:62px;
+
+  height:62px;
+
+  border-radius:18px;
+
+  background:#edf4ff;
+
+  color:#2864d5;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  font-size:30px;
+
+  font-weight:800;
+
+}
+
+.university-title h2{
+
+  color:#20479b;
+
+  font-size:34px;
+
+}
+
+
+/* ================= TABS ================= */
+
+.tabs{
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:18px;
+
+  margin-bottom:28px;
+
+}
+
+.tab{
+
+  height:65px;
+
+  border:2px solid #d8e0ed;
+
+  border-radius:17px;
+
+  background:white;
+
+  color:#66758d;
+
+  font-size:21px;
+
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:.2s;
+
+}
+
+.tab.active{
+
+  background:#20479b;
+
+  border-color:#20479b;
+
+  color:white;
+
+}
+
+
+/* ================= SEARCH ================= */
+
+.search-title{
+
+  font-size:20px;
+
+  font-weight:700;
+
+  color:#35435d;
+
+  margin-bottom:10px;
+
+}
+
+.search{
+
+  width:100%;
+
+  height:62px;
+
+  border:2px solid #dce3ed;
+
+  border-radius:15px;
+
+  padding:0 20px;
+
+  font-size:18px;
+
+  outline:none;
+
+  color:#172033;
+
+  background:white;
+
+}
+
+.search:focus{
+
+  border-color:#2864d5;
+
+}
+
+.search::placeholder{
+
+  color:#a4acb9;
+
+}
+
+
+/* ================= UNIVERSITY LIST ================= */
+
+.university-list{
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:13px;
+
+  margin-top:20px;
+
+}
+
+.university-item{
+
+  background:#f8faff;
+
+  border:1px solid #e1e7f0;
+
+  border-radius:13px;
+
+  padding:16px;
+
+  color:#35435d;
+
+  font-size:16px;
+
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:.2s;
+
+}
+
+.university-item:hover{
+
+  background:#edf4ff;
+
+  border-color:#2864d5;
+
+  color:#2864d5;
+
+  transform:translateY(-1px);
+
+}
+
+.no-result{
+
+  display:none;
+
+  text-align:center;
+
+  padding:25px;
+
+  color:#66758d;
+
+  font-size:17px;
+
+}
+
+
+/* ================= TOOLS ================= */
+
+.tools{
+
+  max-width:1150px;
+
+  margin:auto;
+
+  padding:0 20px 75px;
+
+}
+
+.tools-title{
+
+  text-align:center;
+
+  color:#20479b;
+
+  font-size:34px;
+
+  margin-bottom:30px;
+
+}
+
+.tool-grid{
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:20px;
+
+}
+
+.tool-card{
+
+  background:white;
+
+  border:1px solid #e3e8f1;
+
+  border-radius:20px;
+
+  padding:30px 22px;
+
+  text-align:center;
+
+  text-decoration:none;
+
+  color:inherit;
+
+  transition:.2s;
+
+}
+
+.tool-card:hover{
+
+  transform:translateY(-4px);
+
+  box-shadow:
+    0 10px 25px rgba(20,50,100,.09);
+
+  border-color:#2864d5;
+
+}
+
+.tool-icon{
+
+  font-size:38px;
+
+  margin-bottom:14px;
+
+}
+
+.tool-card h3{
+
+  color:#20499b;
+
+  font-size:21px;
+
+  margin-bottom:9px;
+
+}
+
+.tool-card p{
+
+  color:#6b778c;
+
+  font-size:15px;
+
+  line-height:1.5;
+
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+
+  background:#173f91;
+
+  color:white;
+
+  text-align:center;
+
+  padding:35px 20px;
+
+}
+
+footer h2{
+
+  font-size:25px;
+
+  margin-bottom:9px;
+
+}
+
+footer p{
+
+  color:#dbe5ff;
+
+  font-size:14px;
+
+}
+
+.footer-links{
+
+  display:flex;
+
+  justify-content:center;
+
+  flex-wrap:wrap;
+
+  gap:18px;
+
+  margin-top:18px;
+
+}
+
+.footer-links a{
+
+  color:white;
+
+  text-decoration:none;
+
+  font-size:14px;
+
+  font-weight:600;
+
+}
+
+.footer-links a:hover{
+
+  text-decoration:underline;
+
+}
+
+.copyright{
+
+  margin-top:20px;
+
+  color:#c9d7fa;
+
+  font-size:12px;
+
+}
+
+
+/* ================= TABLET ================= */
+
+@media(max-width:768px){
+
+  .header-inner{
+
+    padding:28px 20px;
+
+  }
+
+  .logo a{
+
+    font-size:32px;
+
+  }
+
+  nav{
+
+    gap:18px 24px;
+
+  }
+
+  nav a{
+
+    font-size:16px;
+
+  }
+
+  .hero-card{
+
+    padding:55px 25px 65px;
+
+  }
+
+  .hero-card h1{
+
+    font-size:50px;
+
+  }
+
+  .hero-card p{
+
+    font-size:21px;
+
+  }
+
+  .hero-btn{
+
+    min-width:300px;
+
+  }
+
+  .university-card{
+
+    padding:32px 25px;
+
+  }
+
+  .university-list{
+
+    grid-template-columns:1fr;
+
+  }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:500px){
+
+  .header-inner{
+
+    padding:25px 15px 24px;
+
+  }
+
+  .logo{
+
+    margin-bottom:28px;
+
+  }
+
+  .logo a{
+
+    font-size:29px;
+
+  }
+
+  nav{
+
+    gap:18px 22px;
+
+  }
+
+  nav a{
+
+    font-size:15px;
+
+  }
+
+  .hero-card{
+
+    padding:55px 18px 58px;
+
+  }
+
+  .hero-card h1{
+
+    font-size:42px;
+
+  }
+
+  .hero-card p{
+
+    font-size:19px;
+
+    line-height:1.65;
+
+    margin-bottom:32px;
+
+  }
+
+  .hero-buttons{
+
+    gap:15px;
+
+  }
+
+  .hero-btn{
+
+    min-width:100%;
+
+    font-size:19px;
+
+    padding:20px;
+
+  }
+
+  .university-area{
+
+    padding:45px 15px 60px;
+
+  }
+
+  .university-card{
+
+    border-radius:22px;
+
+    padding:28px 18px;
+
+  }
+
+  .university-title{
+
+    gap:14px;
+
+  }
+
+  .number{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:16px;
+
+    font-size:25px;
+
+  }
+
+  .university-title h2{
+
+    font-size:25px;
+
+  }
+
+  .tabs{
+
+    gap:10px;
+
+  }
+
+  .tab{
+
+    height:58px;
+
+    font-size:16px;
+
+  }
+
+  .search{
+
+    height:57px;
+
+    font-size:16px;
+
+  }
+
+  .tool-grid{
+
+    grid-template-columns:1fr;
+
+  }
+
+  .tools{
+
+    padding:0 15px 55px;
+
+  }
+
+  .tools-title{
+
+    font-size:29px;
+
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<div class="header-inner">
+
+  <div class="logo">
+
+    <a href="index.html">
+      CGPA Calculator <span>BD</span>
+    </a>
+
+  </div>
+
+
+  <nav>
+
+    <a href="index.html">
+      Home
+    </a>
+
+    <a href="tools/cgpa-calculator.html">
+      CGPA Calculator
+    </a>
+
+    <a href="tools/marks-to-cgpa.html">
+      Marks → Grade
+    </a>
+
+    <a href="tools/target-cgpa.html">
+      Target CGPA
+    </a>
+
+    <a href="about.html">
+      About
+    </a>
+
+    <a href="contact.html">
+      Contact
+    </a>
+
+    <a href="privacy.html">
+      Privacy
+    </a>
+
+  </nav>
+
+</div>
+
+</header>
+
+
+<!-- ================= HOME ================= -->
+
+<main>
+
+
+<section class="home">
+
+
+<!-- HERO -->
+
+<div class="hero-card">
+
+  <h1>
+    CGPA Calculator
+  </h1>
+
+  <p>
+    Calculate your CGPA using your
+    university's grading scale.
+  </p>
+
+
+  <div class="hero-buttons">
+
+    <a
+      href="#university"
+      class="hero-btn primary">
+
+      Calculate CGPA
+
+    </a>
+
+
+    <a
+      href="tools/target-cgpa.html"
+      class="hero-btn secondary">
+
+      Target CGPA
+
+    </a>
+
+  </div>
+
+</div>
+
+
+<!-- ================= UNIVERSITY ================= -->
+
+<section
+  class="university-area"
+  id="university">
+
+<div class="university-card">
+
+
+  <div class="university-title">
+
+    <div class="number">
+      1
+    </div>
+
+    <h2>
+      Select Your University
+    </h2>
+
+  </div>
+
+
+  <!-- TABS -->
+
+  <div class="tabs">
+
+    <button
+      id="publicBtn"
+      class="tab active"
+      onclick="showUniversities('public')">
+
+      Public
+
+    </button>
+
+
+    <button
+      id="privateBtn"
+      class="tab"
+      onclick="showUniversities('private')">
+
+      Private
+
+    </button>
+
+  </div>
+
+
+  <!-- SEARCH -->
+
+  <div class="search-title">
+    Search University
+  </div>
+
+
+  <input
+    id="universitySearch"
+    class="search"
+    type="text"
+    placeholder="Search university..."
+    oninput="searchUniversity()"
+  >
+
+
+  <!-- UNIVERSITY LIST -->
+
+  <div
+    id="universityList"
+    class="university-list">
+  </div>
+
+
+  <div
+    id="noResult"
+    class="no-result">
+
+    No university found.
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= TOOLS ================= -->
+
+<section class="tools">
+
+<h2 class="tools-title">
+  Academic Tools
+</h2>
+
+
+<div class="tool-grid">
+
+
+<a
+  href="tools/target-cgpa.html"
+  class="tool-card">
+
+  <div class="tool-icon">
+    🎯
+  </div>
+
+  <h3>
+    Target CGPA
+  </h3>
+
+  <p>
+    Find what result you need
+    to reach your target CGPA.
+  </p>
+
+</a>
+
+
+<a
+  href="tools/marks-to-cgpa.html"
+  class="tool-card">
+
+  <div class="tool-icon">
+    📊
+  </div>
+
+  <h3>
+    Marks → Grade
+  </h3>
+
+  <p>
+    Convert your marks into
+    grade and grade point.
+  </p>
+
+</a>
+
+
+</div>
+
+</section>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<h2>
+  CGPA Calculator BD
+</h2>
+
+<p>
+  Free CGPA calculation tools
+  for Bangladeshi university students.
+</p>
+
+
+<div class="footer-links">
 
   <a href="index.html">
     Home
@@ -28,4 +1105,346 @@
     Privacy
   </a>
 
-</nav>
+</div>
+
+
+<div class="copyright">
+  © 2026 CGPA Calculator BD. All rights reserved.
+</div>
+
+</footer>
+
+
+<script>
+
+
+/* ================= PUBLIC UNIVERSITIES ================= */
+
+const publicUniversities = [
+
+  "University of Dhaka",
+
+  "Bangladesh University of Engineering and Technology (BUET)",
+
+  "University of Chittagong",
+
+  "University of Rajshahi",
+
+  "Jahangirnagar University",
+
+  "Khulna University",
+
+  "Shahjalal University of Science and Technology (SUST)",
+
+  "Bangladesh Agricultural University",
+
+  "Jagannath University",
+
+  "Comilla University",
+
+  "Islamic University, Bangladesh",
+
+  "Bangladesh University of Professionals (BUP)",
+
+  "University of Barishal",
+
+  "Begum Rokeya University",
+
+  "Chittagong University of Engineering and Technology (CUET)",
+
+  "Khulna University of Engineering and Technology (KUET)",
+
+  "Rajshahi University of Engineering and Technology (RUET)",
+
+  "Dhaka University of Engineering and Technology (DUET)",
+
+  "Mawlana Bhashani Science and Technology University",
+
+  "Noakhali Science and Technology University",
+
+  "Patuakhali Science and Technology University",
+
+  "Hajee Mohammad Danesh Science and Technology University",
+
+  "Jashore University of Science and Technology",
+
+  "Pabna University of Science and Technology",
+
+  "Bangladesh University of Textiles",
+
+  "Sher-e-Bangla Agricultural University"
+
+];
+
+
+/* ================= PRIVATE UNIVERSITIES ================= */
+
+const privateUniversities = [
+
+  "North South University (NSU)",
+
+  "BRAC University",
+
+  "East West University (EWU)",
+
+  "American International University-Bangladesh (AIUB)",
+
+  "United International University (UIU)",
+
+  "Daffodil International University (DIU)",
+
+  "Independent University, Bangladesh (IUB)",
+
+  "Ahsanullah University of Science and Technology (AUST)",
+
+  "University of Asia Pacific (UAP)",
+
+  "Stamford University Bangladesh",
+
+  "University of Liberal Arts Bangladesh (ULAB)",
+
+  "Green University of Bangladesh",
+
+  "Southeast University",
+
+  "International University of Business Agriculture and Technology (IUBAT)",
+
+  "Eastern University",
+
+  "Primeasia University",
+
+  "City University",
+
+  "World University of Bangladesh",
+
+  "University of Information Technology and Sciences (UITS)",
+
+  "Leading University",
+
+  "Metropolitan University",
+
+  "Bangladesh University",
+
+  "Manarat International University",
+
+  "Northern University Bangladesh",
+
+  "Premier University",
+
+  "Southern University Bangladesh",
+
+  "Asian University of Bangladesh",
+
+  "University of South Asia",
+
+  "ASA University Bangladesh"
+
+];
+
+
+let currentType = "public";
+
+
+/* ================= SHOW UNIVERSITIES ================= */
+
+function showUniversities(type){
+
+  currentType = type;
+
+
+  const publicBtn =
+    document.getElementById("publicBtn");
+
+  const privateBtn =
+    document.getElementById("privateBtn");
+
+
+  if(type === "public"){
+
+    publicBtn.classList.add("active");
+
+    privateBtn.classList.remove("active");
+
+  }
+
+  else{
+
+    privateBtn.classList.add("active");
+
+    publicBtn.classList.remove("active");
+
+  }
+
+
+  document.getElementById(
+    "universitySearch"
+  ).value = "";
+
+
+  renderUniversities();
+
+}
+
+
+/* ================= RENDER ================= */
+
+function renderUniversities(){
+
+  const list =
+    document.getElementById(
+      "universityList"
+    );
+
+  const noResult =
+    document.getElementById(
+      "noResult"
+    );
+
+
+  const data =
+    currentType === "public"
+      ? publicUniversities
+      : privateUniversities;
+
+
+  list.innerHTML = "";
+
+  noResult.style.display = "none";
+
+
+  data.forEach(function(university){
+
+    const item =
+      document.createElement("div");
+
+
+    item.className =
+      "university-item";
+
+
+    item.textContent =
+      university;
+
+
+    item.onclick = function(){
+
+      localStorage.setItem(
+        "selectedUniversity",
+        university
+      );
+
+
+      window.location.href =
+        "tools/cgpa-calculator.html";
+
+    };
+
+
+    list.appendChild(item);
+
+  });
+
+}
+
+
+/* ================= SEARCH ================= */
+
+function searchUniversity(){
+
+  const search =
+    document
+      .getElementById(
+        "universitySearch"
+      )
+      .value
+      .toLowerCase()
+      .trim();
+
+
+  const data =
+    currentType === "public"
+      ? publicUniversities
+      : privateUniversities;
+
+
+  const filtered =
+    data.filter(function(university){
+
+      return university
+        .toLowerCase()
+        .includes(search);
+
+    });
+
+
+  const list =
+    document.getElementById(
+      "universityList"
+    );
+
+  const noResult =
+    document.getElementById(
+      "noResult"
+    );
+
+
+  list.innerHTML = "";
+
+
+  if(filtered.length === 0){
+
+    noResult.style.display =
+      "block";
+
+    return;
+
+  }
+
+
+  noResult.style.display =
+    "none";
+
+
+  filtered.forEach(function(university){
+
+    const item =
+      document.createElement("div");
+
+
+    item.className =
+      "university-item";
+
+
+    item.textContent =
+      university;
+
+
+    item.onclick = function(){
+
+      localStorage.setItem(
+        "selectedUniversity",
+        university
+      );
+
+
+      window.location.href =
+        "tools/cgpa-calculator.html";
+
+    };
+
+
+    list.appendChild(item);
+
+  });
+
+}
+
+
+/* ================= START ================= */
+
+showUniversities("public");
+
+</script>
+
+</body>
+</html>
