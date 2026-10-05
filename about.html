@@ -13,7 +13,7 @@
 
   <meta
     name="description"
-    content="Free CGPA Calculator for university students in Bangladesh. Calculate semester GPA and cumulative CGPA using your university grading scale."
+    content="Free CGPA Calculator for university students in Bangladesh. Calculate your CGPA using your university grading scale."
   >
 
   <meta
@@ -32,6 +32,7 @@
   >
 
   <!-- Open Graph -->
+
   <meta
     property="og:title"
     content="CGPA Calculator Bangladesh – Free University CGPA Calculator"
@@ -39,7 +40,7 @@
 
   <meta
     property="og:description"
-    content="Calculate your semester GPA and cumulative CGPA with a Bangladesh-focused university CGPA calculator."
+    content="Calculate your CGPA using your university grading scale."
   >
 
   <meta
@@ -58,6 +59,7 @@
   >
 
   <!-- Twitter -->
+
   <meta
     name="twitter:card"
     content="summary"
@@ -74,6 +76,7 @@
   >
 
   <!-- JSON-LD -->
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -90,6 +93,7 @@
     }
   }
   </script>
+
 
   <style>
 
@@ -129,7 +133,10 @@
       margin: auto;
     }
 
-    /* HEADER */
+
+    /* =========================
+       HEADER
+    ========================= */
 
     header {
       background: #ffffff;
@@ -175,7 +182,10 @@
       color: #173b8f;
     }
 
-    /* HERO */
+
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
       padding: 70px 0 55px;
@@ -247,7 +257,10 @@
       border-color: #173b8f;
     }
 
-    /* MAIN */
+
+    /* =========================
+       MAIN
+    ========================= */
 
     main {
       padding: 45px 0 70px;
@@ -277,7 +290,10 @@
       font-size: 20px;
     }
 
-    /* UNIVERSITY */
+
+    /* =========================
+       UNIVERSITY
+    ========================= */
 
     .university-tabs {
       display: flex;
@@ -318,7 +334,8 @@
     select:focus,
     input:focus {
       border-color: #173b8f;
-      box-shadow: 0 0 0 3px rgba(23, 59, 143, 0.08);
+      box-shadow:
+        0 0 0 3px rgba(23, 59, 143, 0.08);
     }
 
     .university-select {
@@ -341,7 +358,10 @@
       font-size: 14px;
     }
 
-    /* FORM */
+
+    /* =========================
+       PREVIOUS RECORD
+    ========================= */
 
     .form-grid {
       display: grid;
@@ -372,7 +392,10 @@
       color: #7a8292;
     }
 
-    /* COURSE TABLE */
+
+    /* =========================
+       COURSE TABLE
+    ========================= */
 
     .course-table-wrapper {
       width: 100%;
@@ -419,7 +442,7 @@
     }
 
     .course-table .course-name {
-      min-width: 180px;
+      min-width: 190px;
     }
 
     .course-table .course-credit {
@@ -427,13 +450,11 @@
     }
 
     .course-table .course-grade {
-      min-width: 120px;
+      min-width: 130px;
     }
 
     .course-table .grade-point {
-      min-width: 100px;
-      background: #f8f9fc;
-      font-weight: 700;
+      min-width: 130px;
     }
 
     .remove-btn {
@@ -498,7 +519,10 @@
       background: #db7717;
     }
 
-    /* RESULT */
+
+    /* =========================
+       RESULT
+    ========================= */
 
     .result-box {
       margin-top: 20px;
@@ -528,7 +552,10 @@
       font-size: 14px;
     }
 
-    /* GRADING SCALE */
+
+    /* =========================
+       GRADING SCALE
+    ========================= */
 
     .scale-table-wrapper {
       overflow-x: auto;
@@ -553,7 +580,10 @@
       color: #354057;
     }
 
-    /* MORE TOOLS */
+
+    /* =========================
+       MORE TOOLS
+    ========================= */
 
     .tools-grid {
       display: grid;
@@ -591,7 +621,10 @@
       font-size: 13px;
     }
 
-    /* HOW IT WORKS */
+
+    /* =========================
+       HOW IT WORKS
+    ========================= */
 
     .steps {
       display: grid;
@@ -629,7 +662,10 @@
       color: #687185;
     }
 
-    /* FOOTER */
+
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
       background: #111b31;
@@ -666,7 +702,10 @@
       color: #ffffff;
     }
 
-    /* MOBILE */
+
+    /* =========================
+       MOBILE
+    ========================= */
 
     @media (max-width: 850px) {
 
@@ -701,6 +740,7 @@
 
     }
 
+
     @media (max-width: 550px) {
 
       .card {
@@ -729,9 +769,13 @@
 
 </head>
 
+
 <body>
 
-  <!-- HEADER -->
+
+  <!-- =========================
+       HEADER
+  ========================= -->
 
   <header>
 
@@ -781,7 +825,9 @@
   </header>
 
 
-  <!-- HERO -->
+  <!-- =========================
+       HERO
+  ========================= -->
 
   <section class="hero">
 
@@ -792,8 +838,7 @@
       </h1>
 
       <p>
-        Calculate your semester GPA and cumulative CGPA
-        using your university's grading scale.
+        Calculate your CGPA using your university's grading scale.
       </p>
 
       <div class="hero-buttons">
@@ -819,12 +864,15 @@
   </section>
 
 
-  <!-- MAIN -->
+  <!-- =========================
+       MAIN
+  ========================= -->
 
   <main
     id="calculator"
     class="container"
   >
+
 
     <!-- UNIVERSITY -->
 
@@ -856,6 +904,7 @@
 
       </div>
 
+
       <div class="search-box">
 
         <input
@@ -867,11 +916,13 @@
 
       </div>
 
+
       <select
         id="universitySelect"
         class="university-select"
         onchange="universityChanged()"
       ></select>
+
 
       <div
         id="universityInfo"
@@ -883,7 +934,7 @@
     </div>
 
 
-    <!-- PREVIOUS RECORD -->
+    <!-- PREVIOUS ACADEMIC RECORD -->
 
     <div class="card">
 
@@ -913,6 +964,7 @@
           </div>
 
         </div>
+
 
         <div class="form-group">
 
@@ -947,6 +999,7 @@
         3. Current Semester Courses
       </h3>
 
+
       <div class="course-table-wrapper">
 
         <table class="course-table">
@@ -979,11 +1032,13 @@
 
           </thead>
 
+
           <tbody id="courseBody"></tbody>
 
         </table>
 
       </div>
+
 
       <div class="course-actions">
 
@@ -995,6 +1050,7 @@
           + Add Course
         </button>
 
+
         <button
           type="button"
           class="small-btn secondary"
@@ -1005,6 +1061,7 @@
 
       </div>
 
+
       <button
         type="button"
         class="calculate-btn"
@@ -1012,6 +1069,7 @@
       >
         Calculate CGPA
       </button>
+
 
       <div
         id="resultBox"
@@ -1022,12 +1080,14 @@
           Your CGPA
         </div>
 
+
         <div
           id="resultValue"
           class="result-value"
         >
           0.00
         </div>
+
 
         <div
           id="resultDetails"
@@ -1047,6 +1107,7 @@
         Grading Scale
       </h3>
 
+
       <div class="scale-table-wrapper">
 
         <table class="scale-table">
@@ -1054,12 +1115,23 @@
           <thead>
 
             <tr>
-              <th>Grade</th>
-              <th>Marks</th>
-              <th>Grade Point</th>
+
+              <th>
+                Grade
+              </th>
+
+              <th>
+                Marks
+              </th>
+
+              <th>
+                Grade Point
+              </th>
+
             </tr>
 
           </thead>
+
 
           <tbody id="gradingScaleBody"></tbody>
 
@@ -1078,7 +1150,9 @@
         More Calculators
       </h3>
 
+
       <div class="tools-grid">
+
 
         <a
           href="tools/cgpa-calculator.html"
@@ -1090,7 +1164,7 @@
           </h3>
 
           <p>
-            Calculate your semester GPA and overall CGPA.
+            Calculate your CGPA using course credits and grades.
           </p>
 
           <span class="tool-link">
@@ -1130,7 +1204,7 @@
           </h3>
 
           <p>
-            Find the GPA you need to reach your target CGPA.
+            Find the CGPA you need to reach your target.
           </p>
 
           <span class="tool-link">
@@ -1152,7 +1226,9 @@
         How It Works
       </h3>
 
+
       <div class="steps">
+
 
         <div class="step">
 
@@ -1183,8 +1259,8 @@
           </h3>
 
           <p>
-            Add your course names, credits and grades
-            for the current semester.
+            Add your course names, credits, grades and
+            grade points.
           </p>
 
         </div>
@@ -1201,7 +1277,7 @@
           </h3>
 
           <p>
-            Get your semester GPA and updated cumulative CGPA.
+            Get your updated cumulative CGPA instantly.
           </p>
 
         </div>
@@ -1213,11 +1289,14 @@
   </main>
 
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================= -->
 
   <footer>
 
     <div class="container footer-content">
+
 
       <div>
 
@@ -1230,6 +1309,7 @@
         </div>
 
       </div>
+
 
       <div class="footer-links">
 
@@ -1257,6 +1337,7 @@
 
 
   <script>
+
 
     /* =========================
        UNIVERSITY DATA
@@ -1381,6 +1462,7 @@
         }
 
       ],
+
 
       private: [
 
@@ -1559,6 +1641,7 @@
 
       ],
 
+
       aiub: [
 
         {
@@ -1625,6 +1708,7 @@
         }
 
       ],
+
 
       nsu: [
 
@@ -1706,6 +1790,7 @@
         }
 
       ],
+
 
       brac: [
 
@@ -1802,6 +1887,7 @@
 
       ],
 
+
       uiu: [
 
         {
@@ -1882,6 +1968,7 @@
         }
 
       ],
+
 
       iub: [
 
@@ -1964,6 +2051,7 @@
 
       ],
 
+
       ulab: [
 
         {
@@ -2042,12 +2130,13 @@
 
 
     /* =========================
-       GLOBAL STATE
+       STATE
     ========================= */
 
     let currentUniversityType = "public";
 
-    let selectedUniversity = universities.public[0];
+    let selectedUniversity =
+      universities.public[0];
 
 
     /* =========================
@@ -2092,25 +2181,32 @@
 
       const search =
         document
-          .getElementById("universitySearch")
+          .getElementById(
+            "universitySearch"
+          )
           .value
           .toLowerCase()
           .trim();
 
       select.innerHTML = "";
 
+
       const list =
-        universities[currentUniversityType]
-          .filter(university =>
-            university.name
-              .toLowerCase()
-              .includes(search)
-          );
+        universities[
+          currentUniversityType
+        ].filter(university =>
+          university.name
+            .toLowerCase()
+            .includes(search)
+        );
+
 
       list.forEach(university => {
 
         const option =
-          document.createElement("option");
+          document.createElement(
+            "option"
+          );
 
         option.value =
           university.id;
@@ -2122,9 +2218,11 @@
 
       });
 
+
       if (list.length > 0) {
 
-        selectedUniversity = list[0];
+        selectedUniversity =
+          list[0];
 
         select.value =
           selectedUniversity.id;
@@ -2133,22 +2231,28 @@
 
         updateUniversityInfo();
 
+        updateAllGradeOptions();
+
       } else {
 
         selectedUniversity = null;
 
         const option =
-          document.createElement("option");
+          document.createElement(
+            "option"
+          );
+
+        option.value = "";
 
         option.textContent =
           "No university found";
 
-        option.value = "";
-
         select.appendChild(option);
 
         document
-          .getElementById("universityInfo")
+          .getElementById(
+            "universityInfo"
+          )
           .textContent =
           "No university matched your search.";
 
@@ -2174,11 +2278,15 @@
       const id =
         select.value;
 
-      const allUniversities =
-        [
-          ...universities.public,
-          ...universities.private
-        ];
+
+      const allUniversities = [
+
+        ...universities.public,
+
+        ...universities.private
+
+      ];
+
 
       selectedUniversity =
         allUniversities.find(
@@ -2186,24 +2294,12 @@
             university.id === id
         );
 
+
       renderGradingScale();
 
       updateUniversityInfo();
 
-      /*
-        Recalculate all existing course
-        grade points after changing university.
-      */
-
-      document
-        .querySelectorAll(".course-grade")
-        .forEach(selectElement => {
-
-          updateGradePoint(
-            selectElement
-          );
-
-        });
+      updateAllGradeOptions();
 
     }
 
@@ -2215,6 +2311,7 @@
           "universityInfo"
         );
 
+
       if (!selectedUniversity) {
 
         info.textContent =
@@ -2223,6 +2320,7 @@
         return;
 
       }
+
 
       info.textContent =
         selectedUniversity.name +
@@ -2248,33 +2346,10 @@
 
       }
 
+
       return gradingScales[
         selectedUniversity.scale
       ];
-
-    }
-
-
-    function getGradeFromPoint(point) {
-
-      return getCurrentScale().find(
-        item =>
-          Number(item.point) === Number(point)
-      );
-
-    }
-
-
-    function getGradeFromMarks(marks) {
-
-      const scale =
-        getCurrentScale();
-
-      return scale.find(
-        item =>
-          marks >= item.min &&
-          marks <= item.max
-      );
 
     }
 
@@ -2286,20 +2361,26 @@
           "gradingScaleBody"
         );
 
+
       body.innerHTML = "";
+
 
       const scale =
         getCurrentScale();
+
 
       scale.forEach(item => {
 
         const row =
           document.createElement("tr");
 
+
         row.innerHTML = `
 
           <td>
-            <strong>${item.grade}</strong>
+            <strong>
+              ${item.grade}
+            </strong>
           </td>
 
           <td>
@@ -2311,6 +2392,7 @@
           </td>
 
         `;
+
 
         body.appendChild(row);
 
@@ -2326,7 +2408,8 @@
     function addCourse(
       courseName = "",
       credit = "",
-      grade = ""
+      grade = "",
+      gradePoint = ""
     ) {
 
       const body =
@@ -2334,8 +2417,10 @@
           "courseBody"
         );
 
+
       const row =
         document.createElement("tr");
+
 
       row.innerHTML = `
 
@@ -2345,10 +2430,13 @@
             type="text"
             class="course-name"
             placeholder="Course name"
-            value="${escapeHtml(courseName)}"
+            value="${escapeHtml(
+              courseName
+            )}"
           >
 
         </td>
+
 
         <td>
 
@@ -2363,11 +2451,12 @@
 
         </td>
 
+
         <td>
 
           <select
             class="course-grade"
-            onchange="updateGradePoint(this)"
+            onchange="gradeChanged(this)"
           >
 
             <option value="">
@@ -2378,16 +2467,22 @@
 
         </td>
 
+
         <td>
 
-          <input
-            type="text"
+          <select
             class="grade-point"
-            readonly
-            placeholder="0.00"
+            onchange="gradePointChanged(this)"
           >
 
+            <option value="">
+              Select Point
+            </option>
+
+          </select>
+
         </td>
+
 
         <td>
 
@@ -2403,16 +2498,42 @@
 
       `;
 
+
       body.appendChild(row);
 
+
+      const gradeSelect =
+        row.querySelector(
+          ".course-grade"
+        );
+
+
+      const pointSelect =
+        row.querySelector(
+          ".grade-point"
+        );
+
+
       populateGradeOptions(
-        row.querySelector(".course-grade"),
+        gradeSelect,
         grade
       );
 
-      updateGradePoint(
-        row.querySelector(".course-grade")
+
+      populatePointOptions(
+        pointSelect,
+        gradePoint
       );
+
+
+      if (grade) {
+
+        setPointFromGrade(
+          row,
+          grade
+        );
+
+      }
 
     }
 
@@ -2422,19 +2543,21 @@
       selectedGrade = ""
     ) {
 
-      const currentValue =
-        selectedGrade || "";
-
       select.innerHTML = `
+
         <option value="">
           Select Grade
         </option>
+
       `;
+
 
       getCurrentScale().forEach(item => {
 
         const option =
-          document.createElement("option");
+          document.createElement(
+            "option"
+          );
 
         option.value =
           item.grade;
@@ -2442,13 +2565,81 @@
         option.textContent =
           item.grade;
 
+
         if (
-          item.grade === currentValue
+          item.grade ===
+          selectedGrade
         ) {
 
           option.selected = true;
 
         }
+
+
+        select.appendChild(option);
+
+      });
+
+    }
+
+
+    function populatePointOptions(
+      select,
+      selectedPoint = ""
+    ) {
+
+      select.innerHTML = `
+
+        <option value="">
+          Select Point
+        </option>
+
+      `;
+
+
+      const points = [];
+
+
+      getCurrentScale().forEach(item => {
+
+        const point =
+          Number(item.point)
+            .toFixed(2);
+
+
+        if (
+          !points.includes(point)
+        ) {
+
+          points.push(point);
+
+        }
+
+      });
+
+
+      points.forEach(point => {
+
+        const option =
+          document.createElement(
+            "option"
+          );
+
+        option.value = point;
+
+        option.textContent = point;
+
+
+        if (
+          point ===
+          Number(selectedPoint)
+            .toFixed(2)
+        ) {
+
+          option.selected = true;
+
+        }
+
 
         select.appendChild(option);
 
@@ -2460,53 +2651,150 @@
     function updateAllGradeOptions() {
 
       document
-        .querySelectorAll(".course-grade")
-        .forEach(select => {
+        .querySelectorAll(
+          "#courseBody tr"
+        )
+        .forEach(row => {
 
-          const oldValue =
-            select.value;
+          const gradeSelect =
+            row.querySelector(
+              ".course-grade"
+            );
+
+          const pointSelect =
+            row.querySelector(
+              ".grade-point"
+            );
+
+          const oldGrade =
+            gradeSelect.value;
+
+          const oldPoint =
+            pointSelect.value;
+
 
           populateGradeOptions(
-            select,
-            oldValue
+            gradeSelect,
+            oldGrade
           );
 
-          updateGradePoint(select);
+
+          populatePointOptions(
+            pointSelect,
+            oldPoint
+          );
+
+
+          if (gradeSelect.value) {
+
+            setPointFromGrade(
+              row,
+              gradeSelect.value
+            );
+
+          }
 
         });
 
     }
 
 
-    function updateGradePoint(select) {
+    function gradeChanged(select) {
 
       const row =
         select.closest("tr");
+
 
       if (!row) {
         return;
       }
 
-      const pointInput =
+
+      setPointFromGrade(
+        row,
+        select.value
+      );
+
+    }
+
+
+    function setPointFromGrade(
+      row,
+      grade
+    ) {
+
+      const pointSelect =
         row.querySelector(
           ".grade-point"
         );
 
-      const grade =
+
+      const gradeData =
         getCurrentScale().find(
           item =>
-            item.grade === select.value
+            item.grade === grade
         );
 
-      if (grade) {
 
-        pointInput.value =
-          Number(grade.point)
-            .toFixed(2);
+      if (!gradeData) {
 
-      } else {
+        pointSelect.value = "";
 
-        pointInput.value = "";
+        return;
+
+      }
+
+
+      const point =
+        Number(
+          gradeData.point
+        ).toFixed(2);
+
+
+      pointSelect.value =
+        point;
+
+    }
+
+
+    function gradePointChanged(select) {
+
+      const row =
+        select.closest("tr");
+
+
+      if (!row) {
+        return;
+      }
+
+
+      const gradeSelect =
+        row.querySelector(
+          ".course-grade"
+        );
+
+
+      const selectedPoint =
+        parseFloat(
+          select.value
+        );
+
+
+      const matchingGrade =
+        getCurrentScale().find(
+          item =>
+            Number(item.point) ===
+            selectedPoint
+        );
+
+
+      if (
+        matchingGrade &&
+        !gradeSelect.value
+      ) {
+
+        gradeSelect.value =
+          matchingGrade.grade;
 
       }
 
@@ -2517,6 +2805,7 @@
 
       const row =
         button.closest("tr");
+
 
       if (row) {
 
@@ -2534,23 +2823,37 @@
           "courseBody"
         );
 
+
       body.innerHTML = "";
 
+
       addCourse();
       addCourse();
       addCourse();
 
-      document
-        .getElementById("resultBox")
-        .style.display = "none";
 
       document
-        .getElementById("resultValue")
-        .textContent = "0.00";
+        .getElementById(
+          "resultBox"
+        )
+        .style.display =
+        "none";
+
 
       document
-        .getElementById("resultDetails")
-        .textContent = "";
+        .getElementById(
+          "resultValue"
+        )
+        .textContent =
+        "0.00";
+
+
+      document
+        .getElementById(
+          "resultDetails"
+        )
+        .textContent =
+        "";
 
     }
 
@@ -2566,6 +2869,7 @@
           "#courseBody tr"
         );
 
+
       let totalQualityPoints = 0;
 
       let totalCredits = 0;
@@ -2580,15 +2884,30 @@
             ".course-credit"
           );
 
+
         const gradeSelect =
           row.querySelector(
             ".course-grade"
           );
 
+
+        const pointSelect =
+          row.querySelector(
+            ".grade-point"
+          );
+
+
         const credit =
           parseFloat(
             creditInput.value
           );
+
+
+        const point =
+          parseFloat(
+            pointSelect.value
+          );
+
 
         const grade =
           getCurrentScale().find(
@@ -2597,16 +2916,21 @@
               gradeSelect.value
           );
 
+
         if (
           !isNaN(credit) &&
           credit > 0 &&
-          grade
+          grade &&
+          !isNaN(point)
         ) {
 
-          totalCredits += credit;
+          totalCredits +=
+            credit;
+
 
           totalQualityPoints +=
-            credit * grade.point;
+            credit * point;
+
 
           validCourses++;
 
@@ -2621,7 +2945,7 @@
       ) {
 
         alert(
-          "Please add at least one valid course with credit and grade."
+          "Please add at least one valid course with credit, grade and grade point."
         );
 
         return;
@@ -2629,7 +2953,7 @@
       }
 
 
-      const semesterGPA =
+      const currentCGPA =
         totalQualityPoints /
         totalCredits;
 
@@ -2651,13 +2975,11 @@
 
 
       let finalCGPA =
-        semesterGPA;
+        currentCGPA;
 
 
       let details =
-        "Semester GPA: " +
-        semesterGPA.toFixed(2) +
-        " • Current Credits: " +
+        "Current Credits: " +
         totalCredits.toFixed(1);
 
 
@@ -2673,6 +2995,7 @@
           previousCGPA *
           completedCredits;
 
+
         finalCGPA =
           (
             previousQualityPoints +
@@ -2683,10 +3006,9 @@
             totalCredits
           );
 
+
         details =
-          "Semester GPA: " +
-          semesterGPA.toFixed(2) +
-          " • Total Credits: " +
+          "Total Credits: " +
           (
             completedCredits +
             totalCredits
@@ -2696,25 +3018,33 @@
 
 
       document
-        .getElementById("resultValue")
+        .getElementById(
+          "resultValue"
+        )
         .textContent =
         finalCGPA.toFixed(2);
 
 
       document
-        .getElementById("resultDetails")
+        .getElementById(
+          "resultDetails"
+        )
         .textContent =
         details;
 
 
       document
-        .getElementById("resultBox")
+        .getElementById(
+          "resultBox"
+        )
         .style.display =
         "block";
 
 
       document
-        .getElementById("resultBox")
+        .getElementById(
+          "resultBox"
+        )
         .scrollIntoView({
           behavior: "smooth",
           block: "center"
@@ -2724,17 +3054,32 @@
 
 
     /* =========================
-       HTML ESCAPE
+       ESCAPE HTML
     ========================= */
 
     function escapeHtml(value) {
 
       return String(value)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
+        .replace(
+          /&/g,
+          "&amp;"
+        )
+        .replace(
+          /</g,
+          "&lt;"
+        )
+        .replace(
+          />/g,
+          "&gt;"
+        )
+        .replace(
+          /"/g,
+          "&quot;"
+        )
+        .replace(
+          /'/g,
+          "&#039;"
+        );
 
     }
 
