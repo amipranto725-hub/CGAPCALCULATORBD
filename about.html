@@ -2,166 +2,559 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>About Us - CGPA Calculator BD</title>
-  <meta name="description" content="Learn about CGPA Calculator BD, a free Bangladesh-focused CGPA, marks to grade, and target CGPA calculator.">
+  <title>About CGPA Calculator BD – Free University CGPA Calculator</title>
 
-  <link rel="canonical" href="https://amipranto725-hub.github.io/CGAPCALCULATORBD/about.html">
+  <meta
+    name="description"
+    content="Learn about CGPA Calculator BD, a free Bangladesh-focused GPA and CGPA calculator for university students."
+  >
+
+  <meta name="robots" content="index, follow">
+
+  <link
+    rel="canonical"
+    href="https://amipranto725-hub.github.io/CGAPCALCULATORBD/about.html"
+  >
+
+  <meta name="theme-color" content="#173b8f">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+
+  <meta
+    property="og:title"
+    content="About CGPA Calculator BD"
+  >
+
+  <meta
+    property="og:description"
+    content="Learn about CGPA Calculator BD and how it helps university students calculate GPA and CGPA."
+  >
+
+  <meta
+    property="og:url"
+    content="https://amipranto725-hub.github.io/CGAPCALCULATORBD/about.html"
+  >
+
+  <meta
+    property="og:site_name"
+    content="CGPA Calculator BD"
+  >
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+
+  <meta
+    name="twitter:title"
+    content="About CGPA Calculator BD"
+  >
+
+  <meta
+    name="twitter:description"
+    content="A free Bangladesh-focused GPA and CGPA calculator for university students."
+  >
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "About CGPA Calculator BD",
+    "url": "https://amipranto725-hub.github.io/CGAPCALCULATORBD/about.html",
+    "description": "Learn about CGPA Calculator BD, a free Bangladesh-focused academic calculator for university students.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "CGPA Calculator BD",
+      "url": "https://amipranto725-hub.github.io/CGAPCALCULATORBD/"
+    }
+  }
+  </script>
 
   <style>
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:Arial,sans-serif;
-      background:#f5f7fb;
-      color:#172033;
-      line-height:1.7;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
-    header{
-      background:#173b8f;
-      color:white;
-      padding:18px 20px;
+
+    html {
+      scroll-behavior: smooth;
     }
-    .nav{
-      max-width:1100px;
-      margin:auto;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:20px;
+
+    body {
+      font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+      background: #f5f7fb;
+      color: #172033;
+      line-height: 1.7;
     }
-    .logo{
-      color:white;
-      text-decoration:none;
-      font-size:22px;
-      font-weight:bold;
+
+    a {
+      color: inherit;
+      text-decoration: none;
     }
-    nav{
-      display:flex;
-      gap:18px;
-      flex-wrap:wrap;
+
+    /* ================= HEADER ================= */
+
+    header {
+      background: #173b8f;
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     }
-    nav a{
-      color:white;
-      text-decoration:none;
-      font-size:14px;
+
+    .nav-container {
+      max-width: 1180px;
+      margin: auto;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
     }
-    main{
-      max-width:900px;
-      margin:40px auto;
-      padding:0 20px;
+
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      white-space: nowrap;
     }
-    .hero{
-      background:white;
-      padding:35px;
-      border-radius:18px;
-      box-shadow:0 8px 25px rgba(0,0,0,.07);
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
     }
-    h1{margin-top:0;color:#173b8f}
-    h2{color:#173b8f;margin-top:30px}
-    footer{
-      margin-top:50px;
-      background:#101828;
-      color:#cbd5e1;
-      padding:30px 20px;
-      text-align:center;
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 600;
+      opacity: 0.95;
     }
-    footer a{
-      color:#fff;
-      text-decoration:none;
-      margin:0 8px;
+
+    .nav-links a:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+      background: linear-gradient(135deg, #173b8f, #2456c6);
+      color: #fff;
+      padding: 65px 20px;
+    }
+
+    .hero-container {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(34px, 6vw, 52px);
+      line-height: 1.15;
+      margin-bottom: 15px;
+      font-weight: 800;
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: auto;
+      font-size: 17px;
+      opacity: 0.95;
+    }
+
+    /* ================= MAIN ================= */
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 50px 20px;
+    }
+
+    .content-card {
+      background: #fff;
+      border: 1px solid #e5e9f2;
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 25px;
+      box-shadow: 0 5px 20px rgba(20, 35, 70, 0.05);
+    }
+
+    .content-card h2 {
+      color: #173b8f;
+      font-size: 26px;
+      margin-bottom: 15px;
+    }
+
+    .content-card h3 {
+      font-size: 20px;
+      margin-top: 25px;
+      margin-bottom: 10px;
+    }
+
+    .content-card p {
+      color: #475467;
+      margin-bottom: 15px;
+    }
+
+    .content-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ================= CTA ================= */
+
+    .cta {
+      background: #eef4ff;
+      border: 1px solid #d4e1ff;
+      border-radius: 16px;
+      padding: 28px;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .cta h2 {
+      color: #173b8f;
+      margin-bottom: 10px;
+    }
+
+    .cta p {
+      color: #475467;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #173b8f;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background: #123174;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      background: #101828;
+      color: #d0d5dd;
+      margin-top: 20px;
+    }
+
+    .footer-container {
+      max-width: 1050px;
+      margin: auto;
+      padding: 35px 20px;
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-bottom: 15px;
+    }
+
+    .footer-links a {
+      font-size: 14px;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+    }
+
+    .copyright {
+      font-size: 13px;
+      color: #98a2b3;
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media (max-width: 800px) {
+
+      .nav-container {
+        flex-direction: column;
+      }
+
+      .nav-links {
+        justify-content: center;
+        gap: 12px 16px;
+      }
+
+      .hero {
+        padding: 50px 18px;
+      }
+
+      .content-card {
+        padding: 24px;
+      }
+
+    }
+
+    @media (max-width: 520px) {
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .content-card h2 {
+        font-size: 23px;
+      }
+
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <div class="nav">
-    <a class="logo" href="index.html">CGPA Calculator BD</a>
+  <!-- ================= HEADER ================= -->
 
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="tools/cgpa-calculator.html">CGPA Calculator</a>
-      <a href="tools/marks-to-cgpa.html">Marks → Grade</a>
-      <a href="tools/target-cgpa.html">Target CGPA</a>
-      <a href="about.html">About</a>
-    </nav>
-  </div>
-</header>
+  <header>
 
-<main>
+    <div class="nav-container">
+
+      <a href="index.html" class="logo">
+        CGPA Calculator BD
+      </a>
+
+      <nav class="nav-links">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="tools/cgpa-calculator.html">
+          CGPA Calculator
+        </a>
+
+        <a href="tools/marks-to-cgpa.html">
+          Marks → Grade
+        </a>
+
+        <a href="tools/target-cgpa.html">
+          Target CGPA
+        </a>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+        <a href="privacy-policy.html">
+          Privacy
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- ================= HERO ================= -->
+
   <section class="hero">
 
-    <h1>About CGPA Calculator BD</h1>
+    <div class="hero-container">
 
-    <p>
-      CGPA Calculator BD is a free online educational tool designed to help
-      university students calculate CGPA, convert marks into grades, and
-      understand the CGPA they may need to achieve their academic targets.
-    </p>
+      <h1>
+        About CGPA Calculator BD
+      </h1>
 
-    <h2>What We Provide</h2>
+      <p>
+        A simple and free academic calculator designed
+        for university students in Bangladesh.
+      </p>
 
-    <p>
-      Our website provides simple and easy-to-use academic calculators,
-      including:
-    </p>
-
-    <ul>
-      <li>CGPA Calculator</li>
-      <li>Marks to Grade Calculator</li>
-      <li>Target CGPA Calculator</li>
-      <li>University-based grading information</li>
-      <li>Useful academic calculation tools</li>
-    </ul>
-
-    <h2>Our Goal</h2>
-
-    <p>
-      Our goal is to make academic calculations easier for students in
-      Bangladesh. Instead of calculating CGPA manually, students can use
-      simple online tools and get results quickly.
-    </p>
-
-    <h2>Accuracy</h2>
-
-    <p>
-      We aim to provide accurate calculations and useful grading information.
-      However, grading policies can change between universities and academic
-      periods. Students should always verify official grading policies with
-      their respective university when making important academic decisions.
-    </p>
-
-    <h2>Free Educational Resource</h2>
-
-    <p>
-      CGPA Calculator BD is intended as an educational and calculation
-      resource. The calculators are provided for convenience and should not
-      replace official university academic records or policies.
-    </p>
-
-    <h2>Contact</h2>
-
-    <p>
-      If you find an error, have a suggestion, or would like to report an
-      issue with the website, please use our Contact page.
-    </p>
+    </div>
 
   </section>
-</main>
 
-<footer>
-  <p>© 2026 CGPA Calculator BD. All rights reserved.</p>
 
-  <p>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="privacy-policy.html">Privacy Policy</a>
-    <a href="contact.html">Contact</a>
-  </p>
-</footer>
+  <!-- ================= CONTENT ================= -->
+
+  <main>
+
+    <section class="content-card">
+
+      <h2>
+        Free CGPA Calculator for Bangladesh
+      </h2>
+
+      <p>
+        CGPA Calculator BD is a free online GPA and CGPA
+        calculator for university students in Bangladesh.
+        Calculate semester GPA, cumulative CGPA, grade points
+        and target CGPA quickly and easily.
+      </p>
+
+      <p>
+        Select your university, enter your previous academic
+        record, add your courses and grades, and calculate
+        your CGPA using the available grading scale.
+      </p>
+
+    </section>
+
+
+    <section class="content-card">
+
+      <h2>
+        Calculate GPA, CGPA and Target CGPA
+      </h2>
+
+      <p>
+        Use the calculator to find your semester GPA and
+        cumulative CGPA. You can also use our Target CGPA
+        Calculator to estimate the GPA needed to reach your
+        desired CGPA.
+      </p>
+
+      <h3>
+        University Grading Scales
+      </h3>
+
+      <p>
+        Grading systems may vary between universities and
+        academic programs. Always verify your university's
+        official grading policy before using the result for
+        academic or official purposes.
+      </p>
+
+    </section>
+
+
+    <section class="content-card">
+
+      <h2>
+        About CGPA Calculator BD
+      </h2>
+
+      <p>
+        CGPA Calculator BD is a free Bangladesh-focused
+        academic calculator designed to make GPA and CGPA
+        calculation easier for university students.
+      </p>
+
+      <p>
+        Students can calculate semester GPA, cumulative CGPA
+        and target CGPA using the available university
+        grading scales.
+      </p>
+
+      <p>
+        The calculator is intended as a helpful calculation
+        tool. University grading systems and academic
+        regulations may change, so students should verify
+        official information from their university when
+        necessary.
+      </p>
+
+    </section>
+
+
+    <!-- ================= CTA ================= -->
+
+    <section class="cta">
+
+      <h2>
+        Ready to Calculate Your CGPA?
+      </h2>
+
+      <p>
+        Select your university and start calculating your
+        GPA or CGPA.
+      </p>
+
+      <a
+        href="tools/cgpa-calculator.html"
+        class="btn"
+      >
+        Open CGPA Calculator
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+
+    <div class="footer-container">
+
+      <div class="footer-links">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="tools/cgpa-calculator.html">
+          CGPA Calculator
+        </a>
+
+        <a href="tools/marks-to-cgpa.html">
+          Marks → Grade
+        </a>
+
+        <a href="tools/target-cgpa.html">
+          Target CGPA
+        </a>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+        <a href="privacy-policy.html">
+          Privacy Policy
+        </a>
+
+      </div>
+
+      <p class="copyright">
+        © <span id="currentYear"></span>
+        CGPA Calculator BD. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <script>
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
+  </script>
 
 </body>
 </html>
