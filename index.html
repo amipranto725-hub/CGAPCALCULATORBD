@@ -13,7 +13,7 @@
 
   <meta
     name="description"
-    content="Free CGPA Calculator for university students in Bangladesh. Select your university, enter course credits and grades, and calculate your cumulative CGPA."
+    content="Free CGPA Calculator for university students in Bangladesh. Calculate your CGPA using your university grading scale."
   >
 
   <meta
@@ -40,7 +40,7 @@
 
   <meta
     property="og:description"
-    content="Calculate your cumulative CGPA using your university grading scale."
+    content="Calculate your CGPA using your university grading scale."
   >
 
   <meta
@@ -168,7 +168,6 @@
       gap: 20px;
       font-size: 14px;
       font-weight: 600;
-      flex-wrap: wrap;
     }
 
     .nav-links a {
@@ -559,7 +558,7 @@
 
     .scale-table {
       width: 100%;
-      min-width: 360px;
+      min-width: 550px;
       border-collapse: collapse;
     }
 
@@ -711,6 +710,7 @@
       }
 
       .nav-links {
+        flex-wrap: wrap;
         justify-content: center;
         gap: 12px;
       }
@@ -719,7 +719,10 @@
         padding: 55px 0 45px;
       }
 
-      .form-grid,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
       .tools-grid,
       .steps {
         grid-template-columns: 1fr;
@@ -773,7 +776,10 @@
 
     <div class="container nav">
 
-      <a href="index.html" class="logo">
+      <a
+        href="index.html"
+        class="logo"
+      >
         CGPA Calculator <span>BD</span>
       </a>
 
@@ -1065,12 +1071,14 @@
           Your CGPA
         </div>
 
+
         <div
           id="resultValue"
           class="result-value"
         >
           0.00
         </div>
+
 
         <div
           id="resultDetails"
@@ -1101,6 +1109,10 @@
 
               <th>
                 Grade
+              </th>
+
+              <th>
+                Score Range
               </th>
 
               <th>
@@ -1143,7 +1155,7 @@
           </h3>
 
           <p>
-            Calculate your cumulative CGPA using course credits and grades.
+            Calculate your CGPA using course credits and grades.
           </p>
 
           <span class="tool-link">
@@ -1200,7 +1212,8 @@
           </h3>
 
           <p>
-            Choose your university to use the appropriate grading scale.
+            Choose your university to use the appropriate
+            grading scale.
           </p>
 
         </div>
@@ -1217,7 +1230,8 @@
           </h3>
 
           <p>
-            Add your course names, credits, grades and grade points.
+            Add your course names, credits, grades and
+            grade points.
           </p>
 
         </div>
@@ -1253,6 +1267,7 @@
   <footer>
 
     <div class="container footer-content">
+
 
       <div>
 
@@ -1592,7 +1607,7 @@
           grade: "F",
           min: 0,
           max: 39,
-          point: 0
+          point: 0.00
         }
 
       ],
@@ -1660,7 +1675,7 @@
           grade: "F",
           min: 0,
           max: 49,
-          point: 0
+          point: 0.00
         }
 
       ],
@@ -1742,7 +1757,7 @@
           grade: "F",
           min: 0,
           max: 59,
-          point: 0
+          point: 0.00
         }
 
       ],
@@ -1838,7 +1853,7 @@
           grade: "F",
           min: 0,
           max: 49,
-          point: 0
+          point: 0.00
         }
 
       ],
@@ -1920,7 +1935,7 @@
           grade: "F",
           min: 0,
           max: 54,
-          point: 0
+          point: 0.00
         }
 
       ],
@@ -2002,7 +2017,7 @@
           grade: "F",
           min: 0,
           max: 44,
-          point: 0
+          point: 0.00
         }
 
       ],
@@ -2077,7 +2092,7 @@
           grade: "F",
           min: 0,
           max: 49,
-          point: 0
+          point: 0.00
         }
 
       ]
@@ -2090,7 +2105,6 @@
     ========================= */
 
     let currentUniversityType = "public";
-
     let selectedUniversity = universities.public[0];
 
 
@@ -2105,18 +2119,12 @@
       document
         .getElementById("publicTab")
         .classList
-        .toggle(
-          "active",
-          type === "public"
-        );
+        .toggle("active", type === "public");
 
       document
         .getElementById("privateTab")
         .classList
-        .toggle(
-          "active",
-          type === "private"
-        );
+        .toggle("active", type === "private");
 
       document
         .getElementById("universitySearch")
@@ -2130,21 +2138,16 @@
     function populateUniversities() {
 
       const select =
-        document.getElementById(
-          "universitySelect"
-        );
+        document.getElementById("universitySelect");
 
       const search =
         document
-          .getElementById(
-            "universitySearch"
-          )
+          .getElementById("universitySearch")
           .value
           .toLowerCase()
           .trim();
 
       select.innerHTML = "";
-
 
       const list =
         universities[currentUniversityType]
@@ -2160,11 +2163,8 @@
         const option =
           document.createElement("option");
 
-        option.value =
-          university.id;
-
-        option.textContent =
-          university.name;
+        option.value = university.id;
+        option.textContent = university.name;
 
         select.appendChild(option);
 
@@ -2175,13 +2175,10 @@
 
         selectedUniversity = list[0];
 
-        select.value =
-          selectedUniversity.id;
+        select.value = selectedUniversity.id;
 
         renderGradingScale();
-
         updateUniversityInfo();
-
         updateAllGradeOptions();
 
       } else {
@@ -2192,9 +2189,7 @@
           document.createElement("option");
 
         option.value = "";
-
-        option.textContent =
-          "No university found";
+        option.textContent = "No university found";
 
         select.appendChild(option);
 
@@ -2204,6 +2199,7 @@
           "No university matched your search.";
 
         renderGradingScale();
+        updateAllGradeOptions();
 
       }
 
@@ -2211,21 +2207,16 @@
 
 
     function filterUniversities() {
-
       populateUniversities();
-
     }
 
 
     function universityChanged() {
 
       const select =
-        document.getElementById(
-          "universitySelect"
-        );
+        document.getElementById("universitySelect");
 
-      const id =
-        select.value;
+      const id = select.value;
 
 
       const allUniversities = [
@@ -2242,9 +2233,7 @@
 
 
       renderGradingScale();
-
       updateUniversityInfo();
-
       updateAllGradeOptions();
 
     }
@@ -2253,9 +2242,7 @@
     function updateUniversityInfo() {
 
       const info =
-        document.getElementById(
-          "universityInfo"
-        );
+        document.getElementById("universityInfo");
 
 
       if (!selectedUniversity) {
@@ -2291,9 +2278,7 @@
       }
 
 
-      return gradingScales[
-        selectedUniversity.scale
-      ];
+      return gradingScales[selectedUniversity.scale];
 
     }
 
@@ -2301,16 +2286,18 @@
     function renderGradingScale() {
 
       const body =
-        document.getElementById(
-          "gradingScaleBody"
-        );
+        document.getElementById("gradingScaleBody");
+
+
+      if (!body) {
+        return;
+      }
 
 
       body.innerHTML = "";
 
 
-      const scale =
-        getCurrentScale();
+      const scale = getCurrentScale();
 
 
       scale.forEach(item => {
@@ -2322,9 +2309,11 @@
         row.innerHTML = `
 
           <td>
-            <strong>
-              ${item.grade}
-            </strong>
+            <strong>${item.grade}</strong>
+          </td>
+
+          <td>
+            ${item.min}–${item.max}
           </td>
 
           <td>
@@ -2353,9 +2342,7 @@
     ) {
 
       const body =
-        document.getElementById(
-          "courseBody"
-        );
+        document.getElementById("courseBody");
 
 
       const row =
@@ -2384,7 +2371,7 @@
             min="0"
             step="0.5"
             placeholder="3"
-            value="${credit}"
+            value="${escapeHtml(credit)}"
           >
 
         </td>
@@ -2452,6 +2439,7 @@
         grade
       );
 
+
       populatePointOptions(
         pointSelect,
         gradePoint
@@ -2487,11 +2475,8 @@
         const option =
           document.createElement("option");
 
-        option.value =
-          item.grade;
-
-        option.textContent =
-          item.grade;
+        option.value = item.grade;
+        option.textContent = item.grade;
 
 
         if (
@@ -2531,9 +2516,7 @@
           Number(item.point).toFixed(2);
 
 
-        if (
-          !points.includes(point)
-        ) {
+        if (!points.includes(point)) {
 
           points.push(point);
 
@@ -2548,12 +2531,13 @@
           document.createElement("option");
 
         option.value = point;
-
         option.textContent = point;
 
 
         if (
-          String(selectedPoint) === point
+          selectedPoint !== "" &&
+          point ===
+          Number(selectedPoint).toFixed(2)
         ) {
 
           option.selected = true;
@@ -2575,14 +2559,16 @@
         .forEach(row => {
 
           const gradeSelect =
-            row.querySelector(
-              ".course-grade"
-            );
+            row.querySelector(".course-grade");
 
           const pointSelect =
-            row.querySelector(
-              ".grade-point"
-            );
+            row.querySelector(".grade-point");
+
+
+          if (!gradeSelect || !pointSelect) {
+            return;
+          }
+
 
           const oldGrade =
             gradeSelect.value;
@@ -2639,9 +2625,12 @@
     ) {
 
       const pointSelect =
-        row.querySelector(
-          ".grade-point"
-        );
+        row.querySelector(".grade-point");
+
+
+      if (!pointSelect) {
+        return;
+      }
 
 
       const gradeData =
@@ -2660,14 +2649,8 @@
       }
 
 
-      const point =
-        Number(
-          gradeData.point
-        ).toFixed(2);
-
-
       pointSelect.value =
-        point;
+        Number(gradeData.point).toFixed(2);
 
     }
 
@@ -2684,9 +2667,7 @@
 
 
       const gradeSelect =
-        row.querySelector(
-          ".course-grade"
-        );
+        row.querySelector(".course-grade");
 
 
       const selectedPoint =
@@ -2695,37 +2676,67 @@
 
       if (isNaN(selectedPoint)) {
 
+        gradeSelect.value = "";
+
+        return;
+
+      }
+
+
+      const currentGrade =
+        getCurrentScale().find(
+          item =>
+            item.grade === gradeSelect.value
+        );
+
+
+      /*
+        Grade Point is kept synchronized
+        with the selected Grade.
+      */
+
+      if (
+        currentGrade &&
+        Number(currentGrade.point) === selectedPoint
+      ) {
+
+        return;
+
+      }
+
+
+      const matchingGrades =
+        getCurrentScale().filter(
+          item =>
+            Number(item.point) === selectedPoint
+        );
+
+
+      if (matchingGrades.length === 1) {
+
+        gradeSelect.value =
+          matchingGrades[0].grade;
+
         return;
 
       }
 
 
       /*
-        If no grade has been selected,
-        choose the first matching grade.
-
-        If a grade is already selected,
-        keep that grade. This avoids
-        ambiguity when multiple grades
-        have the same point.
+        If several grades have the same
+        point, keep the existing grade
+        when possible and restore its
+        correct point.
       */
 
-      if (!gradeSelect.value) {
+      if (currentGrade) {
 
-        const matchingGrade =
-          getCurrentScale().find(
-            item =>
-              Number(item.point) ===
-              selectedPoint
-          );
+        pointSelect.value =
+          Number(currentGrade.point).toFixed(2);
 
+      } else {
 
-        if (matchingGrade) {
-
-          gradeSelect.value =
-            matchingGrade.grade;
-
-        }
+        gradeSelect.value = "";
 
       }
 
@@ -2739,9 +2750,7 @@
 
 
       if (row) {
-
         row.remove();
-
       }
 
     }
@@ -2750,9 +2759,7 @@
     function resetCourses() {
 
       const body =
-        document.getElementById(
-          "courseBody"
-        );
+        document.getElementById("courseBody");
 
 
       body.innerHTML = "";
@@ -2793,62 +2800,45 @@
 
 
       let totalQualityPoints = 0;
-
       let totalCredits = 0;
-
       let validCourses = 0;
 
 
       rows.forEach(row => {
 
         const creditInput =
-          row.querySelector(
-            ".course-credit"
-          );
+          row.querySelector(".course-credit");
 
         const gradeSelect =
-          row.querySelector(
-            ".course-grade"
-          );
+          row.querySelector(".course-grade");
 
-        const pointSelect =
-          row.querySelector(
-            ".grade-point"
-          );
+
+        if (!creditInput || !gradeSelect) {
+          return;
+        }
 
 
         const credit =
-          parseFloat(
-            creditInput.value
-          );
+          parseFloat(creditInput.value);
 
 
         const grade =
           getCurrentScale().find(
             item =>
-              item.grade ===
-              gradeSelect.value
-          );
-
-
-        const selectedPoint =
-          parseFloat(
-            pointSelect.value
+              item.grade === gradeSelect.value
           );
 
 
         if (
           !isNaN(credit) &&
           credit > 0 &&
-          grade &&
-          !isNaN(selectedPoint)
+          grade
         ) {
 
           /*
             Always use the official point
-            assigned to the selected grade.
-            This prevents a mismatched
-            Grade / Grade Point combination.
+            attached to the selected grade.
+            This prevents manual mismatch.
           */
 
           const point =
@@ -2873,7 +2863,7 @@
       ) {
 
         alert(
-          "Please add at least one valid course with credit, grade and grade point."
+          "Please add at least one valid course with credit and grade."
         );
 
         return;
@@ -2946,33 +2936,25 @@
 
 
       document
-        .getElementById(
-          "resultValue"
-        )
+        .getElementById("resultValue")
         .textContent =
         finalCGPA.toFixed(2);
 
 
       document
-        .getElementById(
-          "resultDetails"
-        )
+        .getElementById("resultDetails")
         .textContent =
         details;
 
 
       document
-        .getElementById(
-          "resultBox"
-        )
+        .getElementById("resultBox")
         .style.display =
         "block";
 
 
       document
-        .getElementById(
-          "resultBox"
-        )
+        .getElementById("resultBox")
         .scrollIntoView({
           behavior: "smooth",
           block: "center"
