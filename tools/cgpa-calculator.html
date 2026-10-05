@@ -1,106 +1,1283 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CGPA Calculator - CGPACalculatorBD</title>
-  <meta name="description" content="Calculate semester GPA and CGPA using credits and grade points.">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>CGPA Calculator Bangladesh - CGPA Calculator BD</title>
+
+  <meta
+    name="description"
+    content="Calculate your CGPA by selecting your university, courses, credits and grades using university grading scales."
+  >
+
+  <meta
+    name="robots"
+    content="index, follow"
+  >
+
+  <link
+    rel="canonical"
+    href="https://amipranto725-hub.github.io/CGAPCALCULATORBD/tools/cgpa-calculator.html"
+  >
+
+  <meta
+    name="theme-color"
+    content="#173b8f"
+  >
+
   <style>
-    body{font-family:Arial;background:#f5f7fb;margin:0;color:#172033}
-    header{background:#173b8f;color:white;padding:20px;text-align:center}
-    main{max-width:850px;margin:35px auto;padding:20px}
-    .box{background:white;padding:25px;border-radius:12px;box-shadow:0 4px 18px #ddd}
-    .row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
-    input{padding:12px;border:1px solid #ccc;border-radius:8px}
-    button{padding:12px 18px;background:#173b8f;color:white;border:0;border-radius:8px;cursor:pointer;margin:5px}
-    #result{margin-top:20px;padding:15px;background:#eef3ff;font-size:20px;font-weight:bold}
-    a{color:white;margin:0 8px}
-    @media(max-width:600px){.row{grid-template-columns:1fr}}
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f7fb;
+      color: #172033;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    header {
+      background: #173b8f;
+      color: #ffffff;
+      padding: 22px 15px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 10px;
+      font-size: 30px;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      color: #ffffff;
+      opacity: 0.95;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      width: min(900px, 92%);
+      margin: 35px auto 60px;
+    }
+
+    .box {
+      background: #ffffff;
+      padding: 28px;
+      border-radius: 14px;
+      box-shadow: 0 5px 20px rgba(20, 40, 80, 0.06);
+      border: 1px solid #e5e8ef;
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #173b8f;
+      font-size: 25px;
+    }
+
+    h3 {
+      color: #173b8f;
+      margin-top: 28px;
+      margin-bottom: 14px;
+    }
+
+    .intro {
+      color: #667087;
+      margin-bottom: 25px;
+    }
+
+    /* UNIVERSITY */
+
+    .university-box {
+      background: #f7f9ff;
+      border: 1px solid #e0e6f5;
+      border-radius: 10px;
+      padding: 18px;
+      margin-bottom: 25px;
+    }
+
+    .field-label {
+      display: block;
+      font-weight: 700;
+      color: #374056;
+      margin-bottom: 7px;
+      font-size: 14px;
+    }
+
+    .university-select {
+      width: 100%;
+      height: 46px;
+      padding: 0 12px;
+      border: 1px solid #d5dae5;
+      border-radius: 8px;
+      background: #ffffff;
+      color: #172033;
+      outline: none;
+    }
+
+    .university-info {
+      margin-top: 10px;
+      color: #667087;
+      font-size: 13px;
+    }
+
+    /* COURSE */
+
+    .course-wrapper {
+      overflow-x: auto;
+      border: 1px solid #e2e6ed;
+      border-radius: 10px;
+    }
+
+    .course-table {
+      width: 100%;
+      min-width: 650px;
+      border-collapse: collapse;
+    }
+
+    .course-table th {
+      background: #f3f5f9;
+      color: #354057;
+      padding: 12px 10px;
+      text-align: left;
+      font-size: 13px;
+      border-bottom: 1px solid #e2e6ed;
+    }
+
+    .course-table td {
+      padding: 10px;
+      border-bottom: 1px solid #edf0f4;
+      vertical-align: middle;
+    }
+
+    .course-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .course-table input,
+    .course-table select {
+      width: 100%;
+      height: 42px;
+      padding: 0 9px;
+      border: 1px solid #d5dae5;
+      border-radius: 7px;
+      background: #ffffff;
+      outline: none;
+    }
+
+    .course-name {
+      min-width: 170px;
+    }
+
+    .credit {
+      min-width: 85px;
+    }
+
+    .grade {
+      min-width: 120px;
+    }
+
+    .grade-point {
+      min-width: 110px;
+    }
+
+    .remove-btn {
+      border: none;
+      background: #fff0f0;
+      color: #c73535;
+      padding: 8px 11px;
+      border-radius: 7px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 12px;
+    }
+
+    .remove-btn:hover {
+      background: #ffe0e0;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    button {
+      border: none;
+      border-radius: 8px;
+      padding: 11px 17px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .add-btn {
+      background: #173b8f;
+      color: #ffffff;
+    }
+
+    .reset-btn {
+      background: #eef1f7;
+      color: #34405a;
+    }
+
+    .calculate-btn {
+      width: 100%;
+      margin-top: 18px;
+      height: 52px;
+      background: #f28c28;
+      color: #ffffff;
+      font-size: 16px;
+    }
+
+    .calculate-btn:hover {
+      background: #db7717;
+    }
+
+    /* RESULT */
+
+    #result {
+      margin-top: 22px;
+      padding: 22px;
+      background: #eef3ff;
+      border-radius: 10px;
+      text-align: center;
+      display: none;
+    }
+
+    .result-label {
+      color: #667087;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .result-value {
+      color: #173b8f;
+      font-size: 44px;
+      font-weight: 900;
+      line-height: 1.2;
+      margin: 4px 0;
+    }
+
+    .result-details {
+      color: #667087;
+      font-size: 13px;
+    }
+
+    /* GRADING SCALE */
+
+    .scale-wrapper {
+      overflow-x: auto;
+      margin-top: 28px;
+    }
+
+    .scale-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 430px;
+    }
+
+    .scale-table th,
+    .scale-table td {
+      padding: 10px;
+      border-bottom: 1px solid #e5e8ef;
+      text-align: left;
+      font-size: 13px;
+    }
+
+    .scale-table th {
+      background: #f3f5f9;
+      color: #354057;
+    }
+
+    .verified-note {
+      margin-top: 12px;
+      padding: 12px;
+      background: #f7f9ff;
+      border-radius: 8px;
+      color: #667087;
+      font-size: 12px;
+    }
+
+    /* FOCUS */
+
+    input:focus,
+    select:focus {
+      border-color: #173b8f;
+      box-shadow: 0 0 0 3px rgba(23, 59, 143, 0.08);
+    }
+
+    @media (max-width: 600px) {
+
+      header h1 {
+        font-size: 25px;
+      }
+
+      main {
+        width: 94%;
+        margin-top: 22px;
+      }
+
+      .box {
+        padding: 19px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+
+    }
+
   </style>
+
 </head>
+
+
 <body>
 
+
 <header>
+
   <h1>CGPA Calculator</h1>
-  <a href="../index.html">Home</a>
+
+  <nav class="nav-links">
+
+    <a href="../index.html">
+      Home
+    </a>
+
+    <a href="cgpa-calculator.html">
+      CGPA Calculator
+    </a>
+
+    <a href="marks-to-cgpa.html">
+      Marks → Grade
+    </a>
+
+    <a href="target-cgpa.html">
+      Target CGPA
+    </a>
+
+    <a href="../about.html">
+      About
+    </a>
+
+  </nav>
+
 </header>
 
+
 <main>
+
   <div class="box">
 
-    <h2>Calculate CGPA</h2>
+    <h2>
+      Calculate Your CGPA
+    </h2>
 
-    <p>Enter grade point and credit for each course.</p>
+    <p class="intro">
+      Select your university and enter your course credits and grades.
+      The calculator will use the selected university's grading scale.
+    </p>
 
-    <br>
 
-    <div id="courses">
+    <!-- UNIVERSITY -->
 
-      <div class="row">
-        <input type="number" step="0.01" min="0" max="4" placeholder="Grade Point">
-        <input type="number" step="0.5" min="0" placeholder="Credit">
-      </div>
+    <div class="university-box">
 
-      <div class="row">
-        <input type="number" step="0.01" min="0" max="4" placeholder="Grade Point">
-        <input type="number" step="0.5" min="0" placeholder="Credit">
+      <label
+        class="field-label"
+        for="universitySelect"
+      >
+        Select University
+      </label>
+
+      <select
+        id="universitySelect"
+        class="university-select"
+        onchange="universityChanged()"
+      ></select>
+
+      <div
+        id="universityInfo"
+        class="university-info"
+      >
+        Select your university.
       </div>
 
     </div>
 
-    <button onclick="addRow()">+ Add Course</button>
-    <button onclick="calculate()">Calculate CGPA</button>
 
-    <div id="result">Your CGPA will appear here.</div>
+    <!-- COURSES -->
+
+    <h3>
+      Courses
+    </h3>
+
+    <div class="course-wrapper">
+
+      <table class="course-table">
+
+        <thead>
+
+          <tr>
+
+            <th>
+              Course Name
+            </th>
+
+            <th>
+              Credit
+            </th>
+
+            <th>
+              Grade
+            </th>
+
+            <th>
+              Grade Point
+            </th>
+
+            <th>
+              Action
+            </th>
+
+          </tr>
+
+        </thead>
+
+        <tbody id="courses"></tbody>
+
+      </table>
+
+    </div>
+
+
+    <div class="actions">
+
+      <button
+        type="button"
+        class="add-btn"
+        onclick="addCourse()"
+      >
+        + Add Course
+      </button>
+
+      <button
+        type="button"
+        class="reset-btn"
+        onclick="resetCourses()"
+      >
+        Reset Courses
+      </button>
+
+    </div>
+
+
+    <button
+      type="button"
+      class="calculate-btn"
+      onclick="calculate()"
+    >
+      Calculate CGPA
+    </button>
+
+
+    <!-- RESULT -->
+
+    <div id="result">
+
+      <div class="result-label">
+        Your CGPA
+      </div>
+
+      <div
+        id="resultValue"
+        class="result-value"
+      >
+        0.00
+      </div>
+
+      <div
+        id="resultDetails"
+        class="result-details"
+      ></div>
+
+    </div>
+
+
+    <!-- GRADING SCALE -->
+
+    <div class="scale-wrapper">
+
+      <h3>
+        Selected University Grading Scale
+      </h3>
+
+      <table class="scale-table">
+
+        <thead>
+
+          <tr>
+
+            <th>
+              Grade
+            </th>
+
+            <th>
+              Grade Point
+            </th>
+
+            <th>
+              Range
+            </th>
+
+          </tr>
+
+        </thead>
+
+        <tbody id="scaleBody"></tbody>
+
+      </table>
+
+      <div class="verified-note">
+        Grading scales shown here are based on official university
+        academic/regulation pages where available.
+      </div>
+
+    </div>
 
   </div>
+
 </main>
 
+
 <script>
-function addRow() {
-  const container = document.getElementById("courses");
 
-  const row = document.createElement("div");
-  row.className = "row";
 
-  row.innerHTML = `
-    <input type="number" step="0.01" min="0" max="4" placeholder="Grade Point">
-    <input type="number" step="0.5" min="0" placeholder="Credit">
-  `;
+/* =====================================================
+   VERIFIED UNIVERSITY GRADING SCALES
+   ===================================================== */
 
-  container.appendChild(row);
-}
+const gradingScales = {
 
-function calculate() {
-  const rows = document.querySelectorAll(".row");
 
-  let points = 0;
-  let credits = 0;
+  /* UNIVERSITY OF DHAKA */
 
-  rows.forEach(row => {
-    const inputs = row.querySelectorAll("input");
+  du: [
 
-    const gp = parseFloat(inputs[0].value);
-    const credit = parseFloat(inputs[1].value);
+    {
+      grade: "A+",
+      point: 4.00,
+      min: 80,
+      max: 100
+    },
 
-    if (!isNaN(gp) && !isNaN(credit) && credit > 0) {
-      points += gp * credit;
-      credits += credit;
+    {
+      grade: "A",
+      point: 3.75,
+      min: 75,
+      max: 79
+    },
+
+    {
+      grade: "A-",
+      point: 3.50,
+      min: 70,
+      max: 74
+    },
+
+    {
+      grade: "B+",
+      point: 3.25,
+      min: 65,
+      max: 69
+    },
+
+    {
+      grade: "B",
+      point: 3.00,
+      min: 60,
+      max: 64
+    },
+
+    {
+      grade: "B-",
+      point: 2.75,
+      min: 55,
+      max: 59
+    },
+
+    {
+      grade: "C+",
+      point: 2.50,
+      min: 50,
+      max: 54
+    },
+
+    {
+      grade: "C",
+      point: 2.25,
+      min: 45,
+      max: 49
+    },
+
+    {
+      grade: "D",
+      point: 2.00,
+      min: 40,
+      max: 44
+    },
+
+    {
+      grade: "F",
+      point: 0.00,
+      min: 0,
+      max: 39
     }
+
+  ],
+
+
+  /* BUET */
+
+  buet: [
+
+    {
+      grade: "A+",
+      point: 4.00,
+      min: 80,
+      max: 100
+    },
+
+    {
+      grade: "A",
+      point: 3.75,
+      min: 75,
+      max: 79
+    },
+
+    {
+      grade: "A-",
+      point: 3.50,
+      min: 70,
+      max: 74
+    },
+
+    {
+      grade: "B+",
+      point: 3.25,
+      min: 65,
+      max: 69
+    },
+
+    {
+      grade: "B",
+      point: 3.00,
+      min: 60,
+      max: 64
+    },
+
+    {
+      grade: "B-",
+      point: 2.75,
+      min: 55,
+      max: 59
+    },
+
+    {
+      grade: "C+",
+      point: 2.50,
+      min: 50,
+      max: 54
+    },
+
+    {
+      grade: "C",
+      point: 2.25,
+      min: 45,
+      max: 49
+    },
+
+    {
+      grade: "D",
+      point: 2.00,
+      min: 40,
+      max: 44
+    },
+
+    {
+      grade: "F",
+      point: 0.00,
+      min: 0,
+      max: 39
+    }
+
+  ],
+
+
+  /* AIUB */
+
+  aiub: [
+
+    {
+      grade: "A+",
+      point: 4.00,
+      min: 90,
+      max: 100
+    },
+
+    {
+      grade: "A",
+      point: 3.75,
+      min: 85,
+      max: 89
+    },
+
+    {
+      grade: "B+",
+      point: 3.50,
+      min: 80,
+      max: 84
+    },
+
+    {
+      grade: "B",
+      point: 3.25,
+      min: 75,
+      max: 79
+    },
+
+    {
+      grade: "C+",
+      point: 3.00,
+      min: 70,
+      max: 74
+    },
+
+    {
+      grade: "C",
+      point: 2.75,
+      min: 65,
+      max: 69
+    },
+
+    {
+      grade: "D+",
+      point: 2.50,
+      min: 60,
+      max: 64
+    },
+
+    {
+      grade: "D",
+      point: 2.25,
+      min: 50,
+      max: 59
+    },
+
+    {
+      grade: "F",
+      point: 0.00,
+      min: 0,
+      max: 49
+    }
+
+  ],
+
+
+  /* BRAC UNIVERSITY */
+
+  brac: [
+
+    {
+      grade: "A",
+      point: 4.00,
+      min: 90,
+      max: 100
+    },
+
+    {
+      grade: "A-",
+      point: 3.70,
+      min: 85,
+      max: 89
+    },
+
+    {
+      grade: "B+",
+      point: 3.30,
+      min: 80,
+      max: 84
+    },
+
+    {
+      grade: "B",
+      point: 3.00,
+      min: 75,
+      max: 79
+    },
+
+    {
+      grade: "B-",
+      point: 2.70,
+      min: 70,
+      max: 74
+    },
+
+    {
+      grade: "C+",
+      point: 2.30,
+      min: 65,
+      max: 69
+    },
+
+    {
+      grade: "C",
+      point: 2.00,
+      min: 60,
+      max: 64
+    },
+
+    {
+      grade: "C-",
+      point: 1.70,
+      min: 57,
+      max: 59
+    },
+
+    {
+      grade: "D+",
+      point: 1.30,
+      min: 55,
+      max: 56
+    },
+
+    {
+      grade: "D",
+      point: 1.00,
+      min: 52,
+      max: 54
+    },
+
+    {
+      grade: "D-",
+      point: 0.70,
+      min: 50,
+      max: 51
+    },
+
+    {
+      grade: "F",
+      point: 0.00,
+      min: 0,
+      max: 49
+    }
+
+  ],
+
+
+  /* UIU */
+
+  uiu: [
+
+    {
+      grade: "A",
+      point: 4.00,
+      min: 90,
+      max: 100
+    },
+
+    {
+      grade: "A-",
+      point: 3.67,
+      min: 86,
+      max: 89
+    },
+
+    {
+      grade: "B+",
+      point: 3.33,
+      min: 82,
+      max: 85
+    },
+
+    {
+      grade: "B",
+      point: 3.00,
+      min: 78,
+      max: 81
+    },
+
+    {
+      grade: "B-",
+      point: 2.67,
+      min: 74,
+      max: 77
+    },
+
+    {
+      grade: "C+",
+      point: 2.33,
+      min: 70,
+      max: 73
+    },
+
+    {
+      grade: "C",
+      point: 2.00,
+      min: 66,
+      max: 69
+    },
+
+    {
+      grade: "C-",
+      point: 1.67,
+      min: 62,
+      max: 65
+    },
+
+    {
+      grade: "D+",
+      point: 1.33,
+      min: 58,
+      max: 61
+    },
+
+    {
+      grade: "D",
+      point: 1.00,
+      min: 55,
+      max: 57
+    },
+
+    {
+      grade: "F",
+      point: 0.00,
+      min: 0,
+      max: 54
+    }
+
+  ],
+
+
+  /* ULAB */
+
+  ulab: [
+
+    {
+      grade: "A+",
+      point: 4.00,
+      min: 97,
+      max: 100
+    },
+
+    {
+      grade: "A",
+      point: 4.00,
+      min: 90,
+      max: 96
+    },
+
+    {
+      grade: "A-",
+      point: 3.80,
+      min: 85,
+      max: 89
+    },
+
+    {
+      grade: "B+",
+      point: 3.30,
+      min: 80,
+      max: 84
+    },
+
+    {
+      grade: "B",
+      point: 3.00,
+      min: 75,
+      max: 79
+    },
+
+    {
+      grade: "B-",
+      point: 2.80,
+      min: 70,
+      max: 74
+    },
+
+    {
+      grade: "C+",
+      point: 2.50,
+      min: 65,
+      max: 69
+    },
+
+    {
+      grade: "C",
+      point: 2.20,
+      min: 60,
+      max: 64
+    },
+
+    {
+      grade: "D",
+      point: 1.50,
+      min: 50,
+      max: 59
+    },
+
+    {
+      grade: "F",
+      point: 0.00,
+      min: 0,
+      max: 49
+    }
+
+  ],
+
+
+  /* EAST WEST UNIVERSITY */
+
+  ewu: [
+
+    {
+      grade: "A+",
+      point: 4.00,
+      min: 80,
+      max: 100
+    },
+
+    {
+      grade: "A",
+      point: 3.75,
+      min: 75,
+      max: 79
+    },
+
+    {
+      grade: "A-",
+      point: 3.50,
+      min: 70,
+      max: 74
+    },
+
+    {
+      grade: "B+",
+      point: 3.25,
+      min: 65,
+      max: 69
+    },
+
+    {
+      grade: "B",
+      point: 3.00,
+      min: 60,
+      max: 64
+    },
+
+    {
+      grade: "B-",
+      point: 2.75,
+      min: 55,
+      max: 59
+    },
+
+    {
+      grade: "C+",
+      point: 2.50,
+      min: 50,
+      max: 54
+    },
+
+    {
+      grade: "C",
+      point: 2.25,
+      min: 45,
+      max: 49
+    },
+
+    {
+      grade: "D",
+      point: 2.00,
+      min: 40,
+      max: 44
+    },
+
+    {
+      grade: "F",
+      point: 0.00,
+      min: 0,
+      max: 39
+    }
+
+  ]
+
+};
+
+
+/* =====================================================
+   UNIVERSITY LIST
+   ===================================================== */
+
+const universities = [
+
+  {
+    id: "du",
+    name: "University of Dhaka",
+    scale: "du"
+  },
+
+  {
+    id: "buet",
+    name: "Bangladesh University of Engineering and Technology (BUET)",
+    scale: "buet"
+  },
+
+  {
+    id: "aiub",
+    name: "American International University-Bangladesh (AIUB)",
+    scale: "aiub"
+  },
+
+  {
+    id: "brac",
+    name: "BRAC University",
+    scale: "brac"
+  },
+
+  {
+    id: "uiu",
+    name: "United International University (UIU)",
+    scale: "uiu"
+  },
+
+  {
+    id: "ulab",
+    name: "University of Liberal Arts Bangladesh (ULAB)",
+    scale: "ulab"
+  },
+
+  {
+    id: "ewu",
+    name: "East West University (EWU)",
+    scale: "ewu"
+  }
+
+];
+
+
+let selectedUniversity = universities[0];
+
+
+/* =====================================================
+   UNIVERSITY
+   ===================================================== */
+
+function populateUniversities() {
+
+  const select =
+    document.getElementById("universitySelect");
+
+  select.innerHTML = "";
+
+  universities.forEach(university => {
+
+    const option =
+      document.createElement("option");
+
+    option.value =
+      university.id;
+
+    option.textContent =
+      university.name;
+
+    select.appendChild(option);
+
   });
 
-  if (credits === 0) {
-    document.getElementById("result").innerText =
-      "Please enter valid values.";
+  select.value =
+    selectedUniversity.id;
+
+  universityChanged();
+
+}
+
+
+/* =====================================================
+   UNIVERSITY CHANGE
+   ===================================================== */
+
+function universityChanged() {
+
+  const select =
+    document.getElementById("universitySelect");
+
+  const university =
+    universities.find(
+      item => item.id === select.value
+    );
+
+  if (!university) {
     return;
   }
 
-  const cgpa = points / credits;
+  selectedUniversity =
+    university;
 
-  document.getElementById("result").innerText =
-    "Your CGPA: " + cgpa.toFixed(2);
+  document
+    .getElementById("universityInfo")
+    .textContent =
+    university.name +
+    " grading scale selected.";
+
+  renderScale();
+
+  updateAllCourseOptions();
+
 }
-</script>
 
-</body>
-</html>
+
+/* =====================================================
+   CURRENT SCALE
+   ===================================================== */
+
+function getCurrentScale() {
+
+  return gradingScales[
+    selectedUniversity
