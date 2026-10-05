@@ -1,1 +1,485 @@
-m
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CGPA Calculator BD - CGPA & GPA Calculator</title>
+
+<meta name="description"
+content="Free CGPA and semester GPA calculator for university students in Bangladesh.">
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f5f7fb;
+  color:#172033;
+}
+
+header{
+  background:#fff;
+  border-bottom:1px solid #e5e9f1;
+}
+
+.header-inner{
+  max-width:1200px;
+  margin:auto;
+  padding:25px 20px;
+}
+
+.logo{
+  text-align:center;
+  margin-bottom:25px;
+}
+
+.logo a{
+  color:#20479b;
+  text-decoration:none;
+  font-size:34px;
+  font-weight:800;
+}
+
+.logo span{
+  color:#f28a25;
+}
+
+nav{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:14px 25px;
+}
+
+nav a{
+  color:#4c5870;
+  text-decoration:none;
+  font-size:16px;
+  font-weight:700;
+}
+
+nav a:hover{
+  color:#20479b;
+}
+
+main{
+  max-width:900px;
+  margin:auto;
+  padding:50px 20px;
+}
+
+.card{
+  background:#fff;
+  border-radius:16px;
+  padding:30px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.07);
+}
+
+h1{
+  text-align:center;
+  color:#20479b;
+  margin-bottom:10px;
+}
+
+.subtitle{
+  text-align:center;
+  color:#657087;
+  margin-bottom:30px;
+}
+
+.section-title{
+  color:#20479b;
+  margin:25px 0 15px;
+}
+
+.form-group{
+  margin-bottom:18px;
+}
+
+label{
+  display:block;
+  font-weight:700;
+  margin-bottom:7px;
+}
+
+input,select{
+  width:100%;
+  padding:12px;
+  border:1px solid #d6dce8;
+  border-radius:8px;
+  font-size:16px;
+}
+
+.course{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr auto;
+  gap:10px;
+  margin-bottom:12px;
+  align-items:center;
+}
+
+.course input,
+.course select{
+  min-width:0;
+}
+
+.remove-btn{
+  border:none;
+  background:#e74c3c;
+  color:#fff;
+  padding:11px 14px;
+  border-radius:7px;
+  cursor:pointer;
+}
+
+.add-btn{
+  border:none;
+  background:#20479b;
+  color:#fff;
+  padding:12px 18px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:700;
+  margin-top:5px;
+}
+
+.calculate-btn{
+  width:100%;
+  border:none;
+  background:#f28a25;
+  color:#fff;
+  padding:14px;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:17px;
+  font-weight:700;
+  margin-top:25px;
+}
+
+.result{
+  display:none;
+  margin-top:25px;
+  padding:20px;
+  background:#eef4ff;
+  border-radius:10px;
+  text-align:center;
+}
+
+.result h2{
+  color:#20479b;
+  margin-bottom:8px;
+}
+
+.result-number{
+  font-size:36px;
+  font-weight:800;
+  color:#20479b;
+}
+
+footer{
+  background:#173f91;
+  color:white;
+  text-align:center;
+  padding:25px 20px;
+  margin-top:30px;
+}
+
+footer p{
+  color:#dbe5ff;
+  font-size:14px;
+}
+
+@media(max-width:700px){
+
+  .header-inner{
+    padding:22px 14px;
+  }
+
+  .logo a{
+    font-size:28px;
+  }
+
+  nav{
+    gap:12px 17px;
+  }
+
+  nav a{
+    font-size:14px;
+  }
+
+  main{
+    padding:35px 15px;
+  }
+
+  .card{
+    padding:20px;
+  }
+
+  .course{
+    grid-template-columns:1fr;
+  }
+
+  .remove-btn{
+    width:100%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+
+    <div class="logo">
+      <a href="../index.html">
+        CGPA Calculator <span>BD</span>
+      </a>
+    </div>
+
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="cgpa-calculator.html">CGPA Calculator</a>
+      <a href="marks-to-cgpa.html">Marks → Grade</a>
+      <a href="target-cgpa.html">Target CGPA</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../privacy-policy.html">Privacy</a>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+
+  <div class="card">
+
+    <h1>CGPA Calculator</h1>
+
+    <p class="subtitle">
+      Calculate your semester GPA and overall CGPA easily.
+    </p>
+
+    <h2 class="section-title">Previous Academic Record</h2>
+
+    <div class="form-group">
+      <label for="previousCGPA">Previous CGPA</label>
+      <input
+        type="number"
+        id="previousCGPA"
+        min="0"
+        max="4"
+        step="0.01"
+        placeholder="Example: 3.50"
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="completedCredits">Completed Credits</label>
+      <input
+        type="number"
+        id="completedCredits"
+        min="0"
+        step="0.5"
+        placeholder="Example: 90"
+      >
+    </div>
+
+    <h2 class="section-title">Current Semester Courses</h2>
+
+    <div id="courses"></div>
+
+    <button class="add-btn" type="button" onclick="addCourse()">
+      + Add Course
+    </button>
+
+    <button class="calculate-btn" type="button" onclick="calculateCGPA()">
+      Calculate CGPA
+    </button>
+
+    <div class="result" id="result">
+
+      <h2>Your Semester GPA</h2>
+
+      <div class="result-number" id="semesterGPA">
+        0.00
+      </div>
+
+      <p id="overallText"></p>
+
+    </div>
+
+  </div>
+
+</main>
+
+<footer>
+  <p>© 2026 CGPA Calculator BD. All rights reserved.</p>
+</footer>
+
+
+<script>
+
+const gradeOptions = [
+  {name:"A+", value:4.00},
+  {name:"A", value:3.75},
+  {name:"A-", value:3.50},
+  {name:"B+", value:3.25},
+  {name:"B", value:3.00},
+  {name:"B-", value:2.75},
+  {name:"C+", value:2.50},
+  {name:"C", value:2.25},
+  {name:"D", value:2.00},
+  {name:"F", value:0.00}
+];
+
+
+function addCourse(){
+
+  const courses = document.getElementById("courses");
+
+  const course = document.createElement("div");
+
+  course.className = "course";
+
+  let gradeHTML = "";
+
+  gradeOptions.forEach(function(grade){
+
+    gradeHTML += `
+      <option value="${grade.value}">
+        ${grade.name} (${grade.value.toFixed(2)})
+      </option>
+    `;
+
+  });
+
+  course.innerHTML = `
+
+    <input
+      type="text"
+      class="courseName"
+      placeholder="Course name"
+    >
+
+    <input
+      type="number"
+      class="credit"
+      min="0.5"
+      step="0.5"
+      placeholder="Credit"
+    >
+
+    <select class="grade">
+      <option value="">Grade</option>
+      ${gradeHTML}
+    </select>
+
+    <button
+      type="button"
+      class="remove-btn"
+      onclick="this.parentElement.remove()"
+    >
+      Remove
+    </button>
+
+  `;
+
+  courses.appendChild(course);
+}
+
+
+function calculateCGPA(){
+
+  const previousCGPA =
+    parseFloat(document.getElementById("previousCGPA").value) || 0;
+
+  const completedCredits =
+    parseFloat(document.getElementById("completedCredits").value) || 0;
+
+  const courseRows =
+    document.querySelectorAll(".course");
+
+  let totalCredits = 0;
+  let totalGradePoints = 0;
+
+  courseRows.forEach(function(row){
+
+    const credit =
+      parseFloat(row.querySelector(".credit").value);
+
+    const grade =
+      parseFloat(row.querySelector(".grade").value);
+
+    if(!isNaN(credit) && !isNaN(grade)){
+
+      totalCredits += credit;
+
+      totalGradePoints += credit * grade;
+
+    }
+
+  });
+
+
+  if(totalCredits <= 0){
+
+    alert("Please add at least one course with credit and grade.");
+
+    return;
+
+  }
+
+
+  const semesterGPA =
+    totalGradePoints / totalCredits;
+
+
+  let overallCGPA = semesterGPA;
+
+
+  if(completedCredits > 0){
+
+    overallCGPA =
+      (
+        (previousCGPA * completedCredits)
+        +
+        totalGradePoints
+      )
+      /
+      (completedCredits + totalCredits);
+
+  }
+
+
+  document.getElementById("semesterGPA").textContent =
+    semesterGPA.toFixed(2);
+
+
+  document.getElementById("overallText").textContent =
+    "Your estimated overall CGPA is " +
+    overallCGPA.toFixed(2);
+
+
+  document.getElementById("result").style.display =
+    "block";
+
+}
+
+
+/* Start with 3 courses */
+
+addCourse();
+addCourse();
+addCourse();
+
+</script>
+
+</body>
+</html>
